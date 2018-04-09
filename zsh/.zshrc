@@ -45,9 +45,6 @@ export BACKUPDIR="/Volumes/Storage/backups"
 export GOPATH="$HOME/go"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="/usr/local/opt/go/libexec/bin:$PATH"
-dev() {
-    cd $GOPATH/src/github.com/$1
-}
 export PATH="/Users/damien/go/src/code.wirelessregistry.com/signal-graph/backend/bin:$PATH"
 
 # C++ (gcc)
