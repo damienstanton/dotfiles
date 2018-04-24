@@ -4,7 +4,7 @@
 # +----+ #
 ##########
 
-export EDITOR="emacs"
+export EDITOR="nvim"
 export TERM="xterm-256color"
 export ZSH=$HOME/.oh-my-zsh
 
@@ -68,8 +68,9 @@ export NODE_PATH="/usr/local/lib/node_modules"
 
 # aliases
 alias sp="source env/bin/activate"
-alias vi="vim"
-alias e=emacs
+alias vi="nvim"
+alias vimconf="nvim $HOME/.config/nvim/init.vim"
+alias e="nvim"
 alias p="echo|clear;pwd"
 alias gs="git status"
 alias c="clear;ls -Ctrl"
