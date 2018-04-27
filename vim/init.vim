@@ -17,7 +17,12 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 call plug#end()
+
+" autcomplete
+" -----------
+let g:deoplete#enable_at_startup = 1
 
 " colors
 " ------
