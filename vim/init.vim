@@ -1,4 +1,4 @@
-" general config
+" general configs
 " --------------
 set termguicolors
 set tabstop=4
@@ -18,11 +18,15 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'jiangmiao/auto-pairs'
+Plug 'edkolev/tmuxline.vim'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
-" autcomplete
+" plugin configs
 " -----------
 let g:deoplete#enable_at_startup = 1
+let g:gitgutter_enabled = 1
 
 " colors
 " ------

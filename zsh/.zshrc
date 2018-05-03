@@ -69,6 +69,7 @@ export NODE_PATH="/usr/local/lib/node_modules"
 # aliases
 alias sp="source env/bin/activate"
 alias vi="nvim"
+alias vim="nvim"
 alias vimconf="nvim $HOME/.config/nvim/init.vim"
 alias e="nvim"
 alias p="echo|clear;pwd"
