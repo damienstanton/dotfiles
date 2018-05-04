@@ -1,4 +1,4 @@
-Safe space for my zsh and neovim config. VSCode has its own synchronization method using Gist.
+Safe space for my zsh, tmux and neovim config. VSCode has its own synchronization method using Gist.
 
 Script to sync things up
 ```sh
