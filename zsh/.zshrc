@@ -19,7 +19,6 @@ source $ZSH/oh-my-zsh.sh
 # ensure misc Brew-installed executables are found
 export PATH="/usr/local/sbin:$PATH"
 
-
 # Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 
@@ -45,6 +44,7 @@ export PATH="/usr/local/opt/go/libexec/bin:$PATH"
 export PATH="/Users/damien/go/src/code.wirelessregistry.com/signal-graph/backend/bin:$PATH"
 
 # C++ (gcc)
+# Commented out because Xcode/clang will explode and do horrible things otherwise.
 # export NCC="/usr/local/Cellar/gcc/7.2.0/bin/c++-7"
 # export NCXX="/usr/local/Cellar/gcc/7.2.0/bin/g++-7"
 
@@ -83,12 +83,11 @@ alias updateall="brew update && brew upgrade && brew cleanup && npm update -g"
 alias rff="rm -rf"
 alias cqlsh="cqlsh --cqlversion=3.4.0"
 alias k="kubectl"
-alias vis="vim -o"
+alias vis="nvim -o"
 alias listening="lsof -P | grep LISTEN"
-alias watchgit="watch --color -n 5 git lg"
 alias octave="/usr/local/octave/3.8.0/bin/octave-3.8.0"
-alias clojars-deploy="GPG_TTY=$(tty) lein deploy clojars"
 
+# just the dir name
 export NAME="${PWD##*/}"
 
 godev() {
