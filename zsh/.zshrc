@@ -19,9 +19,6 @@ source $ZSH/oh-my-zsh.sh
 # ensure misc Brew-installed executables are found
 export PATH="/usr/local/sbin:$PATH"
 
-# AMD Core Math
-export ACML_FMA=0
-export LD_LIBRARY_PATH=/opt/acml5.3.1/ifort64/lib:$LD_LIBRARY_PATH
 
 # Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
@@ -50,9 +47,6 @@ export PATH="/Users/damien/go/src/code.wirelessregistry.com/signal-graph/backend
 # C++ (gcc)
 # export NCC="/usr/local/Cellar/gcc/7.2.0/bin/c++-7"
 # export NCXX="/usr/local/Cellar/gcc/7.2.0/bin/g++-7"
-
-# Conda
-export PATH="$HOME/miniconda3/bin:$PATH"
 
 # Bazel
 export PATH="$HOME/bin:$PATH"
