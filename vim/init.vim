@@ -32,4 +32,4 @@ let g:gitgutter_enabled = 1
 " ------
 colorscheme nofrils-light
 let g:airline_theme='papercolor'
-hi Normal ctermbg=none
+hi Normal term=NONE cterm=NONE ctermfg=black ctermbg=NONE gui=NONE guifg=#000000 guibg=NONE
