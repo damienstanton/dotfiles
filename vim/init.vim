@@ -24,6 +24,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 Plug 'matze/vim-move'
+Plug '/usr/local/opt/fzf'
 call plug#end()
 
 " plugin configs
@@ -40,10 +41,6 @@ let g:notes_suffix = '.txt'
 
 " move lines
 let g:move_key_modifier = 'C'
-
-" fuzzy finder
-" ------------
-set rtp+=/usr/local/opt/fzf
 
 " colors
 " ------
