@@ -22,13 +22,24 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
+Plug 'matze/vim-move'
 call plug#end()
 
 " plugin configs
 " -----------
+" autocomplete
 let g:deoplete#enable_at_startup = 1
+
+" gitgutter
 let g:gitgutter_enabled = 1
+
+" notes
 let g:notes_directories = ['~/notes']
+let g:notes_suffix = '.txt'
+
+" move lines
+let g:move_key_modifier = 'C'
 
 " fuzzy finder
 " ------------
