@@ -28,6 +28,10 @@ call plug#end()
 let g:deoplete#enable_at_startup = 1
 let g:gitgutter_enabled = 1
 
+" fuzzy finder
+" ------------
+set rtp+=/usr/local/opt/fzf
+
 " colors
 " ------
 colorscheme nofrils-light
