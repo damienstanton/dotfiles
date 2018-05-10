@@ -21,12 +21,14 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'xolox/vim-notes'
 call plug#end()
 
 " plugin configs
 " -----------
 let g:deoplete#enable_at_startup = 1
 let g:gitgutter_enabled = 1
+let g:notes_directories = ['~/notes']
 
 " fuzzy finder
 " ------------
