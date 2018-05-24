@@ -61,7 +61,6 @@ export PATH="/Users/damien/.local/bin:$PATH"
 export NODE_PATH="/usr/local/lib/node_modules"
 
 # aliases
-alias sp="source env/bin/activate"
 alias vi="nvim"
 alias vim="nvim"
 alias vimconf="nvim $HOME/.config/nvim/init.vim"
@@ -70,20 +69,16 @@ alias p="echo|clear;pwd"
 alias gs="git status"
 alias c="clear;ls -Ctrl"
 alias ll="clear;ls -C"
-alias x="clear;ls -C"
 alias ct="clear;tree -L 2"
-alias tree="tree -I "env""
 alias untar="tar -xvf"
 alias guntar="tar -xzf"
 alias bn="clear;babel-node"
 alias serve="python3 -m http.server"
 alias sub="git submodule update --init --recursive"
-alias get="go get -u -v"
 alias updateall="brew update && brew upgrade && brew cleanup && npm update -g"
 alias rff="rm -rf"
 alias cqlsh="cqlsh --cqlversion=3.4.0"
 alias k="kubectl"
-alias vis="nvim -o"
 alias listening="lsof -P | grep LISTEN"
 alias octave="/usr/local/octave/3.8.0/bin/octave-3.8.0"
 
@@ -132,11 +127,8 @@ wrdev() {
   wron && cd $GOPATH/src/code.wirelessregistry.com
 }
 
-# WR dev environment scripts
 export WRPATH=$HOME/go/src/code.wirelessregistry.com/signal-graph
 export PATH="$WRPATH/backend/scripts:$PATH"
-
-# Load secured env vars
 source $HOME/.secret
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
