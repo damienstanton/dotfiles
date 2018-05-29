@@ -5,6 +5,7 @@
 ##########
 
 export EDITOR="nvim"
+export GIT_EDITOR="nvim"
 export TERM="xterm-256color"
 export ZSH=$HOME/.oh-my-zsh
 
@@ -41,7 +42,7 @@ export BACKUPDIR="/Volumes/Storage/backups"
 export GOPATH="$HOME/go"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="/usr/local/opt/go/libexec/bin:$PATH"
-export PATH="/Users/damien/go/src/code.wirelessregistry.com/signal-graph/backend/bin:$PATH"
+export PATH="$GOPATH/src/github.com/damienstanton/signal-graph/backend/bin:$PATH"
 
 # C++ (gcc)
 # Commented out because Xcode/clang will explode and do horrible things otherwise.
@@ -86,7 +87,13 @@ alias octave="/usr/local/octave/3.8.0/bin/octave-3.8.0"
 export NAME="${PWD##*/}"
 
 godev() {
-    wroff && cd $GOPATH/src/github.com/damienstanton
+    cd $GOPATH/src/github.com/damienstanton
+}
+
+wrdev() {
+	godev && cd $GOPATH/src/code.wirelessregistry.com/signal-graph/backend/src/code.wirelessregistry.com
+	export GOPATH="$GOPATH/src/code.wirelessregistry.com/signal-graph/backend"
+	echo "GOPATH is now $GOPATH"
 }
 
 sizeof() {
@@ -113,21 +120,7 @@ export PATH="$HOME/kubernetes/platforms/$PLATFORM/$ARCH:$PATH"
 export PATH="$HOME/kubernetes/client/bin:$PATH"
 export KUBECONFIG="$GOPATH/src/code.wirelessregistry.com/signal-graph/data_model/kube.config"
 
-wron() {
-  export GOPATH=$HOME/go/src/code.wirelessregistry.com/signal-graph/backend
-  echo "GOPATH is now $GOPATH"
-}
-
-wroff() {
-  export GOPATH=$HOME/go
-  echo "GOPATH is now $GOPATH"
-}
-
-wrdev() {
-  wron && cd $GOPATH/src/code.wirelessregistry.com
-}
-
-export WRPATH=$HOME/go/src/code.wirelessregistry.com/signal-graph
+export WRPATH=$GOPATH/src/github.com/damienstanton/signal-graph
 export PATH="$WRPATH/backend/scripts:$PATH"
 source $HOME/.secret
 
