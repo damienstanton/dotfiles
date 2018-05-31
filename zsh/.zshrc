@@ -87,13 +87,15 @@ alias octave="/usr/local/octave/3.8.0/bin/octave-3.8.0"
 export NAME="${PWD##*/}"
 
 godev() {
+    export GOPATH="$HOME/go"
+	echo "GOPATH is now $GOPATH"
     cd $GOPATH/src/github.com/damienstanton
 }
 
 wrdev() {
-	godev && cd $GOPATH/src/code.wirelessregistry.com/signal-graph/backend/src/code.wirelessregistry.com
 	export GOPATH="$GOPATH/src/code.wirelessregistry.com/signal-graph/backend"
 	echo "GOPATH is now $GOPATH"
+	cd $GOPATH
 }
 
 sizeof() {
