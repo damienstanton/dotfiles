@@ -93,9 +93,9 @@ godev() {
 }
 
 wrdev() {
-	export GOPATH="$GOPATH/src/code.wirelessregistry.com/signal-graph/backend"
+	export GOPATH="$HOME/go/src/code.wirelessregistry.com/signal-graph/backend"
 	echo "GOPATH is now $GOPATH"
-	cd $GOPATH
+	cd $GOPATH/src/code.wirelessregistry.com
 }
 
 sizeof() {
