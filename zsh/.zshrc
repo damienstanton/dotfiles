@@ -121,8 +121,6 @@ PLATFORM=`uname -s | tr '[:upper:]' '[:lower:]'`
 ARCH="amd64"
 export PATH="$HOME/kubernetes/platforms/$PLATFORM/$ARCH:$PATH"
 export PATH="$HOME/kubernetes/client/bin:$PATH"
-export KUBECONFIG="$GOPATH/src/code.wirelessregistry.com/signal-graph/data_model/kube.config"
-
 export WRPATH=$GOPATH/src/code.wirelessregistry.com/signal-graph
 export PATH="$WRPATH/backend/scripts:$PATH"
 source $HOME/.secret
