@@ -123,7 +123,7 @@ export PATH="$HOME/kubernetes/platforms/$PLATFORM/$ARCH:$PATH"
 export PATH="$HOME/kubernetes/client/bin:$PATH"
 export KUBECONFIG="$GOPATH/src/code.wirelessregistry.com/signal-graph/data_model/kube.config"
 
-export WRPATH=$GOPATH/src/github.com/damienstanton/signal-graph
+export WRPATH=$GOPATH/src/code.wirelessregistry.com/signal-graph
 export PATH="$WRPATH/backend/scripts:$PATH"
 source $HOME/.secret
 
