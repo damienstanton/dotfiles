@@ -31,6 +31,7 @@ export PGDATA="$HOME/postgres"
 
 # Scripts
 export PATH="$HOME/scripts:$PATH"
+export PATH="$HOME/work/scripts:$PATH"
 
 # Fix ipython not sticking to a virtualenv
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
