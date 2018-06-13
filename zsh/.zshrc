@@ -22,6 +22,7 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 # GCloud
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"

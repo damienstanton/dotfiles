@@ -3,6 +3,7 @@
 set termguicolors
 set tabstop=4
 set shiftwidth=4
+set expandtab
 set autoindent
 set copyindent 
 set mouse=a
