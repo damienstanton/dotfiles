@@ -25,7 +25,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 Plug 'matze/vim-move'
+Plug 'idris-hackers/idris-vim'
 Plug '/usr/local/opt/fzf'
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 call plug#end()
 
 " plugin configs
