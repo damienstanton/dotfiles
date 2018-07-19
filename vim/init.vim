@@ -17,8 +17,6 @@ Plug 'robertmeta/nofrils'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
@@ -28,6 +26,8 @@ Plug 'matze/vim-move'
 Plug 'idris-hackers/idris-vim'
 Plug '/usr/local/opt/fzf'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+Plug 'rust-lang/rust.vim'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 call plug#end()
 
 " plugin configs

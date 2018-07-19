@@ -86,6 +86,7 @@ alias cqlsh="cqlsh --cqlversion=3.4.0"
 alias k="kubectl"
 alias listening="lsof -P | grep LISTEN"
 alias octave="/usr/local/octave/3.8.0/bin/octave-3.8.0"
+alias pyinit="python3 -m venv env && source env/bin/activate && pip3 install yapf ipython jupyterlab && pip3 install -r requirements.txt"
 
 # just the dir name
 export NAME="${PWD##*/}"
