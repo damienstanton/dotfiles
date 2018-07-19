@@ -87,6 +87,8 @@ alias k="kubectl"
 alias listening="lsof -P | grep LISTEN"
 alias octave="/usr/local/octave/3.8.0/bin/octave-3.8.0"
 alias pyinit="python3 -m venv env && source env/bin/activate && pip3 install yapf ipython jupyterlab && pip3 install -r requirements.txt"
+alias activate="source env/bin/activate"
+alias safemerge="git merge --no-ff master"
 
 # just the dir name
 export NAME="${PWD##*/}"
