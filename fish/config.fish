@@ -1,6 +1,8 @@
 set -x EDITOR nvim
 set -x GIT_EDITOR nvim 
 set -x TERM xterm-256color
+set -x theme_color_scheme light
+fish_vi_key_bindings
 
 # Android
 set -x ANDROID_HOME $HOME/Library/Android/sdk
@@ -69,6 +71,8 @@ alias octave "/usr/local/octave/3.8.0/bin/octave-3.8.0"
 alias pyinit "python3 -m venv env; and source env/bin/activate; and pip3 install yapf ipython jupyterlab; and pip3 install -r requirements.txt"
 alias activate "source env/bin/activate"
 alias safemerge "git merge --no-ff master"
+alias fishconf "nvim $HOME/.config/fish/config.fish"
+alias reload "source $HOME/.config/fish/config.fish"
 
 function godev
 	set -x GOPATH $HOME/go
