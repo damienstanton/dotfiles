@@ -46,6 +46,7 @@ set -gx PATH $PATH /Users/damien/.local/bin
 set -x NODE_PATH /usr/local/lib/node_modules
 
 # aliases
+alias g "git"
 alias vi "nvim"
 alias vim "nvim"
 alias vimconf "nvim $HOME/.config/nvim/init.vim"
