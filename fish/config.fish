@@ -1,7 +1,7 @@
 set -x EDITOR nvim
 set -x GIT_EDITOR nvim 
 set -x TERM xterm-256color
-set -x theme_color_scheme light
+set -x theme_color_scheme solarized-light
 fish_vi_key_bindings
 
 # Android
