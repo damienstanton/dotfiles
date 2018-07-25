@@ -71,9 +71,17 @@ alias listening "lsof -P | grep LISTEN"
 alias octave "/usr/local/octave/3.8.0/bin/octave-3.8.0"
 alias pyinit "python3 -m venv env; and source env/bin/activate; and pip3 install yapf ipython jupyterlab; and pip3 install -r requirements.txt"
 alias activate "source env/bin/activate"
-alias safemerge "git merge --no-ff master"
 alias fishconf "nvim $HOME/.config/fish/config.fish"
 alias reload "source $HOME/.config/fish/config.fish"
+
+# merging safely
+function synchronize
+    git checkout master
+    git pull
+    git checkout -
+    git merge --no-ff master
+    git push
+end
 
 function godev
 	set -x GOPATH $HOME/go
