@@ -86,7 +86,7 @@ end
 # merging safely
 function synchronize
     git checkout master
-    git pull
+    git pull --rebase
     git checkout -
     git merge --no-ff master
     git push
