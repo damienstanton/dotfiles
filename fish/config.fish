@@ -54,7 +54,8 @@ alias e "nvim"
 alias ls "exa"
 alias p "echo|clear;pwd"
 alias gs "git status"
-alias gp "git push"
+alias push "git push"
+alias pull "git pull --rebase"
 alias c "clear;ls -l -snew -B"
 alias ll "clear;ls -l -B"
 alias ct "clear;ls -T --level=2"
@@ -74,6 +75,14 @@ alias activate "source env/bin/activate"
 alias fishconf "nvim $HOME/.config/fish/config.fish"
 alias reload "source $HOME/.config/fish/config.fish"
 
+function flip
+    if [ $theme_color_scheme = "solarized-light" ]
+        set -x theme_color_scheme solarized-dark
+    else
+        set -x theme_color_scheme solarized-light
+    end
+end
+
 # merging safely
 function synchronize
     git checkout master
@@ -83,12 +92,14 @@ function synchronize
     git push
 end
 
+# set GOPATH and jump to personal work
 function godev
 	set -x GOPATH $HOME/go
 	echo "GOPATH is now $GOPATH"
 	cd $GOPATH/src/github.com/damienstanton
 end
 
+# set GOPATH and jump to work work
 function wrdev
 	set -x GOPATH $HOME/go/src/code.wirelessregistry.com/signal-graph/backend
 	echo "GOPATH is now $GOPATH"

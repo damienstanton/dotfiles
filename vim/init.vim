@@ -27,7 +27,7 @@ Plug 'idris-hackers/idris-vim'
 Plug '/usr/local/opt/fzf'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'rust-lang/rust.vim'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'jeffkraeeftmeijer/vim-numbertoggle'
 call plug#end()
 
 " plugin configs
