@@ -78,7 +78,7 @@ alias reload "source $HOME/.config/fish/config.fish"
 function flip
     if [ $theme_color_scheme = "solarized-light" ]
         set -x theme_color_scheme solarized-dark
-    else
+    else if [ $theme_color_scheme = "solarized-dark" ]
         set -x theme_color_scheme solarized-light
     end
 end
