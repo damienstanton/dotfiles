@@ -45,6 +45,9 @@ set -gx PATH $PATH /Users/damien/.local/bin
 # Node
 set -x NODE_PATH /usr/local/lib/node_modules
 
+# SDL2
+set -x LIBRARY_PATH $LIBRARYPATH /usr/local/lib
+
 # aliases
 alias g "git"
 alias vi "nvim"
