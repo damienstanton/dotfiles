@@ -27,7 +27,8 @@ Plug 'idris-hackers/idris-vim'
 Plug '/usr/local/opt/fzf'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'rust-lang/rust.vim'
-Plug 'jeffkraeeftmeijer/vim-numbertoggle'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 " plugin configs
@@ -47,6 +48,12 @@ let g:move_key_modifier = 'C'
 
 " colors
 " ------
-colorscheme nofrils-light
+colorscheme solarized
 let g:airline_theme='papercolor'
 hi Normal term=NONE cterm=NONE ctermfg=black ctermbg=NONE gui=NONE guifg=#000000 guibg=NONE
+
+" rls config
+" ----------
+set hidden
+let g:LanguageClient_serverCommands = { 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'] }
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>

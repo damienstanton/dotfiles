@@ -121,6 +121,10 @@ function dockerdelete
 	docker rmi `docker images -a -q`
 end
 
+function sourcegraph
+    docker run --publish 7080:7080 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph --volume ~/.sourcegraph/data:/var/opt/sourcegraph --volume /var/run/docker.sock:/var/run/docker.sock sourcegraph/server:2.10.0
+end
+
 # fuckin' .pyc files, man
 set -x PYTHONDONTWRITEBYTECODE 1
 
