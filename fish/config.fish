@@ -73,7 +73,7 @@ alias cqlsh "cqlsh --cqlversion 3.4.0"
 alias k "kubectl"
 alias listening "lsof -P | grep LISTEN"
 alias octave "/usr/local/octave/3.8.0/bin/octave-3.8.0"
-alias pyinit "python3 -m venv env; and source env/bin/activate.fish; and pip3 install yapf ipython jupyterlab; and pip3 install -r requirements.txt"
+alias pyinit "python3 -m venv env; and source env/bin/activate.fish; and pip3 install yapf ipython jupyterlab pylint requests; and pip3 install -r requirements.txt"
 alias activate "source env/bin/activate"
 alias fishconf "nvim $HOME/.config/fish/config.fish"
 alias reload "source $HOME/.config/fish/config.fish"
@@ -133,3 +133,6 @@ set -x PYTHONDONTWRITEBYTECODE 1
 # --------------
 set -gx PATH $PATH $WRPATH/backend/scripts
 set -x WRPATH $GOPATH/src/code.wirelessregistry.com/signal-graph
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+

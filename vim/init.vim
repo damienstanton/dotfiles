@@ -7,6 +7,7 @@ set expandtab
 set autoindent
 set copyindent 
 set mouse=a
+set relativenumber
 
 " plugins
 " -------
@@ -48,9 +49,9 @@ let g:move_key_modifier = 'C'
 
 " colors
 " ------
-colorscheme solarized
+colorscheme slate 
 let g:airline_theme='papercolor'
-hi Normal term=NONE cterm=NONE ctermfg=black ctermbg=NONE gui=NONE guifg=#000000 guibg=NONE
+" hi Normal term=NONE cterm=NONE ctermfg=black ctermbg=NONE gui=NONE guifg=#000000 guibg=NONE
 
 " rls config
 " ----------
