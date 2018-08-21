@@ -30,6 +30,7 @@ Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.s
 Plug 'rust-lang/rust.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'altercation/vim-colors-solarized'
+Plug 'dag/vim-fish'
 call plug#end()
 
 " plugin configs
@@ -49,12 +50,16 @@ let g:move_key_modifier = 'C'
 
 " colors
 " ------
-colorscheme slate 
+colorscheme solarized
+set background=dark
 let g:airline_theme='papercolor'
 " hi Normal term=NONE cterm=NONE ctermfg=black ctermbg=NONE gui=NONE guifg=#000000 guibg=NONE
 
 " rls config
 " ----------
 set hidden
-let g:LanguageClient_serverCommands = { 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'] }
+let g:LanguageClient_serverCommands = { 
+            \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+            \ 'go': ['~/go/bin/go-langserver']
+            \ }
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>

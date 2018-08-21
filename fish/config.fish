@@ -136,3 +136,23 @@ set -x WRPATH $GOPATH/src/code.wirelessregistry.com/signal-graph
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
+# setup_python
+function setup_python
+    pip3 install --upgrade requests flask numpy matplotlib
+end
+
+# setup tensorflow
+function setup_tensorflow
+    pip3 install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.10.0-py3-none-any.whl
+end
+
+# setup python notebooks
+function setup_notebooks
+    pip3 install --upgrade jupyter jupyterthemes ipyparallel
+    jt -t solarizedd
+    ipcluster nbextension enable
+end
+
+function disable_pycluster
+    ipcluster nbextension disable
+end
