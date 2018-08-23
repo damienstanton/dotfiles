@@ -134,6 +134,23 @@ set -x PYTHONDONTWRITEBYTECODE 1
 # --------------
 set -gx PATH $PATH $WRPATH/backend/scripts
 set -x WRPATH $GOPATH/src/code.wirelessregistry.com/signal-graph
+function devstart
+    wrdev; and cd ../..
+    bash scripts/devctl.sh start
+end
+
+function devstop
+    wrdev; and cd ../..
+    bash scripts/devctl.sh stop
+end
+
+function devreboot
+    wrdev; and cd ../..
+    bash scripts/devctl.sh stop
+    make clean
+    make install
+    bash scripts/devctl.sh start
+end
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
