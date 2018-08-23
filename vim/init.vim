@@ -31,6 +31,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'altercation/vim-colors-solarized'
 Plug 'dag/vim-fish'
+Plug 'elubow/cql-vim'
+Plug 'elixir-editors/vim-elixir'
 call plug#end()
 
 " plugin configs

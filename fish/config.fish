@@ -77,6 +77,7 @@ alias pyinit "python3 -m venv env; and source env/bin/activate.fish; and pip3 in
 alias activate "source env/bin/activate"
 alias fishconf "nvim $HOME/.config/fish/config.fish"
 alias reload "source $HOME/.config/fish/config.fish"
+alias gd "git diff --color=always"
 
 function flip
     if [ $theme_color_scheme = "solarized-light" ]
@@ -149,7 +150,7 @@ end
 # setup python notebooks
 function setup_notebooks
     pip3 install --upgrade jupyter jupyterthemes ipyparallel
-    jt -t solarizedd
+    jt -t solarizedd -f firacode
     ipcluster nbextension enable
 end
 
