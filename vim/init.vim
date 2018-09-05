@@ -32,7 +32,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'altercation/vim-colors-solarized'
 Plug 'dag/vim-fish'
 Plug 'elubow/cql-vim'
-Plug 'elixir-editors/vim-elixir'
+Plug 'rhysd/vim-crystal'
 call plug#end()
 
 " plugin configs
