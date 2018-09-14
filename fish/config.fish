@@ -77,6 +77,7 @@ alias activate "source env/bin/activate"
 alias fishconf "nvim $HOME/.config/fish/config.fish"
 alias reload "source $HOME/.config/fish/config.fish"
 alias gd "git diff --color=always"
+alias notebook "jupyter notebook --no-browser"
 
 function flip
     if [ $theme_color_scheme = "solarized-light" ]
