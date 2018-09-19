@@ -21,17 +21,12 @@ set -gx PATH $PATH $HOME/work/scripts
 # Fix ipython not sticking to a virtualenv
 alias ipy "python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 
-# Backups
-set -x BACKUPDIR /Volumes/Storage/backups
-
 # Go
 set -x GOPATH $HOME/go
 set -gx PATH $PATH $HOME/go/bin
 
-# C++ (gcc)
-# Commented out because Xcode/clang will explode and do horrible things otherwise.
-# set -x NCC /usr/local/Cellar/gcc/7.2.0/bin/c++-7
-# set -x NCXX /usr/local/Cellar/gcc/7.2.0/bin/g++-7
+# C++
+set -x BOOST_ROOT /usr/local/Cellar/boost/1.67.0_1
 
 # Bazel
 set -gx PATH $PATH $HOME/bin
