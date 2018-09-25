@@ -27,6 +27,9 @@ set -gx PATH $PATH $HOME/go/bin
 
 # C++
 set -x BOOST_ROOT /usr/local/Cellar/boost/1.67.0_1
+set -gx LDFLAGS "-L/usr/local/opt/llvm/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/llvm/include"
+
 
 # Bazel
 set -gx PATH $PATH $HOME/bin
