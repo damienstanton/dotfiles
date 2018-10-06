@@ -33,6 +33,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'dag/vim-fish'
 Plug 'elubow/cql-vim'
 Plug 'rhysd/vim-crystal'
+Plug 'derekwyatt/vim-scala'
 call plug#end()
 
 " plugin configs

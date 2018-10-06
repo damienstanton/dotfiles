@@ -6,7 +6,7 @@ fish_vi_key_bindings
 
 # Android
 set -x ANDROID_HOME $HOME/Library/Android/sdk
-set -x JAVA_HOME (/usr/libexec/java_home)
+set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
 
 # GCloud
 set -gx PATH $PATH $HOME/google-cloud-sdk/bin
@@ -105,7 +105,7 @@ end
 function wrdev
 	set -x GOPATH $HOME/go/src/code.wirelessregistry.com/signal-graph/backend
 	echo "GOPATH is now $GOPATH"
-	cd $GOPATH/src/code.wirelessregistry.com
+	cd $HOME/go/src/code.wirelessregistry.com/signal-graph/analytics
 end
 
 function sizeof
@@ -121,7 +121,7 @@ function dockerdelete
 end
 
 function sourcegraph
-    docker run --publish 7080:7080 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph --volume ~/.sourcegraph/data:/var/opt/sourcegraph --volume /var/run/docker.sock:/var/run/docker.sock sourcegraph/server:2.10.0
+    docker run --publish 7080:7080 --rm --volume ~/.sourcegraph/config:/etc/sourcegraph --volume ~/.sourcegraph/data:/var/opt/sourcegraph --volume /var/run/docker.sock:/var/run/docker.sock sourcegraph/server:2.11.2
 end
 
 # fuckin' .pyc files, man
