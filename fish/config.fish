@@ -106,6 +106,7 @@ function wrdev
 	set -x GOPATH $HOME/go/src/code.wirelessregistry.com/signal-graph/backend
 	echo "GOPATH is now $GOPATH"
 	cd $HOME/go/src/code.wirelessregistry.com/signal-graph/analytics
+	source $HOME/workenv/bin/activate.fish
 end
 
 function sizeof
