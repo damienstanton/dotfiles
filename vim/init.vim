@@ -34,6 +34,7 @@ Plug 'dag/vim-fish'
 Plug 'elubow/cql-vim'
 Plug 'rhysd/vim-crystal'
 Plug 'derekwyatt/vim-scala'
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 " plugin configs

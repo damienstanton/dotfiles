@@ -30,6 +30,8 @@ set -x BOOST_ROOT /usr/local/Cellar/boost/1.67.0_1
 set -gx LDFLAGS "-L/usr/local/opt/llvm/lib"
 set -gx CPPFLAGS "-I/usr/local/opt/llvm/include"
 
+# Spark/Scala
+set -x PYSPARK_PYTHON "/Users/damien/workenv/bin/python3"
 
 # Bazel
 set -gx PATH $PATH $HOME/bin
@@ -51,6 +53,7 @@ alias g "git"
 alias vi "nvim"
 alias vim "nvim"
 alias vimconf "nvim $HOME/.config/nvim/init.vim"
+alias cat "bat"
 alias e "nvim"
 alias ls "exa"
 alias p "echo|clear;pwd"
@@ -76,6 +79,7 @@ alias fishconf "nvim $HOME/.config/fish/config.fish"
 alias reload "source $HOME/.config/fish/config.fish"
 alias gd "git diff --color=always"
 alias notebook "jupyter notebook --no-browser"
+alias py "ipython3"
 
 function flip
     if [ $theme_color_scheme = "solarized-light" ]
@@ -101,14 +105,6 @@ function godev
 	cd $GOPATH/src/github.com/damienstanton
 end
 
-# set GOPATH and jump to work work
-function wrdev
-	set -x GOPATH $HOME/go/src/code.wirelessregistry.com/signal-graph/backend
-	echo "GOPATH is now $GOPATH"
-	cd $HOME/go/src/code.wirelessregistry.com/signal-graph/analytics
-	source $HOME/workenv/bin/activate.fish
-end
-
 function sizeof
   du -h $1 | tail -n 1
 end
@@ -129,8 +125,8 @@ end
 set -x PYTHONDONTWRITEBYTECODE 1
 
 # ---------------
-# TWR dev configs
-# --------------
+# WORK DEV THINGS
+# ---------------
 set -gx PATH $PATH $WRPATH/backend/scripts
 set -x WRPATH $GOPATH/src/code.wirelessregistry.com/signal-graph
 function devstart
@@ -153,23 +149,30 @@ end
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
-# setup_python
-function setup_python
-    pip3 install --upgrade requests flask numpy matplotlib
+
+# datasci
+
+# jump to work environment
+function wrdev
+	set -x GOPATH $HOME/go/src/code.wirelessregistry.com/signal-graph/backend
+	echo "GOPATH is now $GOPATH"
+	cd $HOME/go/src/code.wirelessregistry.com/signal-graph/analytics
+    # Python 3.6 (and TensorFlow)
+	source $HOME/workenv3.6/bin/activate.fish
+    # Uncomment for Python 3.7 (no TensorFlow)
+    #source $HOME/workenv3.6/bin/activate.fish
 end
 
-# setup tensorflow
-function setup_tensorflow
-    pip3 install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.10.0-py3-none-any.whl
+# connect to datasci DB
+function datasci_db
+    psql --host=$DB_HOST_URL --username=$DB_USER --dbname=$DB_NAME
 end
 
-# setup python notebooks
-function setup_notebooks
-    pip3 install --upgrade jupyter jupyterthemes ipyparallel
-    jt -t solarizedd -f firacode
-    ipcluster nbextension enable
-end
+# datasci clusters
+set -x WR_AWS_CLUSTER_ANNE "j-1QJ95KFBRUDU3"
+set -x WR_AWS_CLUSTER_DAMIEN "j-IHX5U8CJ0E02"
+set -x WR_AWS_CLUSTER_KRIS "j-XU4GLVQ3U1H7"
 
-function disable_pycluster
-    ipcluster nbextension disable
+function upload_spark
+    aws s3 cp ~/go/src/code.wirelessregistry.com/signal-graph/analytics/scala-spark-main/target/scala-2.11/main-assembly-1.0.jar s3://wirelessregistry-emr-jobs/damien/
 end
