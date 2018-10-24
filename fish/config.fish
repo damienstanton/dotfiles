@@ -130,17 +130,17 @@ set -x PYTHONDONTWRITEBYTECODE 1
 set -gx PATH $PATH $WRPATH/backend/scripts
 set -x WRPATH $GOPATH/src/code.wirelessregistry.com/signal-graph
 function devstart
-    wrdev; and cd ../..
+    wrdev; and cd ../backend
     bash scripts/devctl.sh start
 end
 
 function devstop
-    wrdev; and cd ../..
+    wrdev; and cd ../backend
     bash scripts/devctl.sh stop
 end
 
 function devreboot
-    wrdev; and cd ../..
+    wrdev; and cd ../backend
     bash scripts/devctl.sh stop
     make clean
     make install
