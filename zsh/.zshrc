@@ -85,15 +85,15 @@ alias guntar="tar -xzf"
 alias bn="clear;babel-node"
 alias serve="python3 -m http.server"
 alias sub="git submodule update --init --recursive"
-alias updateall="brew update; and brew upgrade; and brew cleanup; and npm update -g; and rustup update"
+alias updateall="brew update && brew upgrade && brew cleanup && npm update -g && rustup update"
 alias rff="rm -rf"
 alias cqlsh="cqlsh --cqlversion 3.4.0"
 alias k="kubectl"
 alias listening="lsof -P | grep LISTEN"
-alias pyinit="python3 -m venv env; and source env/bin/activate.fish; and pip3 install --upgrade pip yapf ipython pylint requests; and pip3 install -r requirements.txt"
+alias pyinit="python3 -m venv env && source env/bin/activate.fish && pip3 install --upgrade pip yapf ipython pylint requests && pip3 install -r requirements.txt"
 alias activate="source env/bin/activate"
-alias fishconf="nvim $HOME/.config/fish/config.fish"
-alias reload="source $HOME/.config/fish/config.fish"
+alias zshconf="nvim $HOME/.zshrc"
+alias reload="source $HOME/.zshrc"
 alias gd="git diff --color=always"
 alias notebook="jupyter notebook --no-browser"
 alias py="ipython3"
@@ -140,17 +140,17 @@ function wrdev() {
 }
 
 function devstart() {
-    wrdev; and cd ../backend
+    wrdev && cd ../backend
     bash scripts/devctl.sh start
 }
 
 function devstop() {
-    wrdev; and cd ../backend
+    wrdev && cd ../backend
     bash scripts/devctl.sh stop
 }
 
 function devreboot() {
-    wrdev; and cd ../backend
+    wrdev && cd ../backend
     bash scripts/devctl.sh stop
     make clean
     make install
@@ -158,7 +158,7 @@ function devreboot() {
 }
 
 function clean_test() {
-    wrdev; and cd ../backend
+    wrdev && cd ../backend
     go clean -cache
 	make clean
 	make install
