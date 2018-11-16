@@ -139,6 +139,14 @@ function wrdev() {
     #source $HOME/workenv3.6/bin/activate
 }
 
+function synchronize() {
+	git checkout master
+	git pull --rebase
+	git checkout -
+	git merge --no-ff master
+	git push
+}
+
 function devstart() {
     wrdev && cd ../backend
     bash scripts/devctl.sh start
