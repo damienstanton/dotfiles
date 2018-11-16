@@ -26,9 +26,11 @@ function get_right_prompt() {
     fi
 }
 
+
+# PROMPT=$'\n'$LAMBDA'\
+
 # prompt config
-PROMPT=$'\n'$LAMBDA'\
- %{$fg_no_bold[green]%}[%T]\
+PROMPT='%{$fg_no_bold[green]%}[%T]\
  %{$fg_no_bold[magenta]%}[%2~]\
  $(check_git_prompt_info)\
 %{$reset_color%}'
