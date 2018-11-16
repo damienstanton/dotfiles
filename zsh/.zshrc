@@ -22,7 +22,11 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-export JAVA_HOME=$(/usr/libexec/java_home)
+
+# JVM
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+# Uncomment this to use the GraalVM (also v8)
+#export JAVA_HOME=$HOME/graal/Contents/Home
 
 # GCloud
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
@@ -37,19 +41,17 @@ export PATH="$HOME/work/scripts:$PATH"
 # Fix ipython not sticking to a virtualenv
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 
-# Backups
-export BACKUPDIR="/Volumes/Storage/backups"
-
 # Go
 export GOPATH="$HOME/go"
 export PATH="$HOME/go/bin:$PATH"
-export PATH="/usr/local/opt/go/libexec/bin:$PATH"
-export PATH="$GOPATH/src/github.com/damienstanton/signal-graph/backend/bin:$PATH"
 
 # C++ (gcc)
-# Commented out because Xcode/clang will explode and do horrible things otherwise.
-# export NCC="/usr/local/Cellar/gcc/7.2.0/bin/c++-7"
-# export NCXX="/usr/local/Cellar/gcc/7.2.0/bin/g++-7"
+export BOOST_ROOT="/usr/local/Cellar/boost/1.67.0_1"
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
+
+# Spark/Scala
+export PYSPARK_PYTHON="/Users/damien/workenv3.6/bin/python"
 
 # Bazel
 export PATH="$HOME/bin:$PATH"
@@ -64,14 +66,17 @@ export PATH="/Users/damien/.local/bin:$PATH"
 export NODE_PATH="/usr/local/lib/node_modules"
 
 # aliases
+alias g="git"
 alias vi="nvim"
 alias vim="nvim"
 alias vimconf="nvim $HOME/.config/nvim/init.vim"
+alias cat="bat"
 alias e="nvim"
 alias ls="exa"
 alias p="echo|clear;pwd"
 alias gs="git status"
-alias gp="git push"
+alias push="git push"
+alias pull="git pull --rebase"
 alias c="clear;ls -l -snew -B"
 alias ll="clear;ls -l -B"
 alias ct="clear;ls -T --level=2"
@@ -80,40 +85,37 @@ alias guntar="tar -xzf"
 alias bn="clear;babel-node"
 alias serve="python3 -m http.server"
 alias sub="git submodule update --init --recursive"
-alias updateall="brew update && brew upgrade && brew cleanup && npm update -g"
+alias updateall="brew update; and brew upgrade; and brew cleanup; and npm update -g; and rustup update"
 alias rff="rm -rf"
-alias cqlsh="cqlsh --cqlversion=3.4.0"
+alias cqlsh="cqlsh --cqlversion 3.4.0"
 alias k="kubectl"
 alias listening="lsof -P | grep LISTEN"
-alias octave="/usr/local/octave/3.8.0/bin/octave-3.8.0"
-alias pyinit="python3 -m venv env && source env/bin/activate && pip3 install yapf ipython jupyterlab && pip3 install -r requirements.txt"
+alias pyinit="python3 -m venv env; and source env/bin/activate.fish; and pip3 install --upgrade pip yapf ipython pylint requests; and pip3 install -r requirements.txt"
 alias activate="source env/bin/activate"
-alias safemerge="git merge --no-ff master"
+alias fishconf="nvim $HOME/.config/fish/config.fish"
+alias reload="source $HOME/.config/fish/config.fish"
+alias gd="git diff --color=always"
+alias notebook="jupyter notebook --no-browser"
+alias py="ipython3"
 
-# just the dir name
+# grab just the dir name
 export NAME="${PWD##*/}"
 
-godev() {
+function godev() {
     export GOPATH="$HOME/go"
 	echo "GOPATH is now $GOPATH"
     cd $GOPATH/src/github.com/damienstanton
 }
 
-wrdev() {
-	export GOPATH="$HOME/go/src/code.wirelessregistry.com/signal-graph/backend"
-	echo "GOPATH is now $GOPATH"
-	cd $GOPATH/src/code.wirelessregistry.com
-}
-
-sizeof() {
+function sizeof() {
   du -h $1 | tail -n 1
 }
 
-testall() {
+function testall() {
  go test ./... -cover
 }
 
-removeDockerImages() {
+function dockerdelete() {
 	docker rmi `docker images -a -q`
 }
 
@@ -121,17 +123,60 @@ removeDockerImages() {
 export PYTHONDONTWRITEBYTECODE=1
 
 # ---------------
-# TWR dev configs
-# --------------
-PLATFORM=`uname -s | tr '[:upper:]' '[:lower:]'`
-ARCH="amd64"
-export PATH="$HOME/kubernetes/platforms/$PLATFORM/$ARCH:$PATH"
-export PATH="$HOME/kubernetes/client/bin:$PATH"
+# WORK DEV THINGS
+# ---------------
 export WRPATH=$GOPATH/src/code.wirelessregistry.com/signal-graph
 export PATH="$WRPATH/backend/scripts:$PATH"
 source $HOME/.secret
 
+function wrdev() {
+	export GOPATH="$HOME/go/src/code.wirelessregistry.com/signal-graph/backend"
+	echo "GOPATH is now $GOPATH"
+	cd $HOME/go/src/code.wirelessregistry.com/signal-graph/analytics
+    # Python 3.6 (and TensorFlow)
+	source $HOME/workenv3.6/bin/activate
+    # Uncomment for Python 3.7 (no TensorFlow)
+    #source $HOME/workenv3.6/bin/activate
+}
+
+function devstart() {
+    wrdev; and cd ../backend
+    bash scripts/devctl.sh start
+}
+
+function devstop() {
+    wrdev; and cd ../backend
+    bash scripts/devctl.sh stop
+}
+
+function devreboot() {
+    wrdev; and cd ../backend
+    bash scripts/devctl.sh stop
+    make clean
+    make install
+    bash scripts/devctl.sh start
+}
+
+function clean_test() {
+    wrdev; and cd ../backend
+    go clean -cache
+	make clean
+	make install
+	make test
+}
+
+
+function datasci_db() {
+    psql --host=$DB_HOST_URL --username=$DB_USER --dbname=$DB_NAME
+}
+
+function upload_spark() {
+    aws s3 cp ~/go/src/code.wirelessregistry.com/signal-graph/analytics/scala-spark-main/target/scala-2.11/main-assembly-1.0.jar s3://wirelessregistry-emr-jobs/damien/
+}
+
+export WR_AWS_CLUSTER_ANNE="j-1QJ95KFBRUDU3"
+export WR_AWS_CLUSTER_DAMIEN="j-IHX5U8CJ0E02"
+export WR_AWS_CLUSTER_KRIS="j-XU4GLVQ3U1H7"
+
+# shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

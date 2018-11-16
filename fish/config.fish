@@ -6,7 +6,12 @@ fish_vi_key_bindings
 
 # Android
 set -x ANDROID_HOME $HOME/Library/Android/sdk
+
+# JVM
+# Uncomment this one to use JDK 8
 set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
+# Uncomment this to use the GraalVM (also v8)
+#set -x JAVA_HOME $HOME/graal/Contents/Home
 
 # GCloud
 set -gx PATH $PATH $HOME/google-cloud-sdk/bin
@@ -31,7 +36,10 @@ set -gx LDFLAGS "-L/usr/local/opt/llvm/lib"
 set -gx CPPFLAGS "-I/usr/local/opt/llvm/include"
 
 # Spark/Scala
-set -x PYSPARK_PYTHON "/Users/damien/workenv/bin/python3"
+set -x PYSPARK_PYTHON "/Users/damien/workenv3.6/bin/python"
+
+# GraalVM
+set -x PATH $PATH "$HOME/graal/Contents/Home/bin"
 
 # Bazel
 set -gx PATH $PATH $HOME/bin
@@ -149,6 +157,13 @@ end
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
+function clean_test
+    wrdev; and cd ../backend
+    go clean -cache
+	make clean
+	make install
+	make test
+end
 
 # datasci
 
