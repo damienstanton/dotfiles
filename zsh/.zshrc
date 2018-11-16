@@ -13,7 +13,7 @@ DEFAULT_USER="damien"
 ZSH_THEME="ds"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git dirhistory docker git-extras gradle node npm osx pip sudo wd zsh-autosuggestions)
+plugins=(git dirhistory docker git-extras gradle node npm osx pip sudo wd)
 
 source $ZSH/oh-my-zsh.sh
 
