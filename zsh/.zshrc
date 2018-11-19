@@ -126,7 +126,9 @@ export PYTHONDONTWRITEBYTECODE=1
 # WORK DEV THINGS
 # ---------------
 export WRPATH=$GOPATH/src/code.wirelessregistry.com/signal-graph
+export USER_CLUSTER="s3://wirelessregistry-emr-jobs/damien/"
 export PATH="$WRPATH/backend/scripts:$PATH"
+export PATH="$WRPATH/analytics/scripts:$PATH"
 source $HOME/.secret
 
 function wrdev() {
@@ -183,7 +185,7 @@ function upload_spark() {
 }
 
 export WR_AWS_CLUSTER_ANNE="j-1QJ95KFBRUDU3"
-export WR_AWS_CLUSTER_DAMIEN="j-IHX5U8CJ0E02"
+export USER_CLUSTER_ID="j-IHX5U8CJ0E02"
 export WR_AWS_CLUSTER_KRIS="j-XU4GLVQ3U1H7"
 
 # shell integration
