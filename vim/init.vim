@@ -7,7 +7,9 @@ set expandtab
 set autoindent
 set copyindent 
 set mouse=a
-set number relativenumber
+set number
+" uncomment for relative line numbers
+" set number relativenumber
 
 " plugins
 " -------

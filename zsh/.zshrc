@@ -19,6 +19,7 @@ source $ZSH/oh-my-zsh.sh
 
 # ensure misc Brew-installed executables are found
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
 # Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
