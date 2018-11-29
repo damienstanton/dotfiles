@@ -51,9 +51,6 @@ export BOOST_ROOT="/usr/local/Cellar/boost/1.67.0_1"
 export LDFLAGS="-L/usr/local/opt/llvm/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
-# Spark/Scala
-export PYSPARK_PYTHON="/Users/damien/workenv3.6/bin/python"
-
 # Bazel
 export PATH="$HOME/bin:$PATH"
 
@@ -126,20 +123,25 @@ export PYTHONDONTWRITEBYTECODE=1
 # ---------------
 # WORK DEV THINGS
 # ---------------
+
 export WRPATH=$GOPATH/src/code.wirelessregistry.com/signal-graph
 export USER_CLUSTER="s3://wirelessregistry-emr-jobs/damien/"
 export PATH="$WRPATH/backend/scripts:$PATH"
-export PATH="$WRPATH/analytics/scripts:$PATH"
+export PATH="$WRPATH/datasci/scripts:$PATH"
+
+
+# Spark/Scala
+export SPARK_HOME="$HOME/spark_home_2.3.2"
+export PATH="$SPARK_HOME/bin:$PATH"
+export PYSPARK_PYTHON="$WRPATH/datasci/scripts/datasci_env/bin/python"
+
 source $HOME/.secret
 
 function wrdev() {
-	export GOPATH="$HOME/go/src/code.wirelessregistry.com/signal-graph/backend"
+	export GOPATH="$WRPATH/backend"
 	echo "GOPATH is now $GOPATH"
-	cd $HOME/go/src/code.wirelessregistry.com/signal-graph/analytics
-    # Python 3.6 (and TensorFlow)
-	source $HOME/workenv3.6/bin/activate
-    # Uncomment for Python 3.7 (no TensorFlow)
-    #source $HOME/workenv3.6/bin/activate
+	cd $WRPATH/datasci
+	source $WRPATH/datasci/scripts/datasci_env/bin/activate
 }
 
 function synchronize() {
