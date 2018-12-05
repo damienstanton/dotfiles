@@ -37,10 +37,15 @@ Plug 'elubow/cql-vim'
 Plug 'rhysd/vim-crystal'
 Plug 'derekwyatt/vim-scala'
 Plug 'davidhalter/jedi-vim'
+Plug 'udalov/kotlin-vim'
+Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
 " plugin configs
 " -----------
+" ctags
+set tags=tags;/
+
 " autocomplete
 let g:deoplete#enable_at_startup = 1
 
