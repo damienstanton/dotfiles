@@ -159,17 +159,17 @@ function synchronize() {
 
 function devstart() {
     wrdev && cd ../backend
-    bash scripts/devctl.sh start
+    scripts/devctl.sh start
 }
 
 function devstop() {
     wrdev && cd ../backend
-    bash scripts/devctl.sh stop
+    scripts/devctl.sh stop
 }
 
 function devreboot() {
     wrdev && cd ../backend
-    bash scripts/devctl.sh stop
+    scripts/devctl.sh stop
     make clean
     make install
     bash scripts/devctl.sh start
