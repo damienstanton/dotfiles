@@ -51,6 +51,16 @@ export BOOST_ROOT="/usr/local/Cellar/boost/1.67.0_1"
 export LDFLAGS="-L/usr/local/opt/llvm/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
+# CMake runner
+function cmb() {
+    if [ ! -d "build" ]; then
+        mkdir build
+    fi
+    cd build
+    cmake -G "Unix Makefiles" ..
+    make
+}
+
 # Bazel
 export PATH="$HOME/bin:$PATH"
 
@@ -95,22 +105,13 @@ alias reload="source $HOME/.zshrc"
 alias gd="git diff --color=always"
 alias notebook="jupyter notebook --no-browser"
 alias py="ipython3"
+alias kshell="$SPARKLIN_HOME/bin/sparklin-spark2x.sh"
 
 # grab just the dir name
 export NAME="${PWD##*/}"
 
-function godev() {
-    export GOPATH="$HOME/go"
-	echo "GOPATH is now $GOPATH"
-    cd $GOPATH/src/github.com/damienstanton
-}
-
 function sizeof() {
   du -h $1 | tail -n 1
-}
-
-function testall() {
- go test ./... -cover
 }
 
 function dockerdelete() {
@@ -125,7 +126,7 @@ export PYTHONDONTWRITEBYTECODE=1
 # ---------------
 
 export WRPATH=$GOPATH/src/code.wirelessregistry.com/signal-graph
-export USER_CLUSTER="s3://wirelessregistry-emr-jobs/damien/"
+export USER_BUCKET="s3://wirelessregistry-emr-jobs/damien/"
 export PATH="$WRPATH/backend/scripts:$PATH"
 export PATH="$WRPATH/datasci/scripts:$PATH"
 
@@ -134,6 +135,9 @@ export PATH="$WRPATH/datasci/scripts:$PATH"
 export SPARK_HOME="$HOME/spark_home_2.3.2"
 export PATH="$SPARK_HOME/bin:$PATH"
 export PYSPARK_PYTHON="$WRPATH/datasci/scripts/datasci_env/bin/python"
+export SPARKLIN_HOME="$HOME/oss/sparklin"
+export PATH="$SPARKLIN_HOME/bin:$PATH"
+
 
 source $HOME/.secret
 
