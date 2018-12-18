@@ -183,6 +183,15 @@ function clean_test() {
 	make test
 }
 
+function query_prod() {
+    # query_prod some_file.json
+    curl -X POST $WR_PROD_URL -d @$1 --header "Content-Type: application/json; charset=utf-8" > prod_output.json
+}
+
+function query_test() {
+    # query_test some_file.json
+    curl -X POST $WR_TEST_URL -d @$1 --header "Content-Type: application/json; charset=utf-8" > test_output.json
+}
 
 function datasci_db() {
     psql --host=$DB_HOST_URL --username=$DB_USER --dbname=$DB_NAME
