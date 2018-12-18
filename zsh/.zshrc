@@ -127,7 +127,6 @@ export PYTHONDONTWRITEBYTECODE=1
 # ---------------
 
 export WRPATH=$GOPATH/src/code.wirelessregistry.com/signal-graph
-export USER_BUCKET="s3://wirelessregistry-emr-jobs/damien/"
 export PATH="$WRPATH/backend/scripts:$PATH"
 export PATH="$WRPATH/datasci/scripts:$PATH"
 
@@ -200,10 +199,6 @@ function datasci_db() {
 function upload_spark() {
     aws s3 cp ~/go/src/code.wirelessregistry.com/signal-graph/analytics/scala-spark-main/target/scala-2.11/main-assembly-1.0.jar s3://wirelessregistry-emr-jobs/damien/
 }
-
-export WR_AWS_CLUSTER_ANNE="j-1QJ95KFBRUDU3"
-export USER_CLUSTER_ID="j-IHX5U8CJ0E02"
-export WR_AWS_CLUSTER_KRIS="j-XU4GLVQ3U1H7"
 
 # shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
