@@ -2,7 +2,6 @@
 set -e
 ZSH_FILE="$HOME/.zshrc"
 ZSH_THEME_FILE="$HOME/.oh-my-zsh/custom/ds.zsh-theme"
-FISH_FILE="$HOME/.config/fish/config.fish"
 VIM_FILE="$HOME/.config/nvim/init.vim"
 TMUX_FILE="$HOME/.tmux.conf"
 cp $ZSH_FILE zsh/
@@ -13,8 +12,6 @@ cp $VIM_FILE vim/
 echo "Added neovim config."
 cp $TMUX_FILE tmux/
 echo "Added tmux config."
-cp $FISH_FILE fish/
-echo "Added fish config."
 echo "All files are updated."
 echo "Uploading to GitHub..."
 git add -A && git commit -m "Dotfiles synced on $(date +%Y-%m-%d)" && git push
