@@ -29,21 +29,31 @@ Plug 'idris-hackers/idris-vim'
 Plug '/usr/local/opt/fzf'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'rust-lang/rust.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'altercation/vim-colors-solarized'
 Plug 'dag/vim-fish'
+Plug 'lifepillar/vim-solarized8'
 Plug 'elubow/cql-vim'
 Plug 'rhysd/vim-crystal'
 Plug 'derekwyatt/vim-scala'
 Plug 'davidhalter/jedi-vim'
 Plug 'udalov/kotlin-vim'
+" autocomplete
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-racer'
 call plug#end()
 
 " plugin configs
 " -----------
 
 " autocomplete
-let g:deoplete#enable_at_startup = 1
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+
 
 " gitgutter
 let g:gitgutter_enabled = 1
@@ -57,16 +67,12 @@ let g:move_key_modifier = 'C'
 
 " colors
 " ------
-colorscheme solarized
+set termguicolors
+colorscheme solarized8
 set background=dark
 let g:airline_theme='papercolor'
-" hi Normal term=NONE cterm=NONE ctermfg=black ctermbg=NONE gui=NONE guifg=#000000 guibg=NONE
 
 " rls config
 " ----------
 set hidden
-let g:LanguageClient_serverCommands = { 
-            \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-            \ 'go': ['~/go/bin/go-langserver']
-            \ }
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+let g:LanguageClient_serverCommands = { 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'] }
