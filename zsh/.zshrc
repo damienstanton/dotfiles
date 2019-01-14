@@ -25,9 +25,13 @@ export PATH="/usr/local/bin:$PATH"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 # JVM
+# ---
+# Uncomment this to use Java 8
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 # Uncomment this to use the GraalVM (also v8)
-#export JAVA_HOME=$HOME/graal/Contents/Home
+# export JAVA_HOME=$HOME/graal/Contents/Home
+# Uncomment this to use Java 11
+# export JAVA_HOME="$HOME/java-11/Contents/Home"
 
 # GCloud
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
@@ -119,6 +123,14 @@ function dockerdelete() {
 	docker rmi `docker images -a -q`
 }
 
+function syncfork() {
+    git fetch up
+    git checkout master
+    git merge up/master
+    git push
+    git checkout -
+}
+
 # fuckin' .pyc files, man
 export PYTHONDONTWRITEBYTECODE=1
 
@@ -202,3 +214,6 @@ function upload_spark() {
 
 # shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# opam configuration
+test -r /Users/damien/.opam/opam-init/init.zsh && . /Users/damien/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

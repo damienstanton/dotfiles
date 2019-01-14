@@ -43,6 +43,7 @@ Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-racer'
+Plug 'ncm2/ncm2-jedi'
 call plug#end()
 
 " plugin configs
@@ -69,7 +70,7 @@ let g:move_key_modifier = 'C'
 " ------
 set termguicolors
 colorscheme solarized8
-set background=dark
+set background=light
 let g:airline_theme='papercolor'
 
 " rls config
