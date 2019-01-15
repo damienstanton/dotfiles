@@ -36,6 +36,7 @@ Plug 'rhysd/vim-crystal'
 Plug 'derekwyatt/vim-scala'
 Plug 'davidhalter/jedi-vim'
 Plug 'udalov/kotlin-vim'
+Plug 'tomasiser/vim-code-dark'
 " autocomplete
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
@@ -69,8 +70,8 @@ let g:move_key_modifier = 'C'
 " colors
 " ------
 set termguicolors
-colorscheme solarized8
-set background=light
+colorscheme codedark
+set background=dark
 let g:airline_theme='papercolor'
 
 " rls config
