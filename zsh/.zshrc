@@ -120,7 +120,7 @@ function sizeof() {
 }
 
 function dockerdelete() {
-	docker rmi `docker images -a -q`
+	docker rmi --force `docker images -a -q`
 }
 
 function syncfork() {

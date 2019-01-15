@@ -72,7 +72,7 @@ let g:move_key_modifier = 'C'
 set termguicolors
 colorscheme codedark
 set background=dark
-let g:airline_theme='papercolor'
+let g:airline_theme='ubaryd'
 
 " rls config
 " ----------
