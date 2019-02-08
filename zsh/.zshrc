@@ -144,7 +144,7 @@ export PATH="$WRPATH/datasci/scripts:$PATH"
 
 
 # Spark/Scala
-export SPARK_HOME="$HOME/spark_home_2.3.2"
+export SPARK_HOME="$HOME/spark_home_2.4.0"
 export PATH="$SPARK_HOME/bin:$PATH"
 export PYSPARK_PYTHON="$WRPATH/datasci/scripts/datasci_env/bin/python"
 export SPARKLIN_HOME="$HOME/oss/sparklin"
@@ -206,10 +206,6 @@ function query_test() {
 
 function datasci_db() {
     psql --host=$DB_HOST_URL --username=$DB_USER --dbname=$DB_NAME
-}
-
-function upload_spark() {
-    aws s3 cp ~/go/src/code.wirelessregistry.com/signal-graph/analytics/scala-spark-main/target/scala-2.11/main-assembly-1.0.jar s3://wirelessregistry-emr-jobs/damien/
 }
 
 # shell integration
