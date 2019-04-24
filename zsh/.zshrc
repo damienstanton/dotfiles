@@ -21,8 +21,14 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
+# icu4c (replete)
+export PATH="/usr/local/Cellar/icu4c/63.1/bin:$PATH"
+export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
+
 # Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$ANDROID_HOME/tools:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
 
 # JVM
 # ---
@@ -30,8 +36,8 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 # Uncomment this to use the GraalVM (also v8)
 # export JAVA_HOME=$HOME/graal/Contents/Home
-# Uncomment this to use Java 11
-# export JAVA_HOME="$HOME/java-11/Contents/Home"
+# Uncomment this to use Java 12
+# export JAVA_HOME="$HOME/java-12/Contents/Home"
 
 # GCloud
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
@@ -42,6 +48,9 @@ export PGDATA="$HOME/postgres"
 # Scripts
 export PATH="$HOME/scripts:$PATH"
 export PATH="$HOME/work/scripts:$PATH"
+
+# Custom binaries
+export PATH="$HOME/bin:$PATH"
 
 # Fix ipython not sticking to a virtualenv
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
@@ -82,7 +91,7 @@ export NODE_PATH="/usr/local/lib/node_modules"
 alias g="git"
 alias vi="nvim"
 alias vim="nvim"
-alias vimconf="nvim $HOME/.config/nvim/init.vim"
+alias vimconf="$EDITOR $HOME/.config/nvim/init.vim"
 alias cat="bat"
 alias e="nvim"
 alias ls="exa"
@@ -96,7 +105,6 @@ alias ct="clear;ls -T --level=2"
 alias untar="tar -xvf"
 alias guntar="tar -xzf"
 alias bn="clear;babel-node"
-alias serve="python3 -m http.server"
 alias sub="git submodule update --init --recursive"
 alias updateall="brew update && brew upgrade && brew cleanup && npm update -g && rustup update"
 alias rff="rm -rf"
@@ -105,7 +113,8 @@ alias k="kubectl"
 alias listening="lsof -P | grep LISTEN"
 alias pyinit="python3 -m venv env && source env/bin/activate.fish && pip3 install --upgrade pip yapf ipython pylint requests && pip3 install -r requirements.txt"
 alias activate="source env/bin/activate"
-alias zshconf="nvim $HOME/.zshrc"
+alias zshconf="$EDITOR $HOME/.zshrc"
+alias emacsconf="emacs ~/.spacemacs"
 alias reload="source $HOME/.zshrc"
 alias gd="git diff --color=always"
 alias notebook="jupyter notebook --no-browser"
@@ -146,9 +155,13 @@ export PATH="$WRPATH/datasci/scripts:$PATH"
 # Spark/Scala
 export SPARK_HOME="$HOME/spark_home_2.4.0"
 export PATH="$SPARK_HOME/bin:$PATH"
+export ZEPPELIN_HOME="$HOME/zeppelin"
+export PATH="$ZEPPELIN_HOME/bin:$PATH"
 export PYSPARK_PYTHON="$WRPATH/datasci/scripts/datasci_env/bin/python"
-export SPARKLIN_HOME="$HOME/oss/sparklin"
-export PATH="$SPARKLIN_HOME/bin:$PATH"
+
+function scala_server() {
+    java -jar $HOME/java/scalavista.jar
+}
 
 
 source $HOME/.secret

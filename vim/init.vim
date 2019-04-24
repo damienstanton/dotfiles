@@ -37,6 +37,7 @@ Plug 'derekwyatt/vim-scala'
 Plug 'davidhalter/jedi-vim'
 Plug 'udalov/kotlin-vim'
 Plug 'tomasiser/vim-code-dark'
+Plug 'cespare/vim-toml'
 " autocomplete
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
