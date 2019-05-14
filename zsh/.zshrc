@@ -4,8 +4,8 @@
 # +----+ #
 ##########
 
-export EDITOR="nvim"
-export GIT_EDITOR="nvim"
+export EDITOR="emacsclient"
+export GIT_EDITOR="emacsclient"
 export TERM="xterm-256color"
 export ZSH=$HOME/.oh-my-zsh
 
@@ -22,8 +22,10 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
 # icu4c (replete)
-export PATH="/usr/local/Cellar/icu4c/63.1/bin:$PATH"
-export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
+# export PATH="/usr/local/Cellar/icu4c/63.1/bin:$PATH"
+# export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
+export PKG_CONFIG_PATH="/usr/local/opt/opencv@3/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 # Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
@@ -93,7 +95,7 @@ alias vi="nvim"
 alias vim="nvim"
 alias vimconf="$EDITOR $HOME/.config/nvim/init.vim"
 alias cat="bat"
-alias e="nvim"
+alias e="emacsclient"
 alias ls="exa"
 alias p="echo|clear;pwd"
 alias gs="git status"
@@ -114,7 +116,7 @@ alias listening="lsof -P | grep LISTEN"
 alias pyinit="python3 -m venv env && source env/bin/activate.fish && pip3 install --upgrade pip yapf ipython pylint requests && pip3 install -r requirements.txt"
 alias activate="source env/bin/activate"
 alias zshconf="$EDITOR $HOME/.zshrc"
-alias emacsconf="emacs ~/.spacemacs"
+alias emacsconf="emacsclient ~/.spacemacs"
 alias reload="source $HOME/.zshrc"
 alias gd="git diff --color=always"
 alias notebook="jupyter notebook --no-browser"
