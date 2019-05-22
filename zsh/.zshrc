@@ -4,8 +4,8 @@
 # +----+ #
 ##########
 
-export EDITOR="emacsclient"
-export GIT_EDITOR="emacsclient"
+export EDITOR="nvim"
+export GIT_EDITOR="nvim"
 export TERM="xterm-256color"
 export ZSH=$HOME/.oh-my-zsh
 
@@ -95,7 +95,7 @@ alias vi="nvim"
 alias vim="nvim"
 alias vimconf="$EDITOR $HOME/.config/nvim/init.vim"
 alias cat="bat"
-alias e="emacsclient"
+alias e="$EDITOR"
 alias ls="exa"
 alias p="echo|clear;pwd"
 alias gs="git status"
@@ -116,12 +116,11 @@ alias listening="lsof -P | grep LISTEN"
 alias pyinit="python3 -m venv env && source env/bin/activate.fish && pip3 install --upgrade pip yapf ipython pylint requests && pip3 install -r requirements.txt"
 alias activate="source env/bin/activate"
 alias zshconf="$EDITOR $HOME/.zshrc"
-alias emacsconf="emacsclient ~/.spacemacs"
+alias emacsconf="$EDITOR ~/.spacemacs"
 alias reload="source $HOME/.zshrc"
 alias gd="git diff --color=always"
 alias notebook="jupyter notebook --no-browser"
 alias py="ipython3"
-alias kshell="$SPARKLIN_HOME/bin/sparklin-spark2x.sh"
 
 # grab just the dir name
 export NAME="${PWD##*/}"
