@@ -60,10 +60,6 @@ export PATH="$HOME/bin:$PATH"
 # Fix ipython not sticking to a virtualenv
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 
-# Go
-export GOPATH="$HOME/go"
-export PATH="$HOME/go/bin:$PATH"
-
 # C++ (gcc)
 export BOOST_ROOT="/usr/local/Cellar/boost/1.67.0_1"
 export LDFLAGS="-L/usr/local/opt/llvm/lib"
@@ -154,6 +150,8 @@ export PYTHONDONTWRITEBYTECODE=1
 export WRPATH=$GOPATH/src/code.wirelessregistry.com/signal-graph
 export PATH="$WRPATH/backend/scripts:$PATH"
 export PATH="$WRPATH/datasci/scripts:$PATH"
+# Set GOPATH to default work gopath
+export GOPATH="$WRPATH/backend"
 
 
 # Spark/Scala
