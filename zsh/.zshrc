@@ -147,7 +147,7 @@ export PYTHONDONTWRITEBYTECODE=1
 # WORK DEV THINGS
 # ---------------
 
-export WRPATH=$GOPATH/src/code.wirelessregistry.com/signal-graph
+export WRPATH=$HOME/go/src/code.wirelessregistry.com/signal-graph
 export PATH="$WRPATH/backend/scripts:$PATH"
 export PATH="$WRPATH/datasci/scripts:$PATH"
 # Set GOPATH to default work gopath
