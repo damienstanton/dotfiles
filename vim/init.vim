@@ -7,9 +7,11 @@ set expandtab
 set autoindent
 set copyindent
 set mouse=a
-set number
+" set number
 " uncomment for relative line numbers
-" set number relativenumber
+set number relativenumber
+au TermOpen * setlocal nonumber norelativenumber
+tnoremap <Esc> <C-\><C-n>
 
 " plugins
 " -------
@@ -26,7 +28,6 @@ Plug 'udalov/kotlin-vim'
 Plug 'cespare/vim-toml'
 Plug 'junegunn/fzf'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 " colors
@@ -47,8 +48,13 @@ let g:go_info_mode='gopls'
 set hidden
 let g:LanguageClient_serverCommands= {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'go': ['gopls'],
     \ }
+
+" disable vtext (RLS is especially onerous)
 let g:LanguageClient_useVirtualText=0
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
