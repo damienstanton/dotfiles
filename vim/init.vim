@@ -39,22 +39,14 @@ set background=dark
 " move lines
 let g:move_key_modifier = 'C'
 
-" vim-go
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-
 " LSP
 " ---
 set hidden
 let g:LanguageClient_serverCommands= {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ 'go': ['gopls'],
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls']
     \ }
 
 " disable vtext (RLS is especially onerous)
 let g:LanguageClient_useVirtualText=0
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-
-autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
