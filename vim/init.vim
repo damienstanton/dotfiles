@@ -16,7 +16,7 @@ tnoremap <Esc> <C-\><C-n>
 " plugins
 " -------
 call plug#begin('~/.vim/plugged')
-Plug 'tomasiser/vim-code-dark'
+Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
@@ -28,12 +28,13 @@ Plug 'udalov/kotlin-vim'
 Plug 'cespare/vim-toml'
 Plug 'junegunn/fzf'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 " colors
 " ------
 set termguicolors
-colorscheme codedark
+colorscheme gruvbox
 set background=dark
 
 " move lines
@@ -48,5 +49,11 @@ let g:LanguageClient_serverCommands= {
 
 " disable vtext (RLS is especially onerous)
 let g:LanguageClient_useVirtualText=0
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+
+" keymaps
+nnoremap <silent> <c-b> :NERDTreeToggle<CR>
+nnoremap <silent> <c-t> :tabnew<CR>
+nnoremap <silent> <c-n> :tabnext<CR>
+nnoremap <silent> <c-\> :vsplit<CR>
+nnoremap <gg> :call LanguageClient_contextMenu()<CR>
+map <silent> <c-p> :FZF<CR>
