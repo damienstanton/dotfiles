@@ -30,15 +30,15 @@ function get_right_prompt() {
 # PROMPT=$'\n'$LAMBDA'\
 
 # prompt config
-PROMPT='%{$fg_no_bold[green]%}[%T]\
- %{$fg_no_bold[magenta]%}[%2~]\
+PROMPT='%{$fg_no_bold[green]%}%T ::\
+ %{$fg_no_bold[magenta]%}%2~\
  $(check_git_prompt_info)\
 %{$reset_color%}'
 
 RPROMPT='$(get_right_prompt)'
 
-ZSH_THEME_GIT_PROMPT_PREFIX="on %{$fg[blue]%} "
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}[ "
+ZSH_THEME_GIT_PROMPT_SUFFIX="]%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=""
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%} ✔"
 ZSH_THEME_GIT_PROMPT_ADDED="%{$fg_bold[green]%}+"
