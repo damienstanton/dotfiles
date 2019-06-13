@@ -27,8 +27,8 @@ Plug 'derekwyatt/vim-scala'
 Plug 'udalov/kotlin-vim'
 Plug 'cespare/vim-toml'
 Plug 'junegunn/fzf'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 "coc
