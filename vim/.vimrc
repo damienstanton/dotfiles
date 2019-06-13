@@ -26,7 +26,7 @@ Plug 'udalov/kotlin-vim'
 Plug 'cespare/vim-toml'
 Plug 'junegunn/fzf'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 call plug#end()
 
 " colors
