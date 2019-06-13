@@ -7,6 +7,7 @@ set expandtab
 set autoindent
 set copyindent
 set mouse=a
+set backspace=indent,eol,start
 " set number
 " uncomment for relative line numbers
 set number relativenumber
@@ -28,6 +29,11 @@ Plug 'junegunn/fzf'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 call plug#end()
+
+"coc
+"---
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
 
 " colors
 " ------
