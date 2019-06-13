@@ -24,8 +24,14 @@ export PATH="$HOME/work/scripts:$PATH"
 # Custom binaries
 export PATH="$HOME/bin:$PATH"
 
+# Cargo-installed binaries
+export PATH="$HOME/.cargo/bin:$PATH"
+
+
 # Go
 export PATH="/usr/local/go/bin:$PATH"
+export PATH="/$GOPATH/bin:$PATH"
+
 
 # Node
 export PATH="/usr/local/nodejs/bin:$PATH"
@@ -72,6 +78,7 @@ alias reload="source $HOME/.zshrc"
 alias gd="git diff --color=always"
 alias notebook="jupyter notebook --no-browser"
 alias py="ipython3"
+alias pip="python3 -m pip"
 
 # grab just the dir name
 export NAME="${PWD##*/}"
@@ -96,3 +103,70 @@ function syncfork() {
 export PYTHONDONTWRITEBYTECODE=1
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# ---------------
+# WORK DEV THINGS
+# ---------------
+
+export WRPATH=$HOME/work/signal-graph
+export PATH="$WRPATH/backend/scripts:$PATH"
+export PATH="$WRPATH/datasci/scripts:$PATH"
+# Set GOPATH to default work gopath
+export GOPATH="$WRPATH/backend"
+
+
+# Spark/Scala
+export SPARK_HOME="$HOME/spark_home_2.4.0"
+export PATH="$SPARK_HOME/bin:$PATH"
+export PATH="$ZEPPELIN_HOME/bin:$PATH"
+export PYSPARK_PYTHON="$WRPATH/datasci/scripts/datasci_env/bin/python"
+
+function wrdev() {
+	echo "GOPATH is $GOPATH"
+	cd $WRPATH/datasci
+	source $WRPATH/datasci/scripts/datasci_env/bin/activate
+}
+
+function synchronize() {
+	git checkout master
+	git pull --rebase
+	git checkout -
+	git merge --no-ff master
+	git push
+}
+
+function devstart() {
+    wrdev && cd ../backend
+    scripts/devctl.sh start
+}
+
+function devstop() {
+    wrdev && cd ../backend
+    scripts/devctl.sh stop
+}
+
+function devreboot() {
+    wrdev && cd ../backend
+    scripts/devctl.sh stop
+    make clean
+    make install
+    bash scripts/devctl.sh start
+}
+
+function clean_test() {
+    wrdev && cd ../backend
+    go clean -cache
+	make clean
+	make install
+	make test
+}
+
+function query_prod() {
+    # query_prod some_file.json
+    curl -X POST $WR_PROD_URL -d @$1 --header "Content-Type: application/json; charset=utf-8" > prod_output.json
+}
+
+function query_test() {
+    # query_test some_file.json
+    curl -X POST $WR_TEST_URL -d @$1 --header "Content-Type: application/json; charset=utf-8" > test_output.json
+}
