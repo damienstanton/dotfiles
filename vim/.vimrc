@@ -6,7 +6,6 @@
 
 " general configs
 " ---------------
-set notermguicolors
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -46,7 +45,7 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " colors
 " ------
-set termguicolors
+set notermguicolors 
 colorscheme gruvbox
 set background=dark
 let g:airline_theme='gruvbox'
