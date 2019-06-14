@@ -32,6 +32,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="/$GOPATH/bin:$PATH"
 
+# Java & Scala
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+export PATH="/usr/local/sbt/bin:$PATH"
 
 # Node
 export PATH="/usr/local/nodejs/bin:$PATH"
@@ -116,7 +119,7 @@ export GOPATH="$WRPATH/backend"
 
 
 # Spark/Scala
-export SPARK_HOME="$HOME/spark_home_2.4.0"
+export SPARK_HOME="$HOME/spark-2.4"
 export PATH="$SPARK_HOME/bin:$PATH"
 export PATH="$ZEPPELIN_HOME/bin:$PATH"
 export PYSPARK_PYTHON="$WRPATH/datasci/scripts/datasci_env/bin/python"

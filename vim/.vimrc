@@ -29,6 +29,8 @@ Plug 'cespare/vim-toml'
 Plug 'junegunn/fzf'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 "coc
@@ -41,6 +43,7 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 set termguicolors
 colorscheme gruvbox
 set background=dark
+let g:airline_theme='gruvbox'
 
 " move lines
 let g:move_key_modifier = 'C'
