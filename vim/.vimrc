@@ -6,6 +6,7 @@
 
 " general configs
 " ---------------
+set encoding=UTF-8
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -36,6 +37,7 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 "coc
