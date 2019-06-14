@@ -19,4 +19,4 @@ echo "All files are updated."
 
 echo "Uploading to GitHub..."
 git add -A && git commit -m "Dotfiles synced on $(date +%Y-%m-%d)" && git push
-echo "👍  Done."
+echo "Done."
