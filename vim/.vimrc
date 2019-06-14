@@ -1,6 +1,12 @@
+""""""""""
+" +----+ "
+" | DS | "
+" +----+ "
+""""""""""
+
 " general configs
-" --------------
-set termguicolors
+" ---------------
+set notermguicolors
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -60,8 +66,7 @@ let g:LanguageClient_useVirtualText=0
 
 " keymaps
 nnoremap <silent> <c-b> :NERDTreeToggle<CR>
-nnoremap <silent> <c-t> :tabnew<CR>
+nnoremap <silent> <c-t> :vnew<CR>
 nnoremap <silent> <c-n> :tabnext<CR>
 nnoremap <silent> <c-\> :vsplit<CR>
-nnoremap <gg> :call LanguageClient_contextMenu()<CR>
 map <silent> <c-p> :FZF<CR>
