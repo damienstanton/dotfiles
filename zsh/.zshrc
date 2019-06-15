@@ -27,6 +27,8 @@ export PATH="$HOME/bin:$PATH"
 # Cargo-installed binaries
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Pip-installed binaries
+export PATH="$HOME/.local/bin:$PATH"
 
 # Go
 export PATH="/usr/local/go/bin:$PATH"
