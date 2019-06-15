@@ -35,6 +35,7 @@ Plug 'cespare/vim-toml'
 Plug 'junegunn/fzf'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
@@ -43,6 +44,11 @@ call plug#end()
 "coc
 "---
 autocmd FileType json syntax match Comment +\/\/.\+$+
+
+" markdown preview
+" ----------------
+let g:mkdp_open_to_the_world=1
+let g:mkdp_open_ip = '127.0.0.1'
 
 
 " colors
