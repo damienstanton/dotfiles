@@ -36,6 +36,7 @@ Plug 'junegunn/fzf'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
@@ -72,8 +73,14 @@ let g:LanguageClient_serverCommands= {
 let g:LanguageClient_useVirtualText=0
 
 " keymaps
+" -------
 nnoremap <silent> <c-b> :NERDTreeToggle<CR>
 nnoremap <silent> <c-t> :vnew<CR>
 nnoremap <silent> <c-n> :tabnext<CR>
-nnoremap <silent> <c-\> :vsplit<CR>
 map <silent> <c-p> :FZF<CR>
+
+" multi-cursors
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_start_key           = 'g<C-x>'
+let g:multi_cursor_next_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
