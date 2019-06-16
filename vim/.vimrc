@@ -84,3 +84,6 @@ let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_start_key           = 'g<C-x>'
 let g:multi_cursor_next_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
+
+" import CoC customizations
+runtime custom.vim 
