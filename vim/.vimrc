@@ -15,9 +15,8 @@ set copyindent
 set mouse=a
 set backspace=indent,eol,start
 set updatetime=300
-" set number
-" uncomment for relative line numbers
 set number relativenumber
+set splitbelow
 
 " plugins
 " -------
