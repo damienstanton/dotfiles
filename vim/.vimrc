@@ -78,6 +78,7 @@ nnoremap <silent> <c-b> :NERDTreeToggle<CR>
 nnoremap <silent> <c-t> :vnew<CR>
 nnoremap <silent> <c-n> :tabnext<CR>
 map <silent> <c-p> :FZF<CR>
+vmap <c-y> "*y
 
 " multi-cursors
 let g:multi_cursor_use_default_mapping=0

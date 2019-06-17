@@ -17,6 +17,39 @@ plugins=(git dirhistory docker git-extras gradle node npm osx pip sudo wd)
 
 source $ZSH/oh-my-zsh.sh
 
+# ensure misc Brew-installed executables are found
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+
+# icu4c (replete)
+# export PATH="/usr/local/Cellar/icu4c/63.1/bin:$PATH"
+# export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
+export PKG_CONFIG_PATH="/usr/local/opt/opencv@3/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+# Android
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$ANDROID_HOME/tools:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+
+# Use GNU getopt
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+
+# JVM
+# ---
+# Uncomment this to use Java 8
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+# Uncomment this to use the GraalVM (also v8)
+# export JAVA_HOME=$HOME/graal/Contents/Home
+# Uncomment this to use Java 12
+# export JAVA_HOME="$HOME/java-12/Contents/Home"
+
+# GCloud
+export PATH="$HOME/google-cloud-sdk/bin:$PATH"
+
+# Postgres
+export PGDATA="$HOME/postgres"
+
 # Scripts
 export PATH="$HOME/scripts:$PATH"
 export PATH="$HOME/work/scripts:$PATH"
@@ -24,22 +57,14 @@ export PATH="$HOME/work/scripts:$PATH"
 # Custom binaries
 export PATH="$HOME/bin:$PATH"
 
-# Cargo-installed binaries
-export PATH="$HOME/.cargo/bin:$PATH"
+# Fix ipython not sticking to a virtualenv
+alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 
-# Pip-installed binaries
-export PATH="$HOME/.local/bin:$PATH"
+# C++ (gcc)
+export BOOST_ROOT="/usr/local/Cellar/boost/1.67.0_1"
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
-# Go
-export PATH="/usr/local/go/bin:$PATH"
-export PATH="/$GOPATH/bin:$PATH"
-
-# Java & Scala
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
-export PATH="/usr/local/sbt/bin:$PATH"
-
-# Node
-export PATH="/usr/local/nodejs/bin:$PATH"
 
 # CMake runner
 function cmb() {
@@ -52,6 +77,17 @@ function cmb() {
     cd ..
 }
 
+# Bazel
+export PATH="$HOME/bin:$PATH"
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Haskell
+export PATH="/Users/damien/.local/bin:$PATH"
+
+# Node
+export NODE_PATH="/usr/local/lib/node_modules"
 
 # aliases
 alias g="git"
@@ -83,7 +119,6 @@ alias reload="source $HOME/.zshrc"
 alias gdiff="git difftool --no-prompt --tool vimdiff"
 alias notebook="jupyter notebook --no-browser"
 alias py="ipython3"
-alias pip="python3 -m pip"
 
 # grab just the dir name
 export NAME="${PWD##*/}"
@@ -107,27 +142,34 @@ function syncfork() {
 # fuckin' .pyc files, man
 export PYTHONDONTWRITEBYTECODE=1
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 # ---------------
 # WORK DEV THINGS
 # ---------------
 
-export WRPATH=$HOME/work/signal-graph
+export WRPATH=$HOME/go/src/code.wirelessregistry.com/signal-graph
 export PATH="$WRPATH/backend/scripts:$PATH"
 export PATH="$WRPATH/datasci/scripts:$PATH"
 # Set GOPATH to default work gopath
 export GOPATH="$WRPATH/backend"
-
+export PATH="$GOPATH/bin:$PATH"
 
 # Spark/Scala
-export SPARK_HOME="$HOME/spark-2.4"
+export SPARK_HOME="$HOME/spark_home_2.4.0"
 export PATH="$SPARK_HOME/bin:$PATH"
+export ZEPPELIN_HOME="$HOME/zeppelin"
 export PATH="$ZEPPELIN_HOME/bin:$PATH"
 export PYSPARK_PYTHON="$WRPATH/datasci/scripts/datasci_env/bin/python"
 
+function scala_server() {
+    java -jar $HOME/java/scalavista.jar
+}
+
+
+source $HOME/.secret
+
 function wrdev() {
-	echo "GOPATH is $GOPATH"
+	export GOPATH="$WRPATH/backend"
+	echo "GOPATH is now $GOPATH"
 	cd $WRPATH/datasci
 	source $WRPATH/datasci/scripts/datasci_env/bin/activate
 }
@@ -175,3 +217,13 @@ function query_test() {
     # query_test some_file.json
     curl -X POST $WR_TEST_URL -d @$1 --header "Content-Type: application/json; charset=utf-8" > test_output.json
 }
+
+function datasci_db() {
+    psql --host=$DB_HOST_URL --username=$DB_USER --dbname=$DB_NAME
+}
+
+# shell integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# opam configuration
+test -r /Users/damien/.opam/opam-init/init.zsh && . /Users/damien/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
