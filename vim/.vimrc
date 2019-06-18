@@ -1,4 +1,4 @@
-""""""""""
+"""""""""
 " +----+ "
 " | DS | "
 " +----+ "
@@ -43,13 +43,14 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'jremmen/vim-ripgrep'
+Plug 'zivyangll/git-blame.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
-"coc
+"coc (externally installed: coc-rls, coc-json, coc-python, coc-tsserver)
 "---
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
@@ -85,6 +86,7 @@ nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 nnoremap <silent> <C-t> :vnew<CR>
 nnoremap <silent> <C-n> :tabnext<CR>
 nnoremap <C-q> :qa<CR>
+nnoremap <C-u> call gitblame#echo()<CR>
 map <silent> <C-p> :FZF<CR>
 vmap <C-y> "*y
 
