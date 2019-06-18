@@ -19,6 +19,7 @@ set number relativenumber
 autocmd InsertEnter * set norelativenumber
 autocmd InsertLeave * set number relativenumber
 set splitbelow
+set ignorecase smartcase
 
 
 " plugins
