@@ -21,6 +21,8 @@ autocmd InsertLeave * set number relativenumber
 set splitbelow
 set ignorecase smartcase
 
+" enable remap of motions captured by the terminal
+silent !stty -ixon > /dev/null 2>/dev/null
 
 " plugins
 " -------
@@ -79,11 +81,12 @@ let g:LanguageClient_useVirtualText=0
 
 " keymaps
 " -------
-nnoremap <silent> <c-b> :NERDTreeToggle<CR>
-nnoremap <silent> <c-t> :vnew<CR>
-nnoremap <silent> <c-n> :tabnext<CR>
-map <silent> <c-p> :FZF<CR>
-vmap <c-y> "*y
+nnoremap <silent> <C-b> :NERDTreeToggle<CR>
+nnoremap <silent> <C-t> :vnew<CR>
+nnoremap <silent> <C-n> :tabnext<CR>
+nnoremap <C-q> :qa<CR>
+map <silent> <C-p> :FZF<CR>
+vmap <C-y> "*y
 
 " multi-cursors
 let g:multi_cursor_use_default_mapping=0
