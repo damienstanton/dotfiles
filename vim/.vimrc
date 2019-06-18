@@ -86,7 +86,6 @@ nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 nnoremap <silent> <C-t> :vnew<CR>
 nnoremap <silent> <C-n> :tabnext<CR>
 nnoremap <C-q> :qa<CR>
-nnoremap <C-u> call gitblame#echo()<CR>
 nnoremap ee :CocList diagnostics<CR>
 map <silent> <C-p> :FZF<CR>
 vmap <C-y> "*y
