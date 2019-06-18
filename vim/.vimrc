@@ -16,7 +16,10 @@ set mouse=a
 set backspace=indent,eol,start
 set updatetime=300
 set number relativenumber
+autocmd InsertEnter * set norelativenumber
+autocmd InsertLeave * set number relativenumber
 set splitbelow
+
 
 " plugins
 " -------
@@ -36,6 +39,7 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'terryma/vim-multiple-cursors'
+Plug 'jremmen/vim-ripgrep'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'enricobacis/vim-airline-clock'
