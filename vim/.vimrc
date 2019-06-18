@@ -59,6 +59,8 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 let g:mkdp_open_to_the_world=1
 let g:mkdp_open_ip = '127.0.0.1'
 
+" ripgrep
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 
 " colors
 " ------
