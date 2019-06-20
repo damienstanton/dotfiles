@@ -89,7 +89,7 @@ nnoremap <silent> <C-t> :vnew<CR>
 nnoremap <silent> <C-n> :tabnext<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap ee :CocList diagnostics<CR>
-nnoremap <silent> <C-f> :Rg<SPACE>
+nnoremap <C-f> :Rg<SPACE>
 map <silent> <C-p> :FZF<CR>
 vmap <C-y> "*y
 
