@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
-# definitions
-local LAMBDA="%(?,%{$fg_bold[green]%}λ,%{$fg_bold[red]%}λ)"
+# Definitions
+# -----------
 if [[ "$USER" == "root" ]]; then USERCOLOR="red"; else USERCOLOR="yellow"; fi
 
 function check_git_prompt_info() {
@@ -26,11 +26,23 @@ function get_right_prompt() {
     fi
 }
 
+# Updates editor information when the keymap changes.
+function zle-keymap-select() {
+  zle reset-prompt
+  zle -R
+}
 
-# PROMPT=$'\n'$LAMBDA'\
+zle -N zle-keymap-select
 
-# prompt config
+function vi_mode_prompt_info() {
+  echo "${${KEYMAP/vicmd/[% N]%}/(main|viins)/[% I]%}"
+}
+
+
+# The main prompt
+# ---------------
 PROMPT='%{$fg_no_bold[green]%}%T ::\
+ $(vi_mode_prompt_info) \
  %{$fg_no_bold[magenta]%}%2~\
  $(check_git_prompt_info)\
 %{$reset_color%}'
