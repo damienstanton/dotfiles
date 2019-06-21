@@ -82,6 +82,9 @@ let g:LanguageClient_serverCommands= {
 " disable vtext (RLS is especially onerous)
 let g:LanguageClient_useVirtualText=0
 
+" run goimports on save
+let g:go_fmt_command = "goimports"
+
 " keymaps
 " -------
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
