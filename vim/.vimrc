@@ -94,8 +94,8 @@ nnoremap <silent> <C-n> :tabnext<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap ee :CocList diagnostics<CR>
 nnoremap <C-f> :Rg<SPACE>
-map <silent> <C-p> :FZF<CR>
-vmap <C-y> "*y
+noremap <silent> <C-p> :FZF<CR>
+vnoremap <C-y> "*y
 
 " multi-cursors
 let g:multi_cursor_use_default_mapping=0
