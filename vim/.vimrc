@@ -97,6 +97,7 @@ nnoremap <C-f> :Rg<SPACE>
 noremap <silent> <C-p> :FZF<CR>
 vnoremap <C-y> "*y
 vnoremap <leader>" c""<ESC>P
+inoremap jk <ESC>
 
 " multi-cursors
 let g:multi_cursor_use_default_mapping=0
