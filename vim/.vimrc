@@ -96,6 +96,7 @@ nnoremap ee :CocList diagnostics<CR>
 nnoremap <C-f> :Rg<SPACE>
 noremap <silent> <C-p> :FZF<CR>
 vnoremap <C-y> "*y
+vnoremap <leader>" c""<ESC>P
 
 " multi-cursors
 let g:multi_cursor_use_default_mapping=0
