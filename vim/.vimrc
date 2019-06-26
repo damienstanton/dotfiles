@@ -38,12 +38,12 @@ Plug 'rust-lang/rust.vim'
 Plug 'derekwyatt/vim-scala'
 Plug 'udalov/kotlin-vim'
 Plug 'cespare/vim-toml'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'terryma/vim-multiple-cursors'
-Plug 'jremmen/vim-ripgrep'
 Plug 'zivyangll/git-blame.vim'
 Plug 'tpope/vim-commentary'
 Plug 'leafgarland/typescript-vim'

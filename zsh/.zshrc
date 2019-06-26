@@ -111,14 +111,13 @@ alias rff="rm -rf"
 alias cqlsh="cqlsh --cqlversion 3.4.0"
 alias k="kubectl"
 alias listening="lsof -P | grep LISTEN"
-alias pyinit="python3 -m venv env && source env/bin/activate.fish && pip3 install --upgrade pip yapf ipython pylint requests && pip3 install -r requirements.txt"
+alias pyinit="python3 -m venv env && source env/bin/activate"
 alias activate="source env/bin/activate"
 alias zshconf="$EDITOR $HOME/.zshrc"
 alias emacsconf="$EDITOR ~/.spacemacs"
 alias reload="source $HOME/.zshrc"
 alias gdiff="git difftool --no-prompt --tool vimdiff"
 alias notebook="jupyter notebook --no-browser"
-alias py="ipython3"
 
 # grab just the dir name
 export NAME="${PWD##*/}"
@@ -227,3 +226,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # opam configuration
 test -r /Users/damien/.opam/opam-init/init.zsh && . /Users/damien/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
