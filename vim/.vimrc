@@ -16,11 +16,11 @@ set mouse=a
 set backspace=indent,eol,start
 set updatetime=300
 set number relativenumber
-autocmd InsertEnter * set norelativenumber
-autocmd InsertLeave * set number relativenumber
 set splitbelow
 set ignorecase smartcase
 set colorcolumn=120
+autocmd InsertEnter * set norelativenumber
+autocmd InsertLeave * set number relativenumber
 
 " enable remap of motions captured by the terminal
 silent !stty -ixon > /dev/null 2>/dev/null
@@ -102,11 +102,17 @@ vnoremap <C-y> "*y
 vnoremap <leader>" c""<ESC>P
 inoremap jk <ESC>
 
+" keywords
+" --------
+:command JSON %!jq '.'
+
+
 " multi-cursors
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_start_key           = 'g<C-x>'
 let g:multi_cursor_next_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
+
 
 " import CoC customizations
 runtime custom.vim 
