@@ -19,8 +19,6 @@ set number relativenumber
 set splitbelow
 set ignorecase smartcase
 set colorcolumn=120
-autocmd InsertEnter * set norelativenumber
-autocmd InsertLeave * set number relativenumber
 
 " enable remap of motions captured by the terminal
 silent !stty -ixon > /dev/null 2>/dev/null

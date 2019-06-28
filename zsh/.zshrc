@@ -21,11 +21,11 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
-# icu4c (replete)
-# export PATH="/usr/local/Cellar/icu4c/63.1/bin:$PATH"
-# export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 export PKG_CONFIG_PATH="/usr/local/opt/opencv@3/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/usr/local/Cellar/libffi/3.2.1/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PKG_CONFIG_PATH="/usr/local/Cellar/atk/2.32.0_1/lib/pkgconfig:$PKG_CONFIG_PATH"
+
 
 # Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
