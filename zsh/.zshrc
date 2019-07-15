@@ -35,8 +35,6 @@ export PATH="/usr/local/go/bin:$PATH"
 export PATH="/$GOPATH/bin:$PATH"
 
 # Java & Scala
-# swap these to switch jdk 8 vs 11
-#export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 
 # Node
