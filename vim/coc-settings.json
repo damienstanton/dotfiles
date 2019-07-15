@@ -4,6 +4,10 @@
           "command": "gopls",
           "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
           "filetypes": ["go"]
+        },
+        "kotlin": {
+            "command": "/home/damienstanton/oss/kls/server/build/install/server/bin/server",
+            "filetypes": ["kotlin"]
         }
     }
 }
