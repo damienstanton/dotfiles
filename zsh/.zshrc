@@ -35,8 +35,6 @@ export PATH="/usr/local/go/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 
 # Java
-#export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
-#export PATH="$JAVA_HOME/bin:$PATH"
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 export PATH="$JAVA_HOME/bin:$PATH"
 
