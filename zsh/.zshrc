@@ -35,8 +35,7 @@ export PATH="/usr/local/go/bin:$PATH"
 export PATH="/$GOPATH/bin:$PATH"
 
 # Java & Scala
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
-export PATH="/usr/local/sbt/bin:$PATH"
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 
 # Node
 export PATH="/usr/local/nodejs/bin:$PATH"
@@ -171,3 +170,7 @@ function query_test() {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/damienstanton/.sdkman"
+[[ -s "/home/damienstanton/.sdkman/bin/sdkman-init.sh" ]] && source "/home/damienstanton/.sdkman/bin/sdkman-init.sh"
