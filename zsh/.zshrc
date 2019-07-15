@@ -52,10 +52,13 @@ function cmb() {
     cd ..
 }
 
-
-# aliases
-alias g="git"
+# config aliases
 alias vimconf="$EDITOR $HOME/.vimrc"
+alias zshconf="$EDITOR $HOME/.zshrc"
+alias lsconf="$EDITOR $HOME/.vim/coc-settings.json"
+
+# other aliases
+alias g="git"
 alias cat="bat"
 alias e="$EDITOR"
 alias ls="exa"
@@ -74,7 +77,6 @@ alias rff="rm -rf"
 alias cqlsh="cqlsh --cqlversion 3.4.0"
 alias k="kubectl"
 alias listening="lsof -P | grep LISTEN"
-alias zshconf="$EDITOR $HOME/.zshrc"
 alias reload="source $HOME/.zshrc"
 alias gdiff="git difftool --no-prompt --tool vimdiff"
 alias pip="python3 -m pip"
