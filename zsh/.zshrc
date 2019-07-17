@@ -41,6 +41,9 @@ export PATH="$JAVA_HOME/bin:$PATH"
 # Node
 export PATH="/usr/local/nodejs/bin:$PATH"
 
+# Haskell
+source $HOME/.ghcup/env
+
 # CMake runner
 function cmb() {
     if [ ! -d "build" ]; then
