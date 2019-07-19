@@ -80,6 +80,7 @@ alias listening="lsof -P | grep LISTEN"
 alias reload="source $HOME/.zshrc"
 alias gdiff="git difftool --no-prompt --tool vimdiff"
 alias pip="python3 -m pip"
+alias psp="psc-package"
 
 # grab just the dir name
 export NAME="${PWD##*/}"

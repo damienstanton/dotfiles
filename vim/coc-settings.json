@@ -8,6 +8,12 @@
         "kotlin": {
             "command": "/home/damienstanton/oss/kls/server/build/install/server/bin/server",
             "filetypes": ["kotlin"]
-        }
+        },
+        "purescript": {
+            "command": "purescript-language-server",
+            "args": ["--stdio"],
+            "filetypes": ["purescript"],
+            "rootPatterns": ["bower.json", "psc-package.json", "spago.dhall"]
+     }
     }
 }
