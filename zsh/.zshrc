@@ -30,6 +30,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Pip-installed binaries
 export PATH="$HOME/.local/bin:$PATH"
 
+# Pycharm
+export PATH="$HOME/pycharm/bin:$PATH"
+
 # Go
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
