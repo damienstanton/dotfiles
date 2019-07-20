@@ -32,6 +32,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Pycharm
 export PATH="$HOME/pycharm/bin:$PATH"
+alias charm="pycharm.sh"
 
 # Go
 export PATH="/usr/local/go/bin:$PATH"
