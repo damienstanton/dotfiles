@@ -46,7 +46,7 @@ export PATH="$JAVA_HOME/bin:$PATH"
 export PATH="$HOME/sbt/bin:$PATH"
 
 # Node
-export PATH="/usr/local/nodejs/bin:$PATH"
+export PATH="$HOME/nodejs/bin:$PATH"
 
 # CMake runner
 function cmb() {
