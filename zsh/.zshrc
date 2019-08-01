@@ -35,7 +35,7 @@ export PATH="$HOME/pycharm/bin:$PATH"
 alias charm="pycharm.sh"
 
 # Go
-export PATH="/usr/local/go/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 
 # Java
@@ -47,6 +47,9 @@ export PATH="$HOME/sbt/bin:$PATH"
 
 # Node
 export PATH="$HOME/nodejs/bin:$PATH"
+
+# Haskell
+source $HOME/.ghcup/env
 
 # CMake runner
 function cmb() {

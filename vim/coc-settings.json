@@ -5,10 +5,6 @@
           "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
           "filetypes": ["go"]
         },
-        "kotlin": {
-            "command": "/home/damienstanton/oss/kls/server/build/install/server/bin/server",
-            "filetypes": ["kotlin"]
-        },
         "purescript": {
             "command": "purescript-language-server",
             "args": ["--stdio"],
@@ -22,3 +18,4 @@
         }
     }
 }
+// TODO: install haskell LSP
