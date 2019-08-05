@@ -18,4 +18,18 @@
         }
     }
 }
-// TODO: install haskell LSP
+
+// Checklist for new installs
+// Manual
+// ------
+// [ ] - Go
+// [ ] - PureScript
+// [ ] - Scala
+// [ ] - Haskell
+
+// Automated
+// ---------
+// [ ] - Python (coc-python)
+// [ ] - Rust (coc-rls)
+// [ ] - JSON (coc-json)
+// [ ] - TypeScript (coc-tsserver)
