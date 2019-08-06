@@ -15,8 +15,8 @@ echo "Done."
 
 echo "Installing vim config..."
 cat vim/.vimrc > $VIM_FILE
-cp vim/coc-settings.json "$HOME/.vim"
-cp vim/custom.vim "$HOME/.vim"
+cp vim/coc-settings.json "$HOME/.vim/"
+cp vim/custom.vim "$HOME/.vim/"
 echo "Done."
 
 echo "All files are updated."
