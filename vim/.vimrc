@@ -107,7 +107,7 @@ inoremap jk <ESC>
 " keywords
 " --------
 :command JSON %!jq '.'
-
+:command SBT :call CocRequestAsync('metals', 'workspace/executeCommand', { 'command': 'build-import' })
 
 " multi-cursors
 let g:multi_cursor_use_default_mapping=0
