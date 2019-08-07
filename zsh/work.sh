@@ -18,17 +18,17 @@ function work() {
 }
 
 function devstart() {
-    wrdev && cd ../backend
+    work && cd ../backend
     scripts/devctl.sh start
 }
 
 function devstop() {
-    wrdev && cd ../backend
+    work && cd ../backend
     scripts/devctl.sh stop
 }
 
 function devreboot() {
-    wrdev && cd ../backend
+    work && cd ../backend
     scripts/devctl.sh stop
     make clean
     make install
@@ -36,7 +36,7 @@ function devreboot() {
 }
 
 function clean_test() {
-    wrdev && cd ../backend
+    work && cd ../backend
     go clean -cache
 	make clean
 	make install
