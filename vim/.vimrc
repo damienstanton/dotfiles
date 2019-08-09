@@ -39,7 +39,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'zivyangll/git-blame.vim'
 Plug 'tpope/vim-commentary'
