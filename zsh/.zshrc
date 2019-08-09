@@ -36,6 +36,10 @@ export PATH="$GOPATH/bin:$PATH"
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 export PATH="$JAVA_HOME/bin:$PATH"
 
+# Android
+export PATH="$HOME/android-studio/bin:$PATH"
+alias studio="studio.sh"
+
 # Scala
 export PATH="$HOME/sbt/bin:$PATH"
 
