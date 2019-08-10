@@ -115,7 +115,6 @@ build/
 **/*.rs.bk
 .metals/
 .bloop/
-project/
 I
 }
 
