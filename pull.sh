@@ -15,6 +15,9 @@ echo "Installing custom ZSH theme."
 cp zsh/ds.zsh-theme "$HOME/.oh-my-zsh/custom/themes/"
 echo "Done."
 echo "Installing custom zsh functions/aliases"
+if [ ! -d "$HOME/zsh" ]; then
+    mkdir $HOME/zsh
+fi
 cp zsh/lang.sh $HOME/zsh/
 echo "Done."
 echo "Installing custom zsh functions/aliases for work"
