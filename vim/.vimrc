@@ -95,7 +95,8 @@ let g:go_fmt_command = "goimports"
 " -------
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 nnoremap <silent> <C-t> :vnew<CR>
-nnoremap <silent> <C-n> :tabnext<CR>
+nnoremap <silent> <C-]> :tabnext<CR>
+nnoremap <silent> <C-[> :tabprevious<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap ee :CocList diagnostics<CR>
 nnoremap <C-f> :Rg<SPACE>
