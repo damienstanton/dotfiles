@@ -23,6 +23,9 @@ alias reload="source $HOME/.zshrc"
 alias gdiff="git difftool --no-prompt --tool vimdiff"
 alias pip="python3 -m pip"
 alias psp="psc-package"
+alias please="sudo"
+alias sorry='sudo $(fc -ln -1)'
+alias open="xdg-open"
 
 # runner for CMake
 function cmakebuild() {
