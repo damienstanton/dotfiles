@@ -29,7 +29,12 @@
             "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
             "filetypes": ["go"]
         }
-    }
+    },
+    "rust.show_warnings": true,
+    "rust.jobs": 8,
+    "rust.build_on_save": true,
+    "rust.all_features": true,
+    "rust.clippy_preference": "on"
 }
 
 // Checklist for new installs
