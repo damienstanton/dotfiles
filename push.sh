@@ -10,6 +10,7 @@ COC_VIMFILE="$HOME/.vim/custom.vim"
 REGOLITH_XFILE="$HOME/.Xresources-regolith-1.2.15"
 REGOLITH_XDIR="$HOME/.Xresources.d/"
 REGOLITH_CONF_DIR="$HOME/.config/i3-regolith/"
+REGOLITH_BAR_DIR="$HOME/.config/i3xrocks/"
 
 cp $ZSH_FILE zsh/
 cp $ZSH_THEME_FILE zsh/
@@ -25,6 +26,7 @@ echo "Wrote vim configuration."
 cp $REGOLITH_XFILE regolith/
 cp -r $REGOLITH_XDIR regolith/
 cp -r $REGOLITH_CONF_DIR regolith/
+cp -r $REGOLITH_BAR_DIR regolith/
 echo "Wrote i3-regolith configuration."
 
 echo "All files are updated."
