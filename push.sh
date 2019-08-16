@@ -7,21 +7,25 @@ ZSH_WORK_FILE="$HOME/zsh/work.sh"
 VIM_FILE="$HOME/.vimrc"
 COC_FILE="$HOME/.vim/coc-settings.json"
 COC_VIMFILE="$HOME/.vim/custom.vim"
+REGOLITH_XFILE="$HOME/.Xresources-regolith-1.2.15"
+REGOLITH_XDIR="$HOME/.Xresources.d/"
+REGOLITH_CONF_DIR="$HOME/.config/i3-regolith/"
 
 cp $ZSH_FILE zsh/
-echo "Added ZSH config."
 cp $ZSH_THEME_FILE zsh/
-echo "Added custom ZSH theme."
 cp $ZSH_LANG_FILE zsh/
-echo "Added custom ZSH functions/aliases."
 cp $ZSH_WORK_FILE zsh/
-echo "Added custom ZSH functions/aliases for work."
+echo "Wrote custom ZSH theme, functions, and aliases."
 
 cp $VIM_FILE vim/
 cp $COC_FILE vim/
 cp $COC_VIMFILE vim/
-echo "Added vim config."
+echo "Wrote vim configuration."
 
+cp $REGOLITH_XFILE regolith/
+cp -r $REGOLITH_XDIR regolith/
+cp -r $REGOLITH_CONF_DIR regolith/
+echo "Wrote i3-regolith configuration."
 
 echo "All files are updated."
 echo "Uploading to GitHub..."

@@ -117,6 +117,8 @@ build/
 **/*.rs.bk
 .metals/
 .bloop/
+dist/
+dist-newstyle/
 I
 }
 
