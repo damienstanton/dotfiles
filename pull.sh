@@ -7,10 +7,6 @@ ZSH_WORK_FILE="$HOME/zsh/work.sh"
 VIM_FILE="$HOME/.vimrc"
 COC_FILE="$HOME/.vim/coc-settings.json"
 COC_VIMFILE="$HOME/.vim/custom.vim"
-REGOLITH_XFILE="$HOME/.Xresources-regolith-1.2.15"
-REGOLITH_XDIR="$HOME/.Xresources.d/"
-REGOLITH_CONF_DIR="$HOME/.config/i3-regolith/"
-REGOLITH_BAR_DIR="$HOME/.config/i3xrocks/"
 
 echo "Installing ZSH config."
 cat zsh/.zshrc > $ZSH_FILE
@@ -33,12 +29,6 @@ cat vim/.vimrc > $VIM_FILE
 cp vim/coc-settings.json "$HOME/.vim/"
 cp vim/custom.vim "$HOME/.vim/"
 echo "Done."
-
-echo "Installing i3-regolith config..."
-cp regolith/.Xresources-regolith-1.2.15 $HOME
-cp -r regolith/.Xresources.d/ $HOME
-cp -r regolith/i3-regolith $HOME/.config/
-cp -r regolith/i3xrocks $HOME/.config/
 
 echo "Done."
 echo "All files are updated."

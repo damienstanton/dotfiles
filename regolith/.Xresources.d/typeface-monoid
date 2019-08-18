@@ -1,5 +1,0 @@
-! Typeface: Monoisome Regular
-#define typeface_bar_glyph  Monoisome Regular 11
-#define typeface_bar        pango:Monoisome Regular 11
-#define typeface_rofi       Monoisome Regular 11
-#define typeface_terminal   Monoisome Regular:pixelsize=11:antialias=true:autohint=true
