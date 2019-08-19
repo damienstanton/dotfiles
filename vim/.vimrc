@@ -7,8 +7,8 @@
 " general configs
 " ---------------
 set encoding=UTF-8
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set autoindent
 set copyindent
