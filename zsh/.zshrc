@@ -55,3 +55,6 @@ source $HOME/.ghcup/env
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/damienstanton/.sdkman"
 [[ -s "/home/damienstanton/.sdkman/bin/sdkman-init.sh" ]] && source "/home/damienstanton/.sdkman/bin/sdkman-init.sh"
+
+# opam configuration
+test -r /home/damien/.opam/opam-init/init.zsh && . /home/damien/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
