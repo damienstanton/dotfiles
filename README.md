@@ -1,10 +1,11 @@
-Safe space for my zsh, regolith-i3 and vim (8.1) config.
+Safe space for my configs.
 
-- `push.sh` to write config to GitHub
-- `pull.sh` to overwrite existing config / install new config locally.
+Usage:
+```shell
+$ ./run
+```
 
-
-© 2018 Damien Stanton
+© 2019 Damien Stanton
 
 See LICENSE for details.
 

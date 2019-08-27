@@ -1,0 +1,56 @@
+#!/bin/bash
+set -e
+
+zsh_file="$HOME/.zshrc"
+zsh_theme_file="$HOME/.oh-my-zsh/custom/themes/ds.zsh-theme"
+zsh_lang_file="$HOME/zsh/lang.sh"
+zsh_work_file="$HOME/zsh/work.sh"
+vim_file="$HOME/.vimrc"
+coc_file="$HOME/.vim/coc-settings.json"
+coc_vimfile="$HOME/.vim/custom.vim"
+
+function install() {
+  git pull
+  if [ ! -d "$HOME/zsh" ]; then
+      mkdir $HOME/zsh
+  fi
+  cat zsh/.zshrc > $zsh_file
+  cp zsh/ds.zsh-theme "$HOME/.oh-my-zsh/custom/themes/"
+  cp zsh/lang.sh $HOME/zsh/
+  cp zsh/work.sh $HOME/zsh/
+  cat vim/.vimrc > $vim_file
+  if [ ! -d "$HOME/.vim" ]; then
+      mkdir $HOME/.vim
+  fi
+  cp vim/coc-settings.json "$HOME/.vim/"
+  cp vim/custom.vim "$HOME/.vim/"
+}
+
+function upload() {
+  cp $zsh_file zsh/
+  cp $zsh_theme_file zsh/
+  cp $zsh_lang_file zsh/
+  cp $zsh_work_file zsh/
+  cp $vim_file vim/
+  cp $coc_file vim/
+  cp $coc_vimfile vim/
+  git add -A && git commit -m "Dotfiles synced on $(date +%Y-%m-%d)" && git push
+}
+
+function print_help() {
+  echo "this run script requires an arg of either 'install' or 'upload'"
+  echo "install overwrites your local configs with those at the latest pull of this branch"
+  echo "upload copies your local configs into this dir and pushes them to the branch"
+}
+
+case $1 in
+  "install")
+    install
+    ;;
+  "upload")
+    upload
+    ;;
+  *)
+    print_help
+    ;;
+esac
