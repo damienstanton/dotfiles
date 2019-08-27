@@ -10,9 +10,12 @@ coc_file="$HOME/.vim/coc-settings.json"
 coc_vimfile="$HOME/.vim/custom.vim"
 
 function install() {
+  echo "- Getting latest updates from GitHub"
+  git pull
   if [ ! -d "$HOME/zsh" ]; then
       mkdir $HOME/zsh
   fi
+  echo "- Copying configuration files"
   cat zsh/.zshrc > $zsh_file
   cp zsh/ds.zsh-theme "$HOME/.oh-my-zsh/custom/themes/"
   cp zsh/lang.sh $HOME/zsh/
@@ -23,9 +26,11 @@ function install() {
   fi
   cp vim/coc-settings.json "$HOME/.vim/"
   cp vim/custom.vim "$HOME/.vim/"
+  echo "- Done"
 }
 
 function upload() {
+  echo "- Copying configuration files"
   cp $zsh_file zsh/
   cp $zsh_theme_file zsh/
   cp $zsh_lang_file zsh/
