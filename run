@@ -10,7 +10,6 @@ coc_file="$HOME/.vim/coc-settings.json"
 coc_vimfile="$HOME/.vim/custom.vim"
 
 function install() {
-  git pull
   if [ ! -d "$HOME/zsh" ]; then
       mkdir $HOME/zsh
   fi
