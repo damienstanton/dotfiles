@@ -38,9 +38,10 @@ function upload() {
 }
 
 function print_help() {
-  echo "this run script requires an arg of either 'install' or 'upload'"
-  echo "install overwrites your local configs with those at the latest pull of this branch"
-  echo "upload copies your local configs into this dir and pushes them to the branch"
+  echo "Hey there."
+  echo "    This run script requires an arg of either 'install' or 'upload'"
+  echo "    - install: Overwrites your local configs with those at the latest pull of this branch"
+  echo "    - upload: Copies your local configs into this dir and pushes them to the branch"
 }
 
 case $1 in
