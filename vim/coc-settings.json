@@ -23,12 +23,6 @@
             "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
             "filetypes": ["go"]
         },
-        "purescript": {
-            "command": "purescript-language-server",
-            "args": ["--stdio"],
-            "filetypes": ["purescript"],
-            "rootPatterns": ["psc-package.json", "spago.dhall"]
-        },
         "ocaml": {
             "command": "ocaml-language-server",
             "args": ["--stdio"],
@@ -49,7 +43,6 @@
 // [ ] - Scala
 // [ ] - Haskell
 // [ ] - ReasonML/OCaml
-// [ ] - PureScript
 
 // Automated
 // ---------
