@@ -50,6 +50,10 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # Haskell
 source $HOME/.ghcup/env
 
+# Pyenv
+export PYENV_ROOT="$HOME/bin/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
