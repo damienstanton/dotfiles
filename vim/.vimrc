@@ -23,32 +23,35 @@ set colorcolumn=120
 " enable remap of motions captured by the terminal
 silent !stty -ixon > /dev/null 2>/dev/null
 
-" plugins
-" -------
+" extensions
+" ----------
 call plug#begin('~/.vim/plugged')
+" vim plugins
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'airblade/vim-gitgutter'
 Plug 'matze/vim-move'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
-Plug 'rust-lang/rust.vim'
-Plug 'derekwyatt/vim-scala'
-Plug 'udalov/kotlin-vim'
-Plug 'cespare/vim-toml'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'zivyangll/git-blame.vim'
 Plug 'tpope/vim-commentary'
-Plug 'reasonml-editor/vim-reason-plus'
 Plug 'mattn/gist-vim'
+Plug 'mattn/webapi-vim'
 Plug 'christoomey/vim-system-copy'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'ryanoasis/vim-devicons'
+" language plugins
+Plug 'rust-lang/rust.vim'
+Plug 'derekwyatt/vim-scala'
+Plug 'udalov/kotlin-vim'
+Plug 'cespare/vim-toml'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'reasonml-editor/vim-reason-plus'
 call plug#end()
 
 "coc (externally installed: coc-rls, coc-json, coc-python, coc-tsserver)
