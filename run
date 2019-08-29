@@ -5,9 +5,15 @@ zsh_file="$HOME/.zshrc"
 zsh_theme_file="$HOME/.oh-my-zsh/custom/themes/ds.zsh-theme"
 zsh_lang_file="$HOME/zsh/lang.sh"
 zsh_work_file="$HOME/zsh/work.sh"
+
 vim_file="$HOME/.vimrc"
 coc_file="$HOME/.vim/coc-settings.json"
 coc_vimfile="$HOME/.vim/custom.vim"
+
+regolith_config="$HOME/.config/regolith/i3/config"
+regolith_resources="$HOME/.Xresources-regolith"
+regolith_res_dir="$HOME/.Xresources.d"
+regolith_bar_dir="$HOME/.config/i3xrocks"
 
 function install() {
   echo "-> Getting latest updates from GitHub"
@@ -26,6 +32,10 @@ function install() {
   fi
   cp vim/coc-settings.json "$HOME/.vim/"
   cp vim/custom.vim "$HOME/.vim/"
+  cp regolith/config "$HOME/.config/regolith/i3/"
+  cp regolith/.Xresources-regolith "$HOME"
+  cp -r regolith/.Xresources.d/ "$HOME"
+  cp -r regolith/i3xrocks "$HOME/.config/"
   echo "-> Done"
 }
 
@@ -38,6 +48,10 @@ function upload() {
   cp $vim_file vim/
   cp $coc_file vim/
   cp $coc_vimfile vim/
+  cp $regolith_config regolith/
+  cp $regolith_resources regolith/
+  cp $regolith_res_dir regolith/
+  cp $regolith_bar_dir regolith/
   git add -A && git commit -m "Dotfiles synced on $(date +%Y-%m-%d)" && git push
 }
 
