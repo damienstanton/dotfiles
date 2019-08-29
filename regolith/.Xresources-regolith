@@ -1,0 +1,36 @@
+! This is the Regolith root-level Xresources file.
+!
+! -- Styles - Colors
+!
+! Uncomment one and only one of the following color definitions: 
+!#include "/etc/regolith/styles/color-solarized-dark"
+!#include "/etc/regolith/styles/color-solarized-light"
+#include "/etc/regolith/styles/color-gruvbox"
+!#include "/etc/regolith/styles/color-nord"
+
+! -- Styles - Fonts
+!
+! Uncomment one and only one of the following font definitions:
+!#include "/etc/regolith/styles/typeface-sourcecodepro"
+!#include "/etc/regolith/styles/typeface-ubuntu"
+#include "/home/damien/.Xresources.d/typeface-monoid"
+
+
+! -- Styles - Theme
+!
+! Uncomment one and only one of the following theme definitions:
+!#include "/etc/regolith/styles/theme-regolith"
+#include "/etc/regolith/styles/theme-ubuntu-dark"
+!#include "/etc/regolith/styles/theme-nordic"
+
+! -- Applications
+! These files are not intended to be modified, however if you
+! would like to configure a new apps Xresources to use Regolith 
+! theme info, this is the place to add it.
+!
+#include "/home/damien/.Xresources.d/st-term"
+#include "/home/damien/.Xresources.d/i3-wm"
+#include "/home/damien/.Xresources.d/i3xrocks"
+#include "/home/damien/.Xresources.d/rofi"
+#include "/home/damien/.Xresources.d/gnome"
+
