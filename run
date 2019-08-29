@@ -53,8 +53,8 @@ function upload() {
   cp $coc_vimfile vim/
   cp $regolith_config regolith/
   cp $regolith_resources regolith/
-  cp $regolith_res_dir regolith/
-  cp $regolith_bar_dir regolith/
+  cp -r $regolith_res_dir regolith/
+  cp -r $regolith_bar_dir regolith/
   git add -A && git commit -m "Dotfiles synced on $(date +%Y-%m-%d)" && git push
 }
 
