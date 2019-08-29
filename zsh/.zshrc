@@ -53,6 +53,7 @@ source $HOME/.ghcup/env
 # Pyenv
 export PYENV_ROOT="$HOME/bin/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/shims:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
