@@ -27,7 +27,13 @@
             "command": "ocaml-language-server",
             "args": ["--stdio"],
             "filetypes": ["ocaml", "reason"]
-        }
+        },
+        "clangd": {
+          "command": "clangd-8",
+          "args": ["--background-index"],
+          "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+          "filetypes": ["c", "cpp", "objc", "objcpp"]
+    }
     },
     "rust.show_warnings": true,
     "rust.jobs": 8,
@@ -43,6 +49,7 @@
 // [ ] - Scala
 // [ ] - Haskell
 // [ ] - ReasonML/OCaml
+// [ ] - C++
 
 // Automated
 // ---------
