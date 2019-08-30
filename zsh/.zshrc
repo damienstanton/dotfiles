@@ -37,6 +37,7 @@ export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 export PATH="$JAVA_HOME/bin:$PATH"
 
 # Android
+export ANDROID_SDK_ROOT="$HOME/Android/Sdk/"
 export PATH="$HOME/android-studio/bin:$PATH"
 alias studio="studio.sh"
 
