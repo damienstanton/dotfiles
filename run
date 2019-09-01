@@ -33,7 +33,7 @@ function install() {
   cp vim/coc-settings.json "$HOME/.vim/"
   cp vim/custom.vim "$HOME/.vim/"
   if [ ! -d "$HOME/.config/regolith/i3" ]; then
-      mkdir $HOME/.config/regolith/i3
+      mkdir -p $HOME/.config/regolith/i3
   fi
   cp regolith/config "$HOME/.config/regolith/i3/"
   cp regolith/.Xresources-regolith "$HOME"
