@@ -88,9 +88,8 @@ let g:LanguageClient_serverCommands= {
 
 " disable vtext (RLS is especially onerous)
 let g:LanguageClient_useVirtualText=0
-
-" run goimports on save
-let g:go_fmt_command = "goimports"
+" Go command on save
+let g:go_fmt_command = "gofmt"
 
 " keymaps
 " -------
