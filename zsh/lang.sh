@@ -119,6 +119,7 @@ build/
 .bloop/
 dist/
 dist-newstyle/
+*.swp
 I
 }
 
