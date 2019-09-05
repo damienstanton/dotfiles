@@ -28,7 +28,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Pip-installed binaries
 export PATH="$HOME/.local/bin:$PATH"
+export PYTHONDONTWRITEBYTECODE=1
 
+# Go
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 
