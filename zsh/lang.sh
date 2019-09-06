@@ -48,12 +48,16 @@ function dockerdelete() {
 	docker rmi --force `docker images -a -q`
 }
 
-# synchronize a working branch with master via rebase
+# synchronize a working branch with another branch via rebase
 function synchronize() {
-	git checkout master
+	branch=$1
+	if [ -z $1 ]; then
+    branch=master
+  fi
+	git checkout $branch 
 	git pull --rebase
 	git checkout -
-	git merge --no-ff master
+	git merge --no-ff $branch
 	git push
 }
 
