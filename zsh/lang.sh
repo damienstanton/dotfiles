@@ -25,7 +25,6 @@ alias psp="psc-package"
 alias please="sudo"
 alias sorry='sudo $(fc -ln -1)'
 alias open="xdg-open"
-alias rs="rustup"
 
 # runner for CMake
 function cmakebuild() {
@@ -124,7 +123,6 @@ build/
 .bloop/
 dist/
 dist-newstyle/
-*.swp
 I
 }
 
