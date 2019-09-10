@@ -102,7 +102,17 @@ function commit() {
     git add -A \
         && git commit -m "$INPUT" \
         && git push
-    }
+}
+
+# firstpush is the same as commit, but sets the origin
+function firstpush() {
+    echo "Please type your initial commit message:"
+    echo
+    read INPUT
+    git add -A \
+        && git commit -m "$INPUT" \
+        && git push --set-upstream origin master
+}
 
 # generate a reasonable gitignore
 function ignore() {
@@ -203,11 +213,6 @@ function jv() {
 # pretty CSV object catting
 function cv() {
     cat $1 | sed 's/,/ ,/g' | column -t -s, | less -S
-}
-
-# automate git push origin stuf
-function firstpush() {
-    git add -A && git commit -m "$@" && git push --set-upstream origin master
 }
 
 # automate synchro with a third-party github repo (useful for OSS stuff)
