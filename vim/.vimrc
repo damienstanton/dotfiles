@@ -18,7 +18,7 @@ set updatetime=300
 set number relativenumber
 set splitbelow
 set ignorecase smartcase
-set colorcolumn=120
+set colorcolumn=100
 
 " enable remap of motions captured by the terminal
 silent !stty -ixon > /dev/null 2>/dev/null

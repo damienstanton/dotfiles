@@ -207,7 +207,7 @@ function cv() {
 
 # automate git push origin stuf
 function firstpush() {
-    git add -A && git commit -m $@ && git push --set-upstream origin master
+    git add -A && git commit -m "$@" && git push --set-upstream origin master
 }
 
 # automate synchro with a third-party github repo (useful for OSS stuff)
