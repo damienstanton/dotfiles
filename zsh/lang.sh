@@ -91,7 +91,7 @@ echo "Created project $project"
 
 # retrieve one of my git repos (since my username is known, this is an easy shorthand)
 function getme() {
-    git clone https://github.com/damienstanton/$1
+    git clone https://github.com/damienstanton/$1 $2 # where 2 is an alias
 }
 
 # simpler one-shot commit shortcut
