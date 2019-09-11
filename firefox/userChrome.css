@@ -1,5 +1,5 @@
+/* swiped from github.com/jonhoo */
 @-moz-document url(chrome://browser/content/browser.xhtml) {
-	/* tabs on bottom of window */
 	#navigator-toolbox { -moz-box-ordinal-group: 10; }
 	#titlebar { -moz-box-ordinal-group: 10; }
 	#urlbar-results { margin-top: -35vh !important; }
