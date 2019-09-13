@@ -11,7 +11,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-set autoindent
 set copyindent
 set mouse=a
 set backspace=indent,eol,start
@@ -87,10 +86,15 @@ let g:LanguageClient_serverCommands= {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls']
     \ }
 
+
+" Misc lang stuff
+" ---------------
 " disable vtext (RLS is especially onerous)
 let g:LanguageClient_useVirtualText=0
 " Go command on save
 let g:go_fmt_command = "gofmt"
+let g:rustfmt_autosave = 1
+
 
 " keymaps
 " -------
