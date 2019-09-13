@@ -12,6 +12,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set copyindent
+set number
 set mouse=a
 set backspace=indent,eol,start
 set updatetime=300
