@@ -15,7 +15,6 @@ set copyindent
 set mouse=a
 set backspace=indent,eol,start
 set updatetime=300
-set number relativenumber
 set splitbelow
 set ignorecase smartcase
 set colorcolumn=100
@@ -108,6 +107,7 @@ noremap <silent> <C-p> :FZF<CR>
 vnoremap <C-y> "*y
 vnoremap <leader>" c""<ESC>P
 inoremap jk <ESC>
+tnoremap <F1> <C-W>N
 
 " keywords
 " --------
