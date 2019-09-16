@@ -52,6 +52,7 @@ Plug 'udalov/kotlin-vim'
 Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'reasonml-editor/vim-reason-plus'
+Plug 'edkolev/tmuxline.vim'
 call plug#end()
 
 "coc (externally installed: coc-rls, coc-json, coc-python, coc-tsserver)
@@ -94,6 +95,7 @@ let g:LanguageClient_useVirtualText=0
 " Go command on save
 let g:go_fmt_command = "gofmt"
 let g:rustfmt_autosave = 1
+let g:tmuxline_powerline_separators = 0
 
 
 " keymaps
