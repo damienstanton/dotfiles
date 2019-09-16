@@ -11,11 +11,13 @@ export ZSH=$HOME/.oh-my-zsh
 DEFAULT_USER="damien"
 ZSH_THEME="ds"
 COMPLETION_WAITING_DOTS="true"
+KEYTIMEOUT=1
 plugins=(git dirhistory docker git-extras gradle node npm osx pip sudo wd vi-mode)
 
 source $HOME/zsh/lang.sh
 source $HOME/zsh/work.sh
 source $ZSH/oh-my-zsh.sh
+
 
 # Scripts
 export PATH="$HOME/work/scripts:$PATH"

@@ -19,6 +19,7 @@ set updatetime=300
 set splitbelow
 set ignorecase smartcase
 set colorcolumn=100
+set timeoutlen=1000 ttimeoutlen=0 " adjust for esc delay
 
 " enable remap of motions captured by the terminal
 silent !stty -ixon > /dev/null 2>/dev/null
