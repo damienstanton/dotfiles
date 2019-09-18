@@ -46,6 +46,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'ryanoasis/vim-devicons'
+Plug 'edkolev/tmuxline.vim'
 " language plugins
 Plug 'rust-lang/rust.vim'
 Plug 'derekwyatt/vim-scala'
@@ -53,17 +54,11 @@ Plug 'udalov/kotlin-vim'
 Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'reasonml-editor/vim-reason-plus'
-Plug 'edkolev/tmuxline.vim'
 call plug#end()
 
 "coc (externally installed: coc-rls, coc-json, coc-python, coc-tsserver)
 "---
 autocmd FileType json syntax match Comment +\/\/.\+$+
-
-" markdown preview
-" ----------------
-let g:mkdp_open_to_the_world=1
-let g:mkdp_open_ip = '127.0.0.1'
 
 " ripgrep
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
@@ -74,7 +69,6 @@ set notermguicolors
 colorscheme gruvbox
 set background=dark
 let g:airline_theme='gruvbox'
-let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 highlight Normal ctermbg=NONE " for a transparent bg
 
@@ -127,3 +121,6 @@ let g:multi_cursor_quit_key            = '<Esc>'
 
 " import CoC customizations
 runtime custom.vim 
+
+" import fake presentation mode
+runtime presentation.vim
