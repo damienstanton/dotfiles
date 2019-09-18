@@ -6,16 +6,16 @@ function! ToggleHiddenAll()
         set noruler
         set laststatus=0
         set noshowcmd
-        set norelativenumber
         set colorcolumn=
+        set norelativenumber
     else
         let s:hidden_all = 0
         set showmode
         set ruler
         set laststatus=2
         set showcmd
-        set relativenumber
         set colorcolumn=100
+        set relativenumber
     endif
 endfunction
 
