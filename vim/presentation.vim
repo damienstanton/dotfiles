@@ -7,6 +7,7 @@ function! ToggleHiddenAll()
         set laststatus=0
         set noshowcmd
         set norelativenumber
+        set colorcolumn=
     else
         let s:hidden_all = 0
         set showmode
@@ -14,6 +15,7 @@ function! ToggleHiddenAll()
         set laststatus=2
         set showcmd
         set relativenumber
+        set colorcolumn=100
     endif
 endfunction
 
