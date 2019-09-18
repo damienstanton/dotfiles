@@ -19,4 +19,4 @@ function! ToggleHiddenAll()
     endif
 endfunction
 
-nnoremap <S-h> :call ToggleHiddenAll()<CR>
+nnoremap <silent> <S-h> :call ToggleHiddenAll()<CR>
