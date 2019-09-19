@@ -55,7 +55,9 @@ gopath() {
             fi
             ;;
         *)
-            echo "not a valid 'gopath' command. Valid ones: ['override', 'reset']"
+            echo "Need a valid 'gopath' command. Try:"
+            echo "    -> override"
+            echo "    -> reset"
             ;;
     esac
 }
