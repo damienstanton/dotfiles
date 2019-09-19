@@ -26,8 +26,42 @@ alias please="sudo"
 alias sorry='sudo $(fc -ln -1)'
 alias open="xdg-open"
 
+# override GOPATH
+gopath() {
+    cmd=$1
+    target=$2
+    case $cmd in
+        "reset")
+            export GOPATH=$(<$HOME/.tmp/saved_gopath)
+            echo "GOPATH has been reset to $GOPATH"
+            echo $GOPATH > $HOME/.tmp/saved_gopath
+            ;;
+        "override")
+            echo $GOPATH > $HOME/.tmp/saved_gopath
+            if [ -z $target ]; then
+                export GOPATH=$(pwd)
+                echo "New GOPATH=$GOPATH"
+            else
+                case $target in
+                    ".")
+                        export GOPATH=$(pwd)
+                        echo "New GOPATH=$GOPATH"
+                        ;;
+                    *)
+                        export GOPATH=$target
+                        echo "New GOPATH=$GOPATH"
+                        ;;
+                esac
+            fi
+            ;;
+        *)
+            echo "not a valid 'gopath' command. Valid ones: ['override', 'reset']"
+            ;;
+    esac
+}
+
 # runner for CMake
-function cmakebuild() {
+cmakebuild() {
     if [ ! -d "build" ]; then
         mkdir build
     fi
@@ -38,17 +72,17 @@ function cmakebuild() {
 }
 
 # human readable size check
-function sizeof() {
+sizeof() {
   du -h $1 | tail -n 1
 }
 
 # delete all docker images, recursively
-function dockerdelete() {
+dockerdelete() {
 	docker rmi --force `docker images -a -q`
 }
 
 # synchronize a working branch with another branch via rebase
-function synchronize() {
+synchronize() {
 	branch=$1
 	if [ -z $1 ]; then
     branch=master
@@ -61,7 +95,7 @@ function synchronize() {
 }
 
 # build a new C++ project using gnu make
-function init_cpp() {
+init_cpp() {
 project=$1
 cpp_ver=$2
 
@@ -90,12 +124,12 @@ echo "Created project $project"
 }
 
 # retrieve one of my git repos (since my username is known, this is an easy shorthand)
-function getme() {
+getme() {
     git clone https://github.com/damienstanton/$1 $2 # where 2 is an alias
 }
 
 # simpler one-shot commit shortcut
-function commit() {
+commit() {
     echo "Please type your commit message:"
     echo
     read INPUT
@@ -105,7 +139,7 @@ function commit() {
 }
 
 # firstpush is the same as commit, but sets the origin
-function firstpush() {
+firstpush() {
     echo "Please type your initial commit message:"
     echo
     read INPUT
@@ -115,7 +149,7 @@ function firstpush() {
 }
 
 # generate a reasonable gitignore
-function ignore() {
+ignore() {
 cat <<I>> .gitignore
 *.DS_Store
 env/
@@ -137,7 +171,7 @@ I
 }
 
 # automatically write a MIT license, including the current year and copyright holder
-function copyright() {
+copyright() {
 cat <<LIC>> LICENSE
 Copyright (c) $(date +%Y) $@
 
@@ -171,7 +205,7 @@ CPR
 }
 
 # peek at a particular line in a file (decent for printf-style debugging)
-function show() {
+show() {
     line_number=$1
     start=$(($line_number - 10))
     stop=$(($line_number + 10))
@@ -189,7 +223,7 @@ function show() {
 }
 
 # create a new github repo from the command line
-function createremote() {
+createremote() {
     w=$1
     u="damienstanton"
     if [ -z "$1" ]; then
@@ -201,22 +235,22 @@ function createremote() {
 }
 
 # set the current dir to an existing github remote.
-function remote() {
+remote() {
     git init && git remote add origin https://github.com/$1
 }
 
 # pretty JSON object catting
-function jv() {
+jv() {
     jq -C . $1 | less -R
 }
 
 # pretty CSV object catting
-function cv() {
+cv() {
     cat $1 | sed 's/,/ ,/g' | column -t -s, | less -S
 }
 
 # automate synchro with a third-party github repo (useful for OSS stuff)
-function syncwith() {
+syncwith() {
     git remote add up https://github.com/$1
     git fetch up master \
         && git merge up/master \
