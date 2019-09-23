@@ -11,23 +11,23 @@ export PATH="$SPARK_HOME/bin:$PATH"
 export PATH="$ZEPPELIN_HOME/bin:$PATH"
 export PYSPARK_PYTHON="$WRPATH/datasci/scripts/datasci_env/bin/python"
 
-function work() {
+work() {
 	echo "GOPATH is $GOPATH"
 	cd $WRPATH/datasci
 	source $WRPATH/datasci/scripts/datasci_env/bin/activate
 }
 
-function devstart() {
+devstart() {
     work && cd ../backend
     scripts/devctl.sh start
 }
 
-function devstop() {
+devstop() {
     work && cd ../backend
     scripts/devctl.sh stop
 }
 
-function devreboot() {
+devreboot() {
     work && cd ../backend
     scripts/devctl.sh stop
     make clean
@@ -35,7 +35,7 @@ function devreboot() {
     bash scripts/devctl.sh start
 }
 
-function clean_test() {
+clean_test() {
     work && cd ../backend
     go clean -cache
 	make clean
@@ -43,12 +43,12 @@ function clean_test() {
 	make test
 }
 
-function query_prod() {
+query_prod() {
     # query_prod some_file.json
     curl -X POST $WR_PROD_URL -d @$1 --header "Content-Type: application/json; charset=utf-8" > prod_output.json
 }
 
-function query_test() {
+query_test() {
     # query_test some_file.json
     curl -X POST $WR_TEST_URL -d @$1 --header "Content-Type: application/json; charset=utf-8" > test_output.json
 }
