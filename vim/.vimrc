@@ -68,8 +68,7 @@ let g:airline_powerline_fonts=1
 let g:airline_skip_empty_sections=1
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
-
-highlight Normal ctermbg=NONE
+hi Normal ctermbg=NONE
 
 " Language Server
 " --------------
@@ -99,8 +98,10 @@ let g:tmuxline_powerline_separators=0
 let g:ale_sign_column_always=1
 let g:ale_completion_enabled=1
 let g:airline#extensions#ale#enabled=1
-let g:ale_sign_error='✖️ '
-let g:ale_sign_warning='⚠️ '
+let g:ale_sign_error = '★'
+let g:ale_sign_warning = '★'
+hi clear ALEErrorSign
+hi clear ALEWarningSign
 
 " Keybindings
 " -----------
