@@ -1,7 +1,7 @@
-let s:hidden_all = 0
+let s:hidden_all=0
 function! ToggleHiddenAll()
-    if s:hidden_all  == 0
-        let s:hidden_all = 1
+    if s:hidden_all == 0
+        let s:hidden_all=1
         set noshowmode
         set noruler
         set laststatus=0
@@ -9,7 +9,7 @@ function! ToggleHiddenAll()
         set colorcolumn=
         set norelativenumber
     else
-        let s:hidden_all = 0
+        let s:hidden_all=0
         set showmode
         set ruler
         set laststatus=2
