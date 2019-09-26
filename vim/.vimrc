@@ -4,8 +4,8 @@
 " +----+ "
 """"""""""
 
-" general configs
-" ---------------
+" General Editor Config
+" ---------------------
 set encoding=UTF-8
 set tabstop=4
 set shiftwidth=4
@@ -24,10 +24,9 @@ set timeoutlen=1000 ttimeoutlen=0 " adjust for esc delay
 " enable remap of motions captured by the terminal
 silent !stty -ixon > /dev/null 2>/dev/null
 
-" extensions
-" ----------
 call plug#begin('~/.vim/plugged')
-" vim plugins
+" General Plugins
+" ---------------
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'airblade/vim-gitgutter'
@@ -35,8 +34,6 @@ Plug 'matze/vim-move'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" NOTE: evaluating whether to replace cocnvim with ale
-" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'zivyangll/git-blame.vim'
 Plug 'tpope/vim-commentary'
@@ -49,54 +46,66 @@ Plug 'enricobacis/vim-airline-clock'
 Plug 'ryanoasis/vim-devicons'
 Plug 'edkolev/tmuxline.vim'
 Plug 'dense-analysis/ale'
-" language plugins
+" Language plugins
+" ----------------
 Plug 'rust-lang/rust.vim'
 Plug 'derekwyatt/vim-scala'
 Plug 'udalov/kotlin-vim'
 Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'reasonml-editor/vim-reason-plus'
+Plug 'leafgarland/typescript-vim'
 call plug#end()
 
-"coc (externally installed: coc-rls, coc-json, coc-python, coc-tsserver)
-"---
-autocmd FileType json syntax match Comment +\/\/.\+$+
-
-" ripgrep
+" Style 
+" -----
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
-
-" colors
-" ------
 set notermguicolors 
 colorscheme gruvbox
 set background=dark
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts=1
-highlight Normal ctermbg=NONE " for a transparent bg
+highlight Normal ctermbg=NONE
 
-" move lines
-let g:move_key_modifier = 'C'
-
-" LSP
-" ---
+" Language Server
+" --------------
 set hidden
 let g:LanguageClient_serverCommands= {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls']
     \ }
 
+" Syntax/Lint options
+" -------------------
+" JSON
+" ----
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
-" Misc lang stuff
-" ---------------
-" disable vtext (RLS is especially onerous)
+" Go
+" --
+let g:go_fmt_command="gofmt"
+
+" Rust
+" ----
 let g:LanguageClient_useVirtualText=0
-" Go command on save
-let g:go_fmt_command = "gofmt"
-let g:rustfmt_autosave = 1
-let g:tmuxline_powerline_separators = 0
+let g:rustfmt_autosave=1
+let g:tmuxline_powerline_separators=0
 
+" ALE
+" ---
+let g:ale_sign_column_always=1
+let g:ale_completion_enabled=1
+let g:airline#extensions#ale#enabled=1
+let g:ale_sign_error='✖️'
+let g:ale_sign_warning='⚠️'
 
-" keymaps
-" -------
+" Keybindings
+" -----------
+let g:move_key_modifier='C'
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_start_key='g<C-x>'
+let g:multi_cursor_next_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 nnoremap <silent> <C-t> :vnew<CR>
 nnoremap <silent> <C-n> :tabnext<CR>
@@ -109,23 +118,9 @@ vnoremap <leader>" c""<ESC>P
 inoremap jk <ESC>
 tnoremap <F1> <C-W>N
 
-" keywords
+" Keywords
 " --------
 :command JSON %!jq '.'
 
-" NOTE: evaluating whether to replace cocnvim with ale
-" :command SBT :call CocRequestAsync('metals', 'workspace/executeCommand', { 'command': 'build-import' })
-
-" multi-cursors
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_start_key           = 'g<C-x>'
-let g:multi_cursor_next_key            = '<C-x>'
-let g:multi_cursor_quit_key            = '<Esc>'
-
-
-" import CoC customizations
-" NOTE: evaluating whether to replace cocnvim with ale
-" runtime custom.vim 
-
-" import fake presentation mode
+" Distraction free mode
 runtime presentation.vim
