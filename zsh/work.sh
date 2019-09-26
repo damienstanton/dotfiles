@@ -6,28 +6,28 @@ export GOPATH="$WRPATH/backend"
 
 
 # Spark/Scala
-export SPARK_HOME="$HOME/spark-2.4.4"
+export SPARK_HOME="$HOME/spark-2.4.3"
 export PATH="$SPARK_HOME/bin:$PATH"
 export PATH="$ZEPPELIN_HOME/bin:$PATH"
 export PYSPARK_PYTHON="$WRPATH/datasci/scripts/datasci_env/bin/python"
 
-work() {
+function work() {
 	echo "GOPATH is $GOPATH"
 	cd $WRPATH/datasci
 	source $WRPATH/datasci/scripts/datasci_env/bin/activate
 }
 
-devstart() {
+function devstart() {
     work && cd ../backend
     scripts/devctl.sh start
 }
 
-devstop() {
+function devstop() {
     work && cd ../backend
     scripts/devctl.sh stop
 }
 
-devreboot() {
+function devreboot() {
     work && cd ../backend
     scripts/devctl.sh stop
     make clean
@@ -35,7 +35,7 @@ devreboot() {
     bash scripts/devctl.sh start
 }
 
-clean_test() {
+function clean_test() {
     work && cd ../backend
     go clean -cache
 	make clean
@@ -43,12 +43,12 @@ clean_test() {
 	make test
 }
 
-query_prod() {
+function query_prod() {
     # query_prod some_file.json
     curl -X POST $WR_PROD_URL -d @$1 --header "Content-Type: application/json; charset=utf-8" > prod_output.json
 }
 
-query_test() {
+function query_test() {
     # query_test some_file.json
     curl -X POST $WR_TEST_URL -d @$1 --header "Content-Type: application/json; charset=utf-8" > test_output.json
 }
