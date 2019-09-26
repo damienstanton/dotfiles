@@ -1,6 +1,7 @@
 export WRPATH=$HOME/work/signal-graph
 export PATH="$WRPATH/backend/scripts:$PATH"
 export PATH="$WRPATH/datasci/scripts:$PATH"
+export SOLENGPATH="$HOME/work/solutions-engineering"
 # Set GOPATH to default work gopath
 export GOPATH="$WRPATH/backend"
 

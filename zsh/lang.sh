@@ -172,8 +172,6 @@ I
 }
 
 # automatically write an Apache license
-Copyright (c) $(date +%Y) $@
-
 copyright() {
 cat <<LIC>> LICENSE
 Apache License
