@@ -7,8 +7,6 @@ zsh_lang_file="$HOME/zsh/lang.sh"
 zsh_work_file="$HOME/zsh/work.sh"
 
 vim_file="$HOME/.vimrc"
-coc_file="$HOME/.vim/coc-settings.json"
-coc_vimfile="$HOME/.vim/custom.vim"
 vim_pres_file="$HOME/.vim/presentation.vim"
 
 regolith_config="$HOME/.config/regolith/i3/config"
@@ -31,8 +29,6 @@ function install() {
   if [ ! -d "$HOME/.vim" ]; then
       mkdir $HOME/.vim
   fi
-  cp vim/coc-settings.json "$HOME/.vim/"
-  cp vim/custom.vim "$HOME/.vim/"
   cp vim/presentation.vim "$HOME/.vim/"
   if [ ! -d "$HOME/.config/regolith/i3" ]; then
       mkdir -p $HOME/.config/regolith/i3
@@ -51,8 +47,6 @@ function upload() {
   cp $zsh_lang_file zsh/
   cp $zsh_work_file zsh/
   cp $vim_file vim/
-  cp $coc_file vim/
-  cp $coc_vimfile vim/
   cp $vim_pres_file vim/
   cp $regolith_config regolith/
   cp $regolith_resources regolith/
