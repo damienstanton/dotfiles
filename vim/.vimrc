@@ -65,6 +65,10 @@ colorscheme gruvbox
 set background=dark
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts=1
+let g:airline_skip_empty_sections=1
+let g:airline_left_sep=' '
+let g:airline_right_sep=' '
+
 highlight Normal ctermbg=NONE
 
 " Language Server
