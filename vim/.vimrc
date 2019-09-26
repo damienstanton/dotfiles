@@ -35,7 +35,8 @@ Plug 'matze/vim-move'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+" NOTE: evaluating whether to replace cocnvim with ale
+" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'zivyangll/git-blame.vim'
 Plug 'tpope/vim-commentary'
@@ -47,6 +48,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'ryanoasis/vim-devicons'
 Plug 'edkolev/tmuxline.vim'
+Plug 'dense-analysis/ale'
 " language plugins
 Plug 'rust-lang/rust.vim'
 Plug 'derekwyatt/vim-scala'
@@ -110,7 +112,9 @@ tnoremap <F1> <C-W>N
 " keywords
 " --------
 :command JSON %!jq '.'
-:command SBT :call CocRequestAsync('metals', 'workspace/executeCommand', { 'command': 'build-import' })
+
+" NOTE: evaluating whether to replace cocnvim with ale
+" :command SBT :call CocRequestAsync('metals', 'workspace/executeCommand', { 'command': 'build-import' })
 
 " multi-cursors
 let g:multi_cursor_use_default_mapping=0
@@ -120,7 +124,8 @@ let g:multi_cursor_quit_key            = '<Esc>'
 
 
 " import CoC customizations
-runtime custom.vim 
+" NOTE: evaluating whether to replace cocnvim with ale
+" runtime custom.vim 
 
 " import fake presentation mode
 runtime presentation.vim
