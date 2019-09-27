@@ -46,6 +46,7 @@ Plug 'enricobacis/vim-airline-clock'
 Plug 'ryanoasis/vim-devicons'
 Plug 'edkolev/tmuxline.vim'
 Plug 'dense-analysis/ale'
+Plug 'cormacrelf/vim-colors-github'
 " Language plugins
 " ----------------
 Plug 'rust-lang/rust.vim'
@@ -61,14 +62,22 @@ call plug#end()
 " -----
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 set notermguicolors 
+
+" Gruvbox (dark)
 colorscheme gruvbox
 set background=dark
 let g:airline_theme='gruvbox'
+hi Normal ctermbg=NONE
+
+" GitHub (light)
+" colorscheme github
+" set background=light
+" let g:airline_theme = "github"
+
 let g:airline_powerline_fonts=1
 let g:airline_skip_empty_sections=1
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
-hi Normal ctermbg=NONE
 
 " Language Server
 " --------------
