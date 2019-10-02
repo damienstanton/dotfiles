@@ -108,6 +108,7 @@ let g:tmuxline_powerline_separators=0
 let g:ale_sign_column_always=1
 let g:ale_completion_enabled=1
 let g:airline#extensions#ale#enabled=1
+let g:ale_open_list=1
 let g:ale_sign_warning = '⚠'
 let g:ale_sign_error = '✖'
 let g:ale_sign_info = 'ℹ'
@@ -127,7 +128,6 @@ nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 nnoremap <silent> <C-t> :vnew<CR>
 nnoremap <silent> <C-n> :tabnext<CR>
 nnoremap <C-q> :qa<CR>
-nnoremap ee :CocList diagnostics<CR>
 nnoremap <C-f> :Rg<SPACE>
 noremap <silent> <C-p> :FZF<CR>
 vnoremap <C-y> "*y
