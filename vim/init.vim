@@ -132,7 +132,7 @@ noremap <silent> <C-p> :FZF<CR>
 vnoremap <C-y> "*y
 vnoremap <leader>" c""<ESC>P
 inoremap jk <ESC>
-tnoremap <F1> <C-W>N
+tnoremap <Esc> <C-\><C-n>
 
 " Keywords
 " --------
