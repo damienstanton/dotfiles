@@ -4,15 +4,15 @@
 # +----+ #
 ##########
 
-export EDITOR="vim"
-export GIT_EDITOR="vim"
+export EDITOR="nvim"
+export GIT_EDITOR="nvim"
 export TERM="xterm-256color"
 export ZSH=$HOME/.oh-my-zsh
 DEFAULT_USER="damien"
 ZSH_THEME="ds"
 COMPLETION_WAITING_DOTS="true"
 KEYTIMEOUT=1
-plugins=(git dirhistory docker git-extras gradle node npm osx pip sudo wd vi-mode)
+plugins=(git dirhistory docker git-extras gradle node npm osx pip sudo wd)
 
 source $HOME/zsh/lang.sh
 source $HOME/zsh/work.sh

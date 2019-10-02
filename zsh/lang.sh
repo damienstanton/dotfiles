@@ -1,5 +1,5 @@
 # configuration aliases
-alias vimconf="$EDITOR $HOME/.vimrc"
+alias vimconf="$EDITOR $HOME/.config/nvim/init.vim"
 alias zshconf="$EDITOR $HOME/.zshrc"
 
 # other aliases
