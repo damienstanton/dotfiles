@@ -35,6 +35,7 @@ function install() {
       mkdir $HOME/.vim
   fi
   cp vim/presentation.vim "$HOME/.vim/"
+  cp vim/presentation.vim "$HOME/.config/nvim/"
   if [ ! -d "$HOME/.config/regolith/i3" ]; then
       mkdir -p $HOME/.config/regolith/i3
   fi
