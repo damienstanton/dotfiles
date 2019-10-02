@@ -7,6 +7,7 @@ zsh_lang_file="$HOME/zsh/lang.sh"
 zsh_work_file="$HOME/zsh/work.sh"
 
 vim_file="$HOME/.vimrc"
+nvim_file="$HOME/.config/nvim/init.vim"
 vim_pres_file="$HOME/.vim/presentation.vim"
 
 regolith_config="$HOME/.config/regolith/i3/config"
@@ -26,6 +27,10 @@ function install() {
   cp zsh/lang.sh $HOME/zsh/
   cp zsh/work.sh $HOME/zsh/
   cat vim/.vimrc > $vim_file
+  if [ ! -d "$HOME/.config/nvim" ]; then
+      mkdir $HOME/.config/nvim
+  fi
+  cat vim/init.vim > $nvim_file
   if [ ! -d "$HOME/.vim" ]; then
       mkdir $HOME/.vim
   fi
@@ -47,6 +52,7 @@ function upload() {
   cp $zsh_lang_file zsh/
   cp $zsh_work_file zsh/
   cp $vim_file vim/
+  cp $nvim_file vim/
   cp $vim_pres_file vim/
   cp $regolith_config regolith/
   cp $regolith_resources regolith/
