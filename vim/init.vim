@@ -108,7 +108,6 @@ let g:tmuxline_powerline_separators=0
 let g:ale_sign_column_always=1
 let g:ale_completion_enabled=1
 let g:airline#extensions#ale#enabled=1
-let g:ale_open_list=1
 let g:ale_sign_warning = '⚠'
 let g:ale_sign_error = '✖'
 let g:ale_sign_info = 'ℹ'
