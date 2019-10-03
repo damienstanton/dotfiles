@@ -83,7 +83,13 @@ let g:tmuxline_powerline_separators=0
 
 " ALE
 " ---
-let g:ale_linters = { 'rust': ['rls'] }
+let g:ale_linters = { 
+    \ 'rust': ['rls'],
+    \ 'python': ['pyls']
+\}
+let g:ale_fixers= { 
+    \ 'python': ['black']
+\}
 let g:ale_fix_on_save=1
 let g:ale_sign_column_always=1
 let g:ale_completion_enabled=1
@@ -94,15 +100,12 @@ let g:ale_sign_error = '✖'
 let g:ale_sign_info = 'ℹ'
 let g:ale_sign_hint = '➤'
 let g:ale_virtualtext_cursor=1
+let g:ale_set_highlights=0
 hi clear ALEErrorSign
 hi clear ALEWarningSign
 hi clear ALEInfoSign
-
-" hi link ALEWarningSign Todo
-" hi link ALEErrorSign WarningMsg
-" hi link ALEVirtualTextWarning Todo
-" hi link ALEVirtualTextInfo Todo
-" hi link ALEVirtualTextError WarningMsg
+hi ALEVirtualTextError ctermbg=NONE ctermfg=Red
+hi ALEVirtualTextWarning ctermbg=NONE ctermfg=Yellow
 
 " Language specific lints/syntax
 " ------------------------------
@@ -138,9 +141,6 @@ nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap <C-f> :Rg<SPACE>
 noremap <silent> <C-p> :FZF<CR>
-nnoremap <silent> gd :ALEGoToDefinition<CR>
-nnoremap <silent> gr :ALEFindReferences<CR>
-nnoremap <silent> gh :ALEHover<CR>
 vnoremap <C-y> "*y
 vnoremap <leader>" c""<ESC>P
 inoremap jk <ESC>
