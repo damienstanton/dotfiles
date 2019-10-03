@@ -108,6 +108,7 @@ let g:tmuxline_powerline_separators=0
 let g:ale_sign_column_always=1
 let g:ale_completion_enabled=1
 let g:airline#extensions#ale#enabled=1
+let g:ale_set_balloons=1
 let g:ale_sign_warning = '⚠'
 let g:ale_sign_error = '✖'
 let g:ale_sign_info = 'ℹ'
@@ -124,11 +125,12 @@ let g:multi_cursor_next_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
-nnoremap <silent> <C-t> :vnew<CR>
-nnoremap <silent> <C-n> :tabnext<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap <C-f> :Rg<SPACE>
 noremap <silent> <C-p> :FZF<CR>
+nnoremap <silent> gd :ALEGoToDefinition<CR>
+nnoremap <silent> gr :ALEFindReferences<CR>
+nnoremap <silent> gh :ALEHover<CR>
 vnoremap <C-y> "*y
 vnoremap <leader>" c""<ESC>P
 inoremap jk <ESC>

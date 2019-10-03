@@ -53,3 +53,6 @@ function query_test() {
     # query_test some_file.json
     curl -X POST $WR_TEST_URL -d @$1 --header "Content-Type: application/json; charset=utf-8" > test_output.json
 }
+
+# load secrets
+source $HOME/.secrets

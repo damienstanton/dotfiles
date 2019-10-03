@@ -1,33 +1,32 @@
 #!/usr/bin/env zsh
 
-# Definitions
-# -----------
+
 if [[ "$USER" == "root" ]]; then USERCOLOR="red"; else USERCOLOR="yellow"; fi
 
-function check_git_prompt_info() {
+check_git_prompt_info() {
     if git rev-parse --git-dir > /dev/null 2>&1; then
         if [[ -z $(git_prompt_info) ]]; then
             echo "%{$fg[blue]%}detached-head%{$reset_color%}) $(git_prompt_status)
-%{$fg[yellow]%}→ "
+%{$fg[yellow]%}::"
         else
             echo "$(git_prompt_info) $(git_prompt_status)
-%{$fg_bold[cyan]%}→ "
+%{$fg_bold[cyan]%}:: "
         fi
     else
-        echo "%{$fg_bold[cyan]%}→ "
+        echo "%{$fg_bold[cyan]%}:: "
     fi
 }
 
-function get_right_prompt() {
-    if git rev-parse --git-dir > /dev/null 2>&1; then
-        echo -n "$(git_prompt_short_sha)%{$reset_color%}"
-    else
-        echo -n "%{$reset_color%}"
-    fi
-}
+# get_right_prompt() {
+#     if git rev-parse --git-dir > /dev/null 2>&1; then
+#         echo -n "$(git_prompt_short_sha)%{$reset_color%}"
+#     else
+#         echo -n "%{$reset_color%}"
+#     fi
+# }
 
 # Updates editor information when the keymap changes.
-function zle-keymap-select() {
+zle-keymap-select() {
   zle reset-prompt
   zle -R
 }
@@ -41,13 +40,12 @@ function vi_mode_prompt_info() {
 
 # The main prompt
 # ---------------
-PROMPT='%{$fg_no_bold[green]%}%T ::\
- $(vi_mode_prompt_info) \
- %{$fg_no_bold[magenta]%}%2~\
+PROMPT='%{$fg_no_bold[green]%}[%T]\
+ %{$fg_no_bold[magenta]%}[%2~]\
  $(check_git_prompt_info)\
 %{$reset_color%}'
 
-RPROMPT='$(get_right_prompt)'
+# RPROMPT='$(get_right_prompt)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}[ "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[blue]%}]"
