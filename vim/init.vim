@@ -79,16 +79,33 @@ let g:airline_powerline_fonts=1
 let g:airline_skip_empty_sections=1
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
+let g:tmuxline_powerline_separators=0
 
-" Language Server
-" --------------
-set hidden
-let g:LanguageClient_serverCommands= {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls']
-    \ }
+" ALE
+" ---
+let g:ale_linters = { 'rust': ['rls'] }
+let g:ale_fix_on_save=1
+let g:ale_sign_column_always=1
+let g:ale_completion_enabled=1
+let g:airline#extensions#ale#enabled=1
+let g:ale_set_balloons=1
+let g:ale_sign_warning = '⚠'
+let g:ale_sign_error = '✖'
+let g:ale_sign_info = 'ℹ'
+let g:ale_sign_hint = '➤'
+let g:ale_virtualtext_cursor=1
+hi clear ALEErrorSign
+hi clear ALEWarningSign
+hi clear ALEInfoSign
 
-" Syntax/Lint options
-" -------------------
+" hi link ALEWarningSign Todo
+" hi link ALEErrorSign WarningMsg
+" hi link ALEVirtualTextWarning Todo
+" hi link ALEVirtualTextInfo Todo
+" hi link ALEVirtualTextError WarningMsg
+
+" Language specific lints/syntax
+" ------------------------------
 " JSON
 " ----
 autocmd FileType json syntax match Comment +\/\/.\+$+
@@ -99,22 +116,15 @@ let g:go_fmt_command="gofmt"
 
 " Rust
 " ----
-let g:LanguageClient_useVirtualText=0
 let g:rustfmt_autosave=1
-let g:tmuxline_powerline_separators=0
+let g:ale_rust_rls_config = {
+	\ 'rust': {
+	    \ 'all_targets': 1,
+		\ 'build_on_save': 0,
+		\ 'clippy_preference': 'on'
+	\ }
+\ }
 
-" ALE
-" ---
-let g:ale_sign_column_always=1
-let g:ale_completion_enabled=1
-let g:airline#extensions#ale#enabled=1
-let g:ale_set_balloons=1
-let g:ale_sign_warning = '⚠'
-let g:ale_sign_error = '✖'
-let g:ale_sign_info = 'ℹ'
-hi clear ALEErrorSign
-hi clear ALEWarningSign
-hi clear ALEInfoSign
 
 " Keybindings
 " -----------
