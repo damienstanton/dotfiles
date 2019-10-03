@@ -85,7 +85,7 @@ let g:tmuxline_powerline_separators=0
 " ---
 let g:ale_linters = { 
     \ 'rust': ['rls'],
-    \ 'python': ['pyls']
+    \ 'python': ['pyls', 'pyflakes']
 \}
 let g:ale_fixers= { 
     \ 'python': ['black']
