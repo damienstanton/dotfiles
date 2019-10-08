@@ -1,4 +1,4 @@
-export WRPATH=$HOME/work/signal-graph
+export WRPATH=$HOME/work/graph
 export PATH="$WRPATH/backend/scripts:$PATH"
 export PATH="$WRPATH/datasci/scripts:$PATH"
 export SOLENGPATH="$HOME/work/solutions-engineering"
@@ -12,7 +12,7 @@ export PATH="$SPARK_HOME/bin:$PATH"
 export PATH="$ZEPPELIN_HOME/bin:$PATH"
 export PYSPARK_PYTHON="$WRPATH/datasci/scripts/datasci_env/bin/python"
 
-function work() {
+function workenv() {
 	echo "GOPATH is $GOPATH"
 	cd $WRPATH/datasci
 	source $WRPATH/datasci/scripts/datasci_env/bin/activate
