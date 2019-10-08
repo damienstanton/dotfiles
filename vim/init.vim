@@ -47,6 +47,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'edkolev/tmuxline.vim'
 Plug 'dense-analysis/ale'
 Plug 'cormacrelf/vim-colors-github'
+Plug 'ncm2/float-preview.nvim'
 " Language plugins
 " ----------------
 Plug 'rust-lang/rust.vim'
@@ -106,6 +107,9 @@ hi clear ALEWarningSign
 hi clear ALEInfoSign
 hi ALEVirtualTextError ctermbg=NONE ctermfg=Red
 hi ALEVirtualTextWarning ctermbg=NONE ctermfg=Yellow
+set completeopt+=noinsert 
+set completeopt-=preview
+let g:float_preview#docked=0
 
 " Language specific lints/syntax
 " ------------------------------
@@ -141,6 +145,7 @@ nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap <C-f> :Rg<SPACE>
 noremap <silent> <C-p> :FZF<CR>
+nnoremap <silent> gd :ALEGoToDefinitionInSplit<CR>
 vnoremap <C-y> "*y
 vnoremap <leader>" c""<ESC>P
 inoremap jk <ESC>
