@@ -7,7 +7,7 @@ export GOPATH="$WRPATH/backend"
 
 
 # Spark/Scala
-export SPARK_HOME="$HOME/spark-2.4.3"
+export SPARK_HOME="$HOME/spark-2.4.4"
 export PATH="$SPARK_HOME/bin:$PATH"
 export PATH="$ZEPPELIN_HOME/bin:$PATH"
 export PYSPARK_PYTHON="$WRPATH/datasci/scripts/datasci_env/bin/python"
