@@ -132,11 +132,6 @@ let g:ale_rust_rls_config = {
 	\ }
 \ }
 
-" Scala
-" -----
-let g:LanguageClient_serverCommands = {
-    \ 'scala': ['metals-vim']
-\ }
 
 " Keybindings
 " -----------
@@ -152,7 +147,6 @@ nnoremap <C-f> :Rg<SPACE>
 noremap <silent> <C-p> :FZF<CR>
 nnoremap <silent> gd :ALEGoToDefinitionInSplit<CR>
 nnoremap <silent> gr :ALEFindReferences<CR>
-nnoremap <silent> gx :call LanguageClient_contextMenu()<CR>
 vnoremap <C-y> "*y
 vnoremap <leader>" c""<ESC>P
 inoremap jk <ESC>
