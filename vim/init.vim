@@ -86,8 +86,11 @@ let g:tmuxline_powerline_separators=0
 " ---
 let g:ale_linters = { 
     \ 'rust': ['rls'],
-    \ 'python': ['pyls', 'pyflakes']
-    \ 'scala': ['metals']
+    \ 'python': ['pyls', 'pyflakes'],
+    \ 'scala': ['metals-vim']
+\}
+let g:ale_fixers= { 
+    \ 'python': ['black']
 \}
 let g:ale_fix_on_save=1
 let g:ale_sign_column_always=1
