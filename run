@@ -6,7 +6,6 @@ zsh_theme_file="$HOME/.oh-my-zsh/custom/themes/ds.zsh-theme"
 zsh_lang_file="$HOME/zsh/lang.sh"
 zsh_work_file="$HOME/zsh/work.sh"
 
-vim_file="$HOME/.vimrc"
 nvim_file="$HOME/.config/nvim/init.vim"
 vim_pres_file="$HOME/.vim/presentation.vim"
 
@@ -26,10 +25,6 @@ function install() {
   cp zsh/ds.zsh-theme "$HOME/.oh-my-zsh/custom/themes/"
   cp zsh/lang.sh $HOME/zsh/
   cp zsh/work.sh $HOME/zsh/
-  cat vim/.vimrc > $vim_file
-  if [ ! -d "$HOME/.config/nvim" ]; then
-      mkdir $HOME/.config/nvim
-  fi
   cat vim/init.vim > $nvim_file
   if [ ! -d "$HOME/.vim" ]; then
       mkdir $HOME/.vim
@@ -52,7 +47,6 @@ function upload() {
   cp $zsh_theme_file zsh/
   cp $zsh_lang_file zsh/
   cp $zsh_work_file zsh/
-  cp $vim_file vim/
   cp $nvim_file vim/
   cp $vim_pres_file vim/
   cp $regolith_config regolith/
