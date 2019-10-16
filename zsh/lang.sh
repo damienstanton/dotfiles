@@ -138,12 +138,9 @@ commit() {
 
 # firstpush is the same as commit, but sets the origin
 firstpush() {
-    echo "Please type your initial commit message:"
-    echo
-    read INPUT
-    git add -A \
-        && git commit -m "$INPUT" \
-        && git push --set-upstream origin master
+    git add -A
+    git commit
+    git push --set-upstream origin master
 }
 
 # generate a reasonable gitignore
