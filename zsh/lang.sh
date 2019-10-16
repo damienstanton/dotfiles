@@ -131,12 +131,9 @@ getme() {
 
 # simpler one-shot commit shortcut
 commit() {
-    echo "Please type your commit message:"
-    echo
-    read INPUT
-    git add -A \
-        && git commit -m "$INPUT" \
-        && git push
+    git add -A
+    git commit
+    git push
 }
 
 # firstpush is the same as commit, but sets the origin
