@@ -48,6 +48,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'dense-analysis/ale'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'ncm2/float-preview.nvim'
+Plug 'gillyb/stable-windows'
 " Language plugins
 " ----------------
 Plug 'rust-lang/rust.vim'
