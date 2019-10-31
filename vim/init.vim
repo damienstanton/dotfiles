@@ -50,6 +50,7 @@ Plug 'dense-analysis/ale'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'ncm2/float-preview.nvim'
 Plug 'gillyb/stable-windows'
+Plug 'lervag/vimtex'
 " Language plugins
 " ----------------
 Plug 'rust-lang/rust.vim'
