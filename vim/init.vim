@@ -149,6 +149,8 @@ nnoremap <C-f> :Rg<SPACE>
 noremap <silent> <C-p> :FZF<CR>
 nnoremap <silent> gd :ALEGoToDefinitionInSplit<CR>
 nnoremap <silent> gr :ALEFindReferences<CR>
+nnoremap <silent> vt :vnew <bar> term<CR>a
+nnoremap <silent> ht :new <bar> term<CR>a
 vnoremap <C-f> y/<C-R>"<CR>
 vnoremap <leader>" c""<ESC>P
 inoremap jk <ESC>
