@@ -12,7 +12,7 @@ DEFAULT_USER="damien"
 ZSH_THEME="ds"
 COMPLETION_WAITING_DOTS="true"
 KEYTIMEOUT=1
-plugins=(git dirhistory docker git-extras gradle node npm osx pip sudo wd)
+plugins=(git dirhistory docker git-extras gradle node npm osx pip sudo wd vi-mode)
 
 source $HOME/zsh/lang.sh
 source $HOME/zsh/work.sh
@@ -35,13 +35,18 @@ export PATH="$HOME/go/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 
 # Java
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
-export PATH="$JAVA_HOME/bin:$PATH"
+# export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+
+export JAVA_HOME="$HOME/graal/Contents/Home"
+export PATH="$HOME/graal/Contents/Home/bin:$PATH"
+
+# export JAVA_HOME="$(/usr/libexec/java_home)"
+# export PATH="$JAVA_HOME/bin:$PATH"
 
 # Android
-export ANDROID_SDK_ROOT="$HOME/Android/Sdk/"
-export PATH="$HOME/android-studio/bin:$PATH"
-alias studio="studio.sh"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export NDK_HOME="$ANDROID_HOME/ndk-bundle"
+export PATH="/Users/damien/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin:$PATH"
 
 # Scala
 export PATH="$HOME/sbt/bin:$PATH"
@@ -57,12 +62,8 @@ source $HOME/.ghcup/env
 export PYENV_ROOT="$HOME/bin/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$PYENV_ROOT/shims:$PATH"
+export PYTHONDONTWRITEBYTECODE=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/damienstanton/.sdkman"
-[[ -s "/home/damienstanton/.sdkman/bin/sdkman-init.sh" ]] && source "/home/damienstanton/.sdkman/bin/sdkman-init.sh"
-
-# opam configuration
-test -r /home/damien/.opam/opam-init/init.zsh && . /home/damien/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+source ~/.secret

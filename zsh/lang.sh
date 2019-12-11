@@ -4,9 +4,8 @@ alias zshconf="$EDITOR $HOME/.zshrc"
 
 # other aliases
 alias g="git"
-alias cat="bat"
+alias cat="bat --theme TwoDark"
 alias e="$EDITOR"
-alias me="$EDITOR -O $@" 
 alias gs="git status"
 alias push="git push"
 alias pull="git pull --rebase"
@@ -14,7 +13,7 @@ alias c="clear;exa -l -B"
 alias ct="clear;exa -T --level=2"
 alias untar="tar -xvf"
 alias sub="git submodule update --init --recursive"
-alias updateall="sudo apt update && sudo apt upgrade -y && sudo apt autoremove && npm update -g && rustup update"
+alias updateall="brew update && brew upgrade && brew cleanup && npm update -g && rustup update"
 alias rff="rm -rf"
 alias k="kubectl"
 alias listening="lsof -P | grep LISTEN"
@@ -24,7 +23,7 @@ alias pip="python3 -m pip"
 alias psp="psc-package"
 alias please="sudo"
 alias sorry='sudo $(fc -ln -1)'
-alias open="xdg-open"
+alias cm="cargo make"
 
 # override GOPATH
 gopath() {

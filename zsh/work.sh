@@ -5,12 +5,18 @@ export SOLENGPATH="$HOME/work/solutions-engineering"
 # Set GOPATH to default work gopath
 export GOPATH="$WRPATH/backend"
 
+# Fix missing C headers for CGo on macOS 10.15
+export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"
+export CGO_ENABLED=1
+export CC=gcc
 
 # Spark/Scala
 export SPARK_HOME="$HOME/spark-2.4.4"
 export PATH="$SPARK_HOME/bin:$PATH"
 export PATH="$ZEPPELIN_HOME/bin:$PATH"
 export PYSPARK_PYTHON="$WRPATH/datasci/scripts/datasci_env/bin/python"
+export PYSPARK_DRIVER_PYTHON="$WRPATH/datasci/scripts/datasci_env/bin/jupyter"
+export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
 
 function workenv() {
 	echo "GOPATH is $GOPATH"
@@ -19,17 +25,17 @@ function workenv() {
 }
 
 function devstart() {
-    work && cd ../backend
+    workenv && cd ../backend
     scripts/devctl.sh start
 }
 
 function devstop() {
-    work && cd ../backend
+    workenv && cd ../backend
     scripts/devctl.sh stop
 }
 
 function devreboot() {
-    work && cd ../backend
+    workenv && cd ../backend
     scripts/devctl.sh stop
     make clean
     make install
@@ -37,7 +43,7 @@ function devreboot() {
 }
 
 function clean_test() {
-    work && cd ../backend
+    workenv && cd ../backend
     go clean -cache
 	make clean
 	make install
@@ -53,6 +59,3 @@ function query_test() {
     # query_test some_file.json
     curl -X POST $WR_TEST_URL -d @$1 --header "Content-Type: application/json; charset=utf-8" > test_output.json
 }
-
-# load secrets
-source $HOME/.secrets

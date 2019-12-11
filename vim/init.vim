@@ -49,7 +49,8 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'dense-analysis/ale'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'ncm2/float-preview.nvim'
-Plug 'lervag/vimtex'
+Plug 'gillyb/stable-windows'
+Plug 'tomasiser/vim-code-dark'
 " Language plugins
 " ----------------
 Plug 'rust-lang/rust.vim'
@@ -67,7 +68,7 @@ set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 set notermguicolors 
 
 " Gruvbox (dark)
-colorscheme gruvbox
+colorscheme codedark
 set background=dark
 let g:airline_theme='gruvbox'
 hi Normal ctermbg=NONE
@@ -149,8 +150,6 @@ nnoremap <C-f> :Rg<SPACE>
 noremap <silent> <C-p> :FZF<CR>
 nnoremap <silent> gd :ALEGoToDefinitionInSplit<CR>
 nnoremap <silent> gr :ALEFindReferences<CR>
-nnoremap <silent> vt :vnew <bar> term<CR>a
-nnoremap <silent> ht :new <bar> term<CR>a
 vnoremap <C-f> y/<C-R>"<CR>
 vnoremap <leader>" c""<ESC>P
 inoremap jk <ESC>
