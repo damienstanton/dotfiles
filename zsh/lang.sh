@@ -24,7 +24,6 @@ alias psp="psc-package"
 alias please="sudo"
 alias sorry='sudo $(fc -ln -1)'
 alias cm="cargo make"
-alias clang="/usr/bin/clang" # messing with NDK somehow realiased/smylinked clang. V bad.
 
 # override GOPATH
 gopath() {

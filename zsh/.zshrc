@@ -46,7 +46,6 @@ export PATH="$HOME/graal/Contents/Home/bin:$PATH"
 # Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export NDK_HOME="$ANDROID_HOME/ndk-bundle"
-export PATH="/Users/damien/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin:$PATH"
 
 # Scala
 export PATH="$HOME/sbt/bin:$PATH"
