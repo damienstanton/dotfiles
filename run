@@ -34,10 +34,10 @@ function install() {
   if [ ! -d "$HOME/.config/regolith/i3" ]; then
       mkdir -p $HOME/.config/regolith/i3
   fi
-  cp regolith/config "$HOME/.config/regolith/i3/"
-  cp regolith/.Xresources-regolith "$HOME"
-  cp -r regolith/.Xresources.d/ "$HOME"
-  cp -r regolith/i3xrocks "$HOME/.config/"
+  # cp regolith/config "$HOME/.config/regolith/i3/"
+  # cp regolith/.Xresources-regolith "$HOME"
+  # cp -r regolith/.Xresources.d/ "$HOME"
+  # cp -r regolith/i3xrocks "$HOME/.config/"
   echo "-> Done"
 }
 
@@ -49,10 +49,10 @@ function upload() {
   cp $zsh_work_file zsh/
   cp $nvim_file vim/
   cp $vim_pres_file vim/
-  cp $regolith_config regolith/
-  cp $regolith_resources regolith/
-  cp -r $regolith_res_dir regolith/
-  cp -r $regolith_bar_dir regolith/
+  # cp $regolith_config regolith/
+  # cp $regolith_resources regolith/
+  # cp -r $regolith_res_dir regolith/
+  # cp -r $regolith_bar_dir regolith/
   git add -A && git commit -m "Dotfiles synced on $(date +%Y-%m-%d)" && git push
 }
 

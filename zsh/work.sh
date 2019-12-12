@@ -5,11 +5,6 @@ export SOLENGPATH="$HOME/work/solutions-engineering"
 # Set GOPATH to default work gopath
 export GOPATH="$WRPATH/backend"
 
-# Fix missing C headers for CGo on macOS 10.15
-export CPATH="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"
-export CGO_ENABLED=1
-export CC=gcc
-
 # Spark/Scala
 export SPARK_HOME="$HOME/spark-2.4.4"
 export PATH="$SPARK_HOME/bin:$PATH"
