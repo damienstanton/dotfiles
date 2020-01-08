@@ -24,6 +24,7 @@ alias psp="psc-package"
 alias please="sudo"
 alias sorry='sudo $(fc -ln -1)'
 alias cm="cargo make"
+alias backup="cd $HOME && restic backup personal work edu training oss -r /Volumes/Storage/restic_backups"
 
 # override GOPATH
 gopath() {

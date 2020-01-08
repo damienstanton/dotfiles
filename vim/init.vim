@@ -51,6 +51,7 @@ Plug 'cormacrelf/vim-colors-github'
 Plug 'ncm2/float-preview.nvim'
 Plug 'gillyb/stable-windows'
 Plug 'tomasiser/vim-code-dark'
+Plug 'JuliaEditorSupport/julia-vim'
 " Language plugins
 " ----------------
 Plug 'rust-lang/rust.vim'
