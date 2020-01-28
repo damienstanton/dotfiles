@@ -35,13 +35,16 @@ export PATH="$HOME/go/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 
 # Java
-# export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
-
+# GraalVM
 # export JAVA_HOME="$HOME/graal/Contents/Home"
 # export PATH="$HOME/graal/Contents/Home/bin:$PATH"
 
+# System Java
 export JAVA_HOME="$(/usr/libexec/java_home)"
 export PATH="$JAVA_HOME/bin:$PATH"
+
+# Go
+export PATH="$HOME/.gvm/bin:$PATH"
 
 # Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
@@ -67,6 +70,5 @@ export PYTHONDONTWRITEBYTECODE=1
 
 source ~/.secret
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/damien/.sdkman"
-[[ -s "/Users/damien/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/damien/.sdkman/bin/sdkman-init.sh"
+# Go (GVM)
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"

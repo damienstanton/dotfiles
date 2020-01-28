@@ -14,7 +14,7 @@ regolith_resources="$HOME/.Xresources-regolith"
 regolith_res_dir="$HOME/.Xresources.d"
 regolith_bar_dir="$HOME/.config/i3xrocks"
 
-function install() {
+install() {
   echo "-> Getting latest updates from GitHub"
   git pull
   if [ ! -d "$HOME/zsh" ]; then
@@ -41,7 +41,7 @@ function install() {
   echo "-> Done"
 }
 
-function upload() {
+upload() {
   echo "-> Copying configuration files"
   cp $zsh_file zsh/
   cp $zsh_theme_file zsh/
@@ -56,7 +56,7 @@ function upload() {
   git add -A && git commit -m "Dotfiles synced on $(date +%Y-%m-%d)" && git push
 }
 
-function print_help() {
+print_help() {
   echo "Hey there."
   echo "    This run script requires an arg of either 'install' or 'upload'"
   echo "    -> install: Overwrites your local configs with those at the latest pull of this branch"

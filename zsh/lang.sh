@@ -13,7 +13,7 @@ alias c="clear;exa -l -B"
 alias ct="clear;exa -T --level=2"
 alias untar="tar -xvf"
 alias sub="git submodule update --init --recursive"
-alias updateall="brew update && brew upgrade && brew cleanup && npm update -g && rustup update"
+alias updateall="brew update && brew upgrade && brew cleanup && npm i -g npm --force && npm update -g && rustup update"
 alias rff="rm -rf"
 alias k="kubectl"
 alias listening="lsof -P | grep LISTEN"
@@ -96,16 +96,28 @@ synchronize() {
 	git push
 }
 
+# build a new Java project using maven
+init_java() {
+    project=$2
+    group=$1
+    mvn -B archetype:generate \
+        -DarchetypeGroupId=org.apache.maven.archetypes \
+        -DgroupId=$group \
+        -DartifactId=$project
+    echo "Created project $group.$project"
+    cd $project
+}
+
 # build a new C++ project using gnu make
 init_cpp() {
-project=$1
-cpp_ver=$2
+    project=$1
+    cpp_ver=$2
 
-if [[ -z $2 ]]; then
-    cpp_ver="c++17"
-fi
+    if [[ -z $2 ]]; then
+        cpp_ver="c++17"
+    fi
+    mkdir $project && cd $project
 
-mkdir $project && cd $project
 cat <<MAKEFILE > Makefile
 name := \$(shell basename \$(CURDIR))
 
@@ -121,8 +133,8 @@ clean:
 	@echo "Deleting \$(name)"
 	@rm \$(name)
 MAKEFILE
-cd ..
-echo "Created project $project"
+    cd ..
+    echo "Created project $project"
 }
 
 # retrieve one of my git repos (since my username is known, this is an easy shorthand)
