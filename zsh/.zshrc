@@ -15,7 +15,6 @@ KEYTIMEOUT=1
 plugins=(git dirhistory docker git-extras gradle node npm osx pip sudo wd vi-mode)
 
 source $HOME/zsh/lang.sh
-source $HOME/zsh/work.sh
 source $ZSH/oh-my-zsh.sh
 
 
@@ -68,7 +67,10 @@ export PYTHONDONTWRITEBYTECODE=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source ~/.secret
 
 # Go (GVM)
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+# If on a work machine
+source ~/.secret
+source $HOME/zsh/work.sh

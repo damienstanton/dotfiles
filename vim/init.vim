@@ -9,9 +9,8 @@
 set encoding=UTF-8
 set tabstop=4
 set shiftwidth=4
-set softtabstop=4
-set expandtab
-set copyindent
+set noexpandtab
+set autoindent
 set relativenumber
 set mouse=a
 set backspace=indent,eol,start

@@ -26,6 +26,50 @@ alias sorry='sudo $(fc -ln -1)'
 alias cm="cargo make"
 alias backup="cd $HOME && restic backup personal work edu training oss -r /Volumes/Storage/restic_backups"
 
+# create a new go-mod based Go project
+goproject() {
+    coord=$1
+    project=$2
+    mkdir $project && cd $project
+    go mod init $coord/$project
+cat <<ENDGOFILE > $project.go
+package main
+
+import "fmt"
+
+func main() { fmt.Println("$project OK") }
+ENDGOFILE
+cat <<ENDGOTESTFILE > ${project}_test.go
+package main
+
+import "testing"
+
+func TestNothing(t *testing.T) {
+    if 1 != 1 { t.Fatal("not possible") }
+}
+ENDGOTESTFILE
+cat <<ENDMAKE > Makefile
+.PHONY: default
+default:
+	build test run
+
+.PHONY: build
+build:
+	@go build -o bin/$project
+
+.PHONY: test
+test:
+	@go test -v -cover
+
+.PHONY: _run
+_run:
+	@go run $project.go
+
+.PHONY: run
+run: build _run
+ENDMAKE
+}
+
 # override GOPATH
 gopath() {
     cmd=$1
