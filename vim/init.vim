@@ -51,6 +51,8 @@ Plug 'ncm2/float-preview.nvim'
 Plug 'gillyb/stable-windows'
 Plug 'tomasiser/vim-code-dark'
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Language plugins
 " ----------------
 Plug 'rust-lang/rust.vim'
@@ -60,6 +62,7 @@ Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'leafgarland/typescript-vim'
+
 call plug#end()
 
 " Style 
@@ -70,8 +73,10 @@ set notermguicolors
 " Gruvbox (dark)
 colorscheme codedark
 set background=dark
-let g:airline_theme='gruvbox'
 hi Normal ctermbg=NONE
+if exists("$TMUX")
+	autocmd VimEnter * Tmuxline vim_statusline_2 .
+endif
 
 " GitHub (light)
 " colorscheme github

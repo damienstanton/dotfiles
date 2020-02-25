@@ -68,9 +68,11 @@ export PYTHONDONTWRITEBYTECODE=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
-# Go (GVM)
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+# Go
+# # Uncomment to use gvm (multiple Go versions simultaneously)
+# [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+export GO111MODULE=auto
 
 # If on a work machine
+source ~/zsh/work.sh
 source ~/.secret
-source $HOME/zsh/work.sh
