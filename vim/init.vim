@@ -75,7 +75,7 @@ colorscheme codedark
 set background=dark
 hi Normal ctermbg=NONE
 if exists("$TMUX")
-	autocmd VimEnter * Tmuxline vim_statusline_2 .
+	autocmd VimEnter * Tmuxline vim_statusline_2
 endif
 
 " GitHub (light)
