@@ -13,7 +13,7 @@ alias c="clear;exa -l -B"
 alias ct="clear;exa -T --level=2"
 alias untar="tar -xvf"
 alias sub="git submodule update --init --recursive"
-alias updateall="brew update && brew upgrade && brew cleanup && npm i -g npm --force && npm update -g && rustup update"
+alias updateall="brew update && brew upgrade && brew cleanup && npm i -g npm && npm update -g && rustup update"
 alias rff="rm -rf"
 alias k="kubectl"
 alias listening="lsof -P | grep LISTEN"
@@ -68,42 +68,6 @@ _run:
 .PHONY: run
 run: build _run
 ENDMAKE
-}
-
-# override GOPATH
-gopath() {
-    cmd=$1
-    target=$2
-    case $cmd in
-        "reset")
-            export GOPATH=$(<$HOME/.tmp/saved_gopath)
-            echo "GOPATH has been reset to $GOPATH"
-            echo $GOPATH > $HOME/.tmp/saved_gopath
-            ;;
-        "override")
-            echo $GOPATH > $HOME/.tmp/saved_gopath
-            if [ -z $target ]; then
-                export GOPATH=$(pwd)
-                echo "New GOPATH=$GOPATH"
-            else
-                case $target in
-                    ".")
-                        export GOPATH=$(pwd)
-                        echo "New GOPATH=$GOPATH"
-                        ;;
-                    *)
-                        export GOPATH=$target
-                        echo "New GOPATH=$GOPATH"
-                        ;;
-                esac
-            fi
-            ;;
-        *)
-            echo "Need a valid 'gopath' command. Try:"
-            echo "    -> override"
-            echo "    -> reset"
-            ;;
-    esac
 }
 
 # runner for CMake
@@ -210,15 +174,12 @@ bin/*
 node_modules/
 .vscode/
 .idea/
-vendor/
 target/
 build/
 .gradle/
 **/*.rs.bk
 .metals/
 .bloop/
-dist/
-dist-newstyle/
 I
 }
 

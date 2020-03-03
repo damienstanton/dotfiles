@@ -2,7 +2,6 @@ export WRPATH=$HOME/work/graph
 export PATH="$WRPATH/backend/scripts:$PATH"
 export PATH="$WRPATH/datasci/scripts:$PATH"
 export SOLENGPATH="$HOME/work/solutions-engineering"
-export GOPATH="$WRPATH/backend"
 
 # Spark/Scala
 export SPARK_HOME="$HOME/spark-2.4.4"

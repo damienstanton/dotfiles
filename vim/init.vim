@@ -48,7 +48,6 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'dense-analysis/ale'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'ncm2/float-preview.nvim'
-Plug 'gillyb/stable-windows'
 Plug 'tomasiser/vim-code-dark'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

@@ -52,10 +52,6 @@ export NDK_HOME="$ANDROID_HOME/ndk-bundle"
 # Scala
 export PATH="$HOME/sbt/bin:$PATH"
 
-# Node
-export PATH="$HOME/nodejs/bin:$PATH"
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 # Haskell
 source $HOME/.ghcup/env
 
@@ -68,10 +64,13 @@ export PYTHONDONTWRITEBYTECODE=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
+# Silly stuff
+export PATH="$HOME/doomfiles/bin:$PATH"
+
 # Go
 # # Uncomment to use gvm (multiple Go versions simultaneously)
 # [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-export GO111MODULE=auto
+export GO111MODULE=on
 
 # If on a work machine
 source ~/zsh/work.sh
