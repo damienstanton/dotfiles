@@ -11,7 +11,7 @@ set tabstop=4
 set shiftwidth=4
 set noexpandtab
 set autoindent
-set relativenumber
+set number
 set mouse=a
 set backspace=indent,eol,start
 set updatetime=300
@@ -126,7 +126,7 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Go
 " --
-let g:go_fmt_command="gofmt"
+let g:go_fmt_command="goimports"
 
 " Rust
 " ----

@@ -53,7 +53,7 @@ export NDK_HOME="$ANDROID_HOME/ndk-bundle"
 export PATH="$HOME/sbt/bin:$PATH"
 
 # Haskell
-source $HOME/.ghcup/env
+# source $HOME/.ghcup/env
 
 # Pyenv
 export PYENV_ROOT="$HOME/bin/.pyenv"
@@ -73,5 +73,5 @@ export PATH="$HOME/doomfiles/bin:$PATH"
 export GO111MODULE=on
 
 # If on a work machine
-source ~/zsh/work.sh
-source ~/.secret
+# source ~/zsh/work.sh
+# source ~/.secret
