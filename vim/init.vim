@@ -11,7 +11,7 @@ set tabstop=4
 set shiftwidth=4
 set noexpandtab
 set autoindent
-set number
+" set number
 set mouse=a
 set backspace=indent,eol,start
 set updatetime=300
@@ -73,15 +73,16 @@ set notermguicolors
 colorscheme codedark
 set background=dark
 hi Normal ctermbg=NONE
-if exists("$TMUX")
-	autocmd VimEnter * Tmuxline vim_statusline_2
-endif
 
 " GitHub (light)
 " colorscheme github
 " set background=light
 " let g:airline_theme = "github"
 " hi Normal ctermbg=NONE
+
+if exists("$TMUX")
+	autocmd VimEnter * Tmuxline vim_statusline_2
+endif
 
 let g:airline_powerline_fonts=1
 let g:airline_skip_empty_sections=1

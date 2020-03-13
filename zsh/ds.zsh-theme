@@ -37,12 +37,12 @@ function vi_mode_prompt_info() {
   echo "${${KEYMAP/vicmd/[% N]%}/(main|viins)/[% I]%}"
 }
 
+# timestamp %{$fg_no_bold[green]%}[%T]\
 
 # The main prompt
 # ---------------
-PROMPT='%{$fg_no_bold[green]%}[%T]\
- %{$fg_no_bold[magenta]%}[%2~]\
- $(check_git_prompt_info)\
+PROMPT='%{$fg_no_bold[magenta]%}[%2~]\
+$(check_git_prompt_info)\
 %{$reset_color%}'
 
 # RPROMPT='$(get_right_prompt)'

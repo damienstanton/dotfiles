@@ -73,5 +73,5 @@ export PATH="$HOME/doomfiles/bin:$PATH"
 export GO111MODULE=on
 
 # If on a work machine
-# source ~/zsh/work.sh
-# source ~/.secret
+source ~/zsh/work.sh
+source ~/.secret
