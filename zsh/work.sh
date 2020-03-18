@@ -1,5 +1,6 @@
 export WRPATH=$HOME/work/graph
 export PATH="$WRPATH/backend/scripts:$PATH"
+export PATH="$WRPATH/backend/bin:$PATH"
 export PATH="$WRPATH/datasci/scripts:$PATH"
 export SOLENGPATH="$HOME/work/solutions-engineering"
 
@@ -12,7 +13,6 @@ export PYSPARK_DRIVER_PYTHON="$WRPATH/datasci/scripts/datasci_env/bin/jupyter"
 export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
 
 function workenv() {
-	echo "GOPATH is $GOPATH"
 	cd $WRPATH/datasci
 	source $WRPATH/datasci/scripts/datasci_env/bin/activate
 }
