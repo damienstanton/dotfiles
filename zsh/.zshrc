@@ -52,16 +52,16 @@ export NDK_HOME="$ANDROID_HOME/ndk-bundle"
 # Scala
 export PATH="$HOME/sbt/bin:$PATH"
 
-# Haskell
-# source $HOME/.ghcup/env
-
 # Pyenv
 export PYENV_ROOT="$HOME/bin/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$PYENV_ROOT/shims:$PATH"
 export PYTHONDONTWRITEBYTECODE=1
 
+# fzf and fd configs
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND="fd --type file --color=always"
+export FZF_DEFAULT_OPTS="--ansi"
 
 
 # Silly stuff
