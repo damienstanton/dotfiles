@@ -55,11 +55,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Language plugins
 " ----------------
 Plug 'rust-lang/rust.vim'
-Plug 'derekwyatt/vim-scala'
-Plug 'udalov/kotlin-vim'
 Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'reasonml-editor/vim-reason-plus'
 Plug 'leafgarland/typescript-vim'
 
 call plug#end()
