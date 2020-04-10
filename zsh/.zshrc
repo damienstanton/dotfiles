@@ -17,7 +17,6 @@ plugins=(git dirhistory docker git-extras gradle node npm osx pip sudo wd vi-mod
 source $HOME/zsh/lang.sh
 source $ZSH/oh-my-zsh.sh
 
-
 # Scripts
 export PATH="$HOME/work/scripts:$PATH"
 
@@ -30,8 +29,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Pip-installed binaries
 export PATH="$HOME/.local/bin:$PATH"
 
-export PATH="$HOME/go/bin:$PATH"
-export PATH="$GOPATH/bin:$PATH"
+# Updated LLVM
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
 # Java
 # GraalVM
@@ -41,9 +41,6 @@ export PATH="$GOPATH/bin:$PATH"
 # System Java
 export JAVA_HOME="$(/usr/libexec/java_home)"
 export PATH="$JAVA_HOME/bin:$PATH"
-
-# Go
-export PATH="$HOME/.gvm/bin:$PATH"
 
 # Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
@@ -68,9 +65,9 @@ export FZF_DEFAULT_OPTS="--ansi"
 export PATH="$HOME/doomfiles/bin:$PATH"
 
 # Go
-# # Uncomment to use gvm (multiple Go versions simultaneously)
-# [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 export GO111MODULE=on
+export PATH="$HOME/go/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 
 # If on a work machine
 source ~/zsh/work.sh
