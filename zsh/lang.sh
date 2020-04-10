@@ -11,7 +11,7 @@ alias push="git push"
 alias pull="git pull --rebase"
 alias c="clear;exa -l -B"
 alias ct="clear;exa -T --level=2"
-alias untar="tar -xvf"
+alias ca="clear; ls -la"
 alias sub="git submodule update --init --recursive"
 alias updateall="brew update && brew upgrade && brew cleanup && npm i -g npm && npm update -g && rustup update"
 alias rff="rm -rf"
@@ -19,12 +19,9 @@ alias k="kubectl"
 alias listening="lsof -P | rg LISTEN"
 alias reload="source $HOME/.zshrc"
 alias gdiff="git difftool --no-prompt --tool vimdiff"
-alias pip="python3 -m pip"
-alias psp="psc-package"
 alias please="sudo"
 alias sorry='sudo $(fc -ln -1)'
-alias cm="cargo make"
-alias backup="cd $HOME && restic backup personal work edu training oss -r /Volumes/Storage/restic_backups"
+alias glog= "git log --oneline --decorate --graph"
 
 # create a new go-mod based Go project
 goproject() {
@@ -105,7 +102,7 @@ synchronize() {
 }
 
 # build a new Java project using maven
-init_java() {
+javaproject() {
     project=$2
     group=$1
     mvn -B archetype:generate \
@@ -116,38 +113,24 @@ init_java() {
     cd $project
 }
 
-# build a new C++ project using gnu make
-init_cpp() {
-    project=$1
-    cpp_ver=$2
-
-    if [[ -z $2 ]]; then
-        cpp_ver="c++17"
-    fi
-    mkdir $project && cd $project
-
-cat <<MAKEFILE > Makefile
-name := \$(shell basename \$(CURDIR))
-
-default: build
-
-build:
-	@echo "Compiling..."
-	@g++ -pipe -O2 -std=$cpp_ver *.cpp -lm -o \$(name)
-	@echo "Done. Calling executable: \$(name)"
-	./\$(name)
-
-clean:
-	@echo "Deleting \$(name)"
-	@rm \$(name)
-MAKEFILE
-    cd ..
-    echo "Created project $project"
+# build a new Python project with reasonable defaults
+pyproject() {
+	mkdir $1 && cd $1
+	echo "Building a new project: $1..."
+	python3 -m venv env
+	source env/bin/activate
+	pip3 install pytest pylint mypy python-language-server black pyflakes ipython
+	echo "Created project $1 successfully"
 }
 
-# retrieve one of my git repos (since my username is known, this is an easy shorthand)
+# retrieve one of my GitHub repos
 getme() {
     git clone https://github.com/damienstanton/$1 $2 # where 2 is an alias
+}
+
+# retrieve an arbitrary project from GitHub
+get() {
+	git clone --recursive https://github.com/$1/$2 $@
 }
 
 # simpler one-shot commit shortcut
@@ -169,8 +152,6 @@ ignore() {
 cat <<I>> .gitignore
 *.DS_Store
 env/
-bin/*
-!src/bin/
 node_modules/
 .vscode/
 .idea/
@@ -180,6 +161,8 @@ build/
 **/*.rs.bk
 .metals/
 .bloop/
+.pytest_cache/
+.mypy_cache/
 I
 }
 
@@ -416,8 +399,8 @@ show() {
     awk "NR >= $start && NR <= $stop + 10" $file_path
 }
 
-# create a new github repo from the command line
-createremote() {
+# create a new GitHub repo from the command line
+newrepo() {
     w=$1
     u="damienstanton"
     if [ -z "$1" ]; then
@@ -449,6 +432,6 @@ syncwith() {
     git fetch up master \
         && git merge up/master \
         && git push \
-        && echo "👌"
+        && echo "OK"
 }
 
