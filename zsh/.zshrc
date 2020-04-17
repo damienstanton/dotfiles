@@ -33,14 +33,14 @@ export PATH="$HOME/.local/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/llvm/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
-# Java
-# GraalVM
+# GraalVM Java
 # export JAVA_HOME="$HOME/graal/Contents/Home"
 # export PATH="$HOME/graal/Contents/Home/bin:$PATH"
 
 # System Java
 export JAVA_HOME="$(/usr/libexec/java_home)"
 export PATH="$JAVA_HOME/bin:$PATH"
+export JAVA_OPTS="-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee"
 
 # Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
