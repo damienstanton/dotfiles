@@ -69,6 +69,9 @@ export GO111MODULE=on
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 
+# Flutter
+export PATH="$HOME/flutter/bin:$PATH"
+
 # If on a work machine
 source ~/zsh/work.sh
 source ~/.secret
