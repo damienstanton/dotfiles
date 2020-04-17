@@ -46,6 +46,9 @@ export PATH="$JAVA_HOME/bin:$PATH"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export NDK_HOME="$ANDROID_HOME/ndk-bundle"
 
+# Flutter
+export PATH="$HOME/flutter/bin:$PATH"
+
 # Scala
 export PATH="$HOME/sbt/bin:$PATH"
 
