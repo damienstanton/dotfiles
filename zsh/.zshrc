@@ -30,8 +30,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Updated LLVM
-export LDFLAGS="-L/usr/local/opt/llvm/lib"
-export CPPFLAGS="-I/usr/local/opt/llvm/include"
+export LDFLAGS="-L/usr/local/opt/llvm@8/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm@8/include"
 
 # GraalVM Java
 # export JAVA_HOME="$HOME/graal/Contents/Home"
@@ -40,7 +40,6 @@ export CPPFLAGS="-I/usr/local/opt/llvm/include"
 # System Java
 export JAVA_HOME="$(/usr/libexec/java_home)"
 export PATH="$JAVA_HOME/bin:$PATH"
-export JAVA_OPTS="-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee"
 
 # Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
@@ -51,8 +50,6 @@ export PATH="$HOME/sbt/bin:$PATH"
 
 # Pyenv
 export PYENV_ROOT="$HOME/bin/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-export PATH="$PYENV_ROOT/shims:$PATH"
 export PYTHONDONTWRITEBYTECODE=1
 
 # fzf and fd configs
