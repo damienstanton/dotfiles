@@ -50,11 +50,9 @@ Plug 'cormacrelf/vim-colors-github'
 Plug 'ncm2/float-preview.nvim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'JuliaEditorSupport/julia-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Language plugins
 " ----------------
-Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'leafgarland/typescript-vim'
@@ -87,10 +85,13 @@ let g:airline_left_sep=' '
 let g:airline_right_sep=' '
 let g:tmuxline_powerline_separators=0
 
-" ALE
-" ---
+" ALE & LCS
+" ---------
+let g:LanguageClient_serverCommands = {
+	\ 'rust': ['rust-analyzer'],
+\ }
 let g:ale_linters = { 
-    \ 'rust': ['rls'],
+    \ 'rust': ['rust-analyzer'],
     \ 'python': ['pyls', 'pyflakes'],
 \}
 let g:ale_fixers= { 
@@ -129,13 +130,6 @@ let g:go_fmt_command="goimports"
 " Rust
 " ----
 let g:rustfmt_autosave=1
-let g:ale_rust_rls_config = {
-	\ 'rust': {
-	    \ 'all_targets': 1,
-		\ 'build_on_save': 0,
-		\ 'clippy_preference': 'on'
-	\ }
-\ }
 
 " Keybindings
 " -----------
