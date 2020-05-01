@@ -49,13 +49,14 @@ Plug 'dense-analysis/ale'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'ncm2/float-preview.nvim'
 Plug 'tomasiser/vim-code-dark'
-Plug 'JuliaEditorSupport/julia-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Language plugins
 " ----------------
 Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'leafgarland/typescript-vim'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
@@ -117,6 +118,7 @@ set completeopt+=noinsert
 set completeopt-=preview
 let g:float_preview#docked=0
 
+
 " Language specific lints/syntax
 " ------------------------------
 " JSON
@@ -129,7 +131,8 @@ let g:go_fmt_command="goimports"
 
 " Rust
 " ----
-let g:rustfmt_autosave=1
+let g:rust_clip_command = 'pbcopy'
+let g:rustfmt_autosave = 1
 
 " Keybindings
 " -----------
