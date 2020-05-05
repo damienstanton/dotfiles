@@ -48,6 +48,7 @@ Plug 'dense-analysis/ale'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'ncm2/float-preview.nvim'
 Plug 'tomasiser/vim-code-dark'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Language plugins
 " ----------------
@@ -86,7 +87,7 @@ let g:tmuxline_powerline_separators=0
 " ---------
 let g:ale_linters = { 
     \ 'rust': ['rust-analyzer'],
-    \ 'python': ['pyls', 'pyflakes'],
+    \ 'python': ['pyls', 'pyflakes']
 \}
 let g:ale_fixers= { 
     \ 'python': ['black'],
@@ -94,6 +95,8 @@ let g:ale_fixers= {
 let g:ale_fix_on_save=1
 let g:ale_sign_column_always=1
 let g:ale_completion_enabled=1
+set omnifunc=ale#completion#OmniFunc
+let g:ale_completion_tsserver_autoimport = 1
 let g:airline#extensions#ale#enabled=1
 let g:ale_set_balloons=1
 let g:ale_sign_warning = '⚠'
