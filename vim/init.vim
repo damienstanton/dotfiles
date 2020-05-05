@@ -31,7 +31,6 @@ Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'airblade/vim-gitgutter'
 Plug 'matze/vim-move'
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -49,14 +48,11 @@ Plug 'dense-analysis/ale'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'ncm2/float-preview.nvim'
 Plug 'tomasiser/vim-code-dark'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Language plugins
 " ----------------
 Plug 'cespare/vim-toml'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'leafgarland/typescript-vim'
-Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
@@ -88,9 +84,6 @@ let g:tmuxline_powerline_separators=0
 
 " ALE & LCS
 " ---------
-let g:LanguageClient_serverCommands = {
-	\ 'rust': ['rust-analyzer'],
-\ }
 let g:ale_linters = { 
     \ 'rust': ['rust-analyzer'],
     \ 'python': ['pyls', 'pyflakes'],
@@ -125,14 +118,18 @@ let g:float_preview#docked=0
 " ----
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
-" Go
-" --
-let g:go_fmt_command="goimports"
-
 " Rust
 " ----
+call ale#linter#Define('rust', {
+	\   'name': 'rust-analyzer',
+	\   'lsp': 'stdio',
+	\   'executable': 'rust-analyzer',
+	\   'command': '%e',
+	\   'project_root': '.',
+\})
 let g:rust_clip_command = 'pbcopy'
 let g:rustfmt_autosave = 1
+
 
 " Keybindings
 " -----------
