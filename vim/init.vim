@@ -46,7 +46,6 @@ Plug 'dense-analysis/ale'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'ncm2/float-preview.nvim'
 Plug 'tomasiser/vim-code-dark'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Language plugins
 " ----------------
