@@ -32,7 +32,6 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'airblade/vim-gitgutter'
 Plug 'matze/vim-move'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'zivyangll/git-blame.vim'
 Plug 'tpope/vim-commentary'
@@ -46,6 +45,7 @@ Plug 'dense-analysis/ale'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'ncm2/float-preview.nvim'
 Plug 'tomasiser/vim-code-dark'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Language plugins
 " ----------------
@@ -120,13 +120,6 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Rust
 " ----
-call ale#linter#Define('rust', {
-	\   'name': 'rust-analyzer',
-	\   'lsp': 'stdio',
-	\   'executable': 'rust-analyzer',
-	\   'command': '%e',
-	\   'project_root': '.',
-\})
 let g:rust_clip_command = 'pbcopy'
 let g:rustfmt_autosave = 1
 

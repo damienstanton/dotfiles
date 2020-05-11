@@ -14,6 +14,8 @@ regolith_resources="$HOME/.Xresources-regolith"
 regolith_res_dir="$HOME/.Xresources.d"
 regolith_bar_dir="$HOME/.config/i3xrocks"
 
+coc_settings_file="$HOME/.config/nvim/coc-settings.json"
+
 install() {
   echo "-> Getting latest updates from GitHub"
   git pull
@@ -31,6 +33,7 @@ install() {
   fi
   cp vim/presentation.vim "$HOME/.vim/"
   cp vim/presentation.vim "$HOME/.config/nvim/"
+  cp vim/coc-settings.json "$HOME/.config/nvim/"
   if [ ! -d "$HOME/.config/regolith/i3" ]; then
       mkdir -p $HOME/.config/regolith/i3
   fi
@@ -49,6 +52,7 @@ upload() {
   cp $zsh_work_file zsh/
   cp $nvim_file vim/
   cp $vim_pres_file vim/
+  cp $coc_settings_file vim/
   # cp $regolith_config regolith/
   # cp $regolith_resources regolith/
   # cp -r $regolith_res_dir regolith/
