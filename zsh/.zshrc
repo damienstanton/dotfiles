@@ -17,6 +17,9 @@ plugins=(git dirhistory docker git-extras gradle node npm osx pip sudo wd vi-mod
 source $HOME/zsh/lang.sh
 source $ZSH/oh-my-zsh.sh
 
+# Prerelease nvim
+export PATH="$HOME/nvim-osx64/bin:$PATH"
+
 # Scripts
 export PATH="$HOME/work/scripts:$PATH"
 
