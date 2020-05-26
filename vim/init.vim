@@ -32,6 +32,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'airblade/vim-gitgutter'
 Plug 'matze/vim-move'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'zivyangll/git-blame.vim'
 Plug 'tpope/vim-commentary'
@@ -135,7 +136,8 @@ let g:multi_cursor_quit_key='<Esc>'
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap <C-f> :Rg<SPACE>
-noremap <silent> <C-p> :FZF<CR>
+noremap <silent> <C-p> :Files<CR>
+nnoremap <silent> gf :GFiles<CR>
 nnoremap <silent> gd :ALEGoToDefinitionInSplit<CR>
 nnoremap <silent> gr :ALEFindReferences<CR>
 nnoremap <silent> vt :vnew <bar> term<CR>a
