@@ -23,6 +23,15 @@ alias please="sudo"
 alias sorry='sudo $(fc -ln -1)'
 alias glog= "git log --oneline --decorate --graph"
 
+# activate a Python virtualenv in the current dir
+activate() {
+	if [ -z "$1" ]; then
+		source env/bin/activate
+	else
+		source $1/bin/activate
+	fi
+}
+
 # create a new go-mod based Go project
 goproject() {
     coord=$1
