@@ -36,13 +36,30 @@ export PATH="$HOME/.local/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/llvm@8/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm@8/include"
 
-# GraalVM Java
-# export JAVA_HOME="$HOME/graal/Contents/Home"
-# export PATH="$HOME/graal/Contents/Home/bin:$PATH"
-
-# System Java
-export JAVA_HOME="$(/usr/libexec/java_home)"
-export PATH="$JAVA_HOME/bin:$PATH"
+# Toggle JVMs
+jenv() {
+	if [ -z $1 ]; then
+		echo "Pick 8, 11, or 14"
+	else
+		case $1 in
+			8)
+				export JAVA_HOME="$(/usr/libexec/java_home -v1.8)"
+				;;
+			11)
+				export JAVA_HOME="$(/usr/libexec/java_home -v11)"
+				;;
+			14)
+				export JAVA_HOME="$(/usr/libexec/java_home -v14)"
+				;;
+			*)
+				echo "Not a valid Java version on this machine"
+				;;
+		esac
+	fi
+	export PATH="$JAVA_HOME/bin:$PATH"
+}
+# set JDK 8 as default for dumb legacy reasons
+jenv 8
 
 # Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
