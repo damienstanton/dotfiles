@@ -8,6 +8,7 @@ zsh_work_file="$HOME/zsh/work.sh"
 
 nvim_file="$HOME/.config/nvim/init.vim"
 vim_pres_file="$HOME/.vim/presentation.vim"
+vim_coc_file="$HOME/.vim/coc.vim"
 
 regolith_config="$HOME/.config/regolith/i3/config"
 regolith_resources="$HOME/.Xresources-regolith"
@@ -33,6 +34,7 @@ install() {
   fi
   cp vim/presentation.vim "$HOME/.vim/"
   cp vim/presentation.vim "$HOME/.config/nvim/"
+  cp vim/coc.vim "$HOME/.config/nvim/"
   cp vim/coc-settings.json "$HOME/.config/nvim/"
   if [ ! -d "$HOME/.config/regolith/i3" ]; then
       mkdir -p $HOME/.config/regolith/i3
@@ -52,6 +54,7 @@ upload() {
   cp $zsh_work_file zsh/
   cp $nvim_file vim/
   cp $vim_pres_file vim/
+  cp $vim_coc_file vim/
   cp $coc_settings_file vim/
   # cp $regolith_config regolith/
   # cp $regolith_resources regolith/

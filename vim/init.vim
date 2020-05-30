@@ -42,7 +42,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'ryanoasis/vim-devicons'
 Plug 'edkolev/tmuxline.vim'
-Plug 'dense-analysis/ale'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'ncm2/float-preview.nvim'
 Plug 'tomasiser/vim-code-dark'
@@ -52,6 +51,7 @@ Plug 'neoclide/coc.nvim', {'tag': 'v0.0.78'}
 " ----------------
 Plug 'cespare/vim-toml'
 Plug 'leafgarland/typescript-vim'
+Plug 'damienstanton/vim-swift'
 
 call plug#end()
 
@@ -80,38 +80,6 @@ let g:airline_skip_empty_sections=1
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
 let g:tmuxline_powerline_separators=0
-
-" ALE & LCS
-" ---------
-let g:ale_linters = { 
-    \ 'rust': ['rust-analyzer'],
-    \ 'python': ['pyls', 'pyflakes']
-\}
-let g:ale_fixers= { 
-    \ 'python': ['black'],
-\}
-let g:ale_fix_on_save=1
-let g:ale_sign_column_always=1
-let g:ale_completion_enabled=1
-set omnifunc=ale#completion#OmniFunc
-let g:ale_completion_tsserver_autoimport = 1
-let g:airline#extensions#ale#enabled=1
-let g:ale_set_balloons=1
-let g:ale_sign_warning = '⚠'
-let g:ale_sign_error = '✖'
-let g:ale_sign_info = 'ℹ'
-let g:ale_sign_hint = '➤'
-let g:ale_virtualtext_cursor=1
-let g:ale_set_highlights=0
-hi clear ALEErrorSign
-hi clear ALEWarningSign
-hi clear ALEInfoSign
-hi ALEVirtualTextError ctermbg=NONE ctermfg=Red
-hi ALEVirtualTextWarning ctermbg=NONE ctermfg=Yellow
-set completeopt+=noinsert 
-set completeopt-=preview
-let g:float_preview#docked=0
-
 
 " Language specific lints/syntax
 " ------------------------------
@@ -153,3 +121,4 @@ tnoremap <Esc> <C-\><C-n>
 
 " Distraction free mode
 runtime presentation.vim
+runtime coc.vim
