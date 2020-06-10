@@ -21,7 +21,33 @@ alias reload="source $HOME/.zshrc"
 alias gdiff="git difftool --no-prompt --tool vimdiff"
 alias please="sudo"
 alias sorry='sudo $(fc -ln -1)'
-alias glog= "git log --oneline --decorate --graph"
+alias glog="git log --oneline --decorate --graph"
+
+# whatis pretty-prints the result of which
+whatis() {
+    which $1 | bat --theme TwoDark
+}
+
+# ff finds things and (if applicable) previews them nicely
+# usage: ff <pattern> <path> <type> <additional args for fd>
+ff() {
+	case "$3" in
+		"f")
+			fd $1 $2 -t f -c always -X bat --theme TwoDark
+			;;
+		"d")
+			fd $1 $2 -t d | as-tree
+			;;
+		"x")
+			fd $1 $2 -t x | as-tree
+			;;
+		"*")
+			echo "Not a valid type. Need one of ['f', 'd', 'x']"
+			echo "to search for either a file, dir, or executable"
+			;;
+	esac
+}
+
 
 # activate a Python virtualenv in the current dir
 activate() {
@@ -89,7 +115,11 @@ cmakebuild() {
 
 # human readable size check
 sizeof() {
-  du -h $1 | tail -n 1
+    if [ -z "$1" ]; then
+		du -sh * | sort -hr
+	else
+		du -sh $1 | sort -hr
+	fi
 }
 
 # delete all docker images, recursively
