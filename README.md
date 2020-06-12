@@ -5,9 +5,7 @@ Dotfile install/upload:
 $ ./run
 ```
 
-Other configs (like Firefox's `userChrome.css`) need to be installed manually.
-
-© 2019 Damien Stanton
+© 2019-2020 Damien Stanton
 
 See LICENSE for details.
 

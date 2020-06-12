@@ -7,14 +7,8 @@ zsh_lang_file="$HOME/zsh/lang.sh"
 zsh_work_file="$HOME/zsh/work.sh"
 
 nvim_file="$HOME/.config/nvim/init.vim"
-vim_pres_file="$HOME/.vim/presentation.vim"
-vim_coc_file="$HOME/.vim/coc.vim"
-
-regolith_config="$HOME/.config/regolith/i3/config"
-regolith_resources="$HOME/.Xresources-regolith"
-regolith_res_dir="$HOME/.Xresources.d"
-regolith_bar_dir="$HOME/.config/i3xrocks"
-
+vim_pres_file="$HOME/.config/nvim/presentation.vim"
+vim_coc_file="$HOME/.config/nvim/coc.vim"
 coc_settings_file="$HOME/.config/nvim/coc-settings.json"
 
 install() {
@@ -29,20 +23,9 @@ install() {
   cp zsh/lang.sh $HOME/zsh/
   cp zsh/work.sh $HOME/zsh/
   cat vim/init.vim > $nvim_file
-  if [ ! -d "$HOME/.vim" ]; then
-      mkdir $HOME/.vim
-  fi
-  cp vim/presentation.vim "$HOME/.vim/"
   cp vim/presentation.vim "$HOME/.config/nvim/"
   cp vim/coc.vim "$HOME/.config/nvim/"
   cp vim/coc-settings.json "$HOME/.config/nvim/"
-  if [ ! -d "$HOME/.config/regolith/i3" ]; then
-      mkdir -p $HOME/.config/regolith/i3
-  fi
-  # cp regolith/config "$HOME/.config/regolith/i3/"
-  # cp regolith/.Xresources-regolith "$HOME"
-  # cp -r regolith/.Xresources.d/ "$HOME"
-  # cp -r regolith/i3xrocks "$HOME/.config/"
   echo "-> Done"
 }
 
@@ -56,10 +39,6 @@ upload() {
   cp $vim_pres_file vim/
   cp $vim_coc_file vim/
   cp $coc_settings_file vim/
-  # cp $regolith_config regolith/
-  # cp $regolith_resources regolith/
-  # cp -r $regolith_res_dir regolith/
-  # cp -r $regolith_bar_dir regolith/
   git add -A && git commit -m "Dotfiles synced on $(date +%Y-%m-%d)" && git push
 }
 
