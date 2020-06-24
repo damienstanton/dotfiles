@@ -11,7 +11,6 @@ alias push="git push"
 alias pull="git pull --rebase"
 alias c="clear;exa -l -B"
 alias ct="clear;exa -T --level=2"
-alias ca="clear; ls -la"
 alias sub="git submodule update --init --recursive"
 alias updateall="brew update && brew upgrade && brew cleanup && npm i -g npm && npm update -g && rustup update"
 alias rff="rm -rf"
@@ -22,6 +21,7 @@ alias gdiff="git difftool --no-prompt --tool vimdiff"
 alias please="sudo"
 alias sorry='sudo $(fc -ln -1)'
 alias glog="git log --oneline --decorate --graph"
+alias ll="ls -lha"
 
 # whatis pretty-prints the result of which
 whatis() {
