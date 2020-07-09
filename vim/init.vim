@@ -46,6 +46,7 @@ Plug 'cormacrelf/vim-colors-github'
 Plug 'ncm2/float-preview.nvim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'neoclide/coc.nvim', {'tag': 'v0.0.78'}
+Plug 'dense-analysis/ale'
 
 " Language plugins
 " ----------------
@@ -81,6 +82,15 @@ let g:airline_left_sep=' '
 let g:airline_right_sep=' '
 let g:tmuxline_powerline_separators=0
 
+" ALE
+" ---
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_sign_error = "☠️ "
+let g:ale_sign_warning = "⚠️ " 
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+
 " Language specific lints/syntax
 " ------------------------------
 " JSON
@@ -114,6 +124,8 @@ vnoremap <C-f> y/<C-R>"<CR>
 vnoremap <leader>" c""<ESC>P
 inoremap jk <ESC>
 tnoremap <Esc> <C-\><C-n>
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Keywords
 " --------
