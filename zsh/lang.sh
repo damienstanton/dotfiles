@@ -4,7 +4,7 @@ alias zshconf="$EDITOR $HOME/.zshrc"
 
 # other aliases
 alias g="git"
-alias cat="bat --theme TwoDark"
+alias cat="bat --theme Nord"
 alias e="$EDITOR"
 alias gs="git status"
 alias push="git push"

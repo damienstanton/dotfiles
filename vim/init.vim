@@ -47,6 +47,7 @@ Plug 'ncm2/float-preview.nvim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'neoclide/coc.nvim', {'tag': 'v0.0.78'}
 Plug 'dense-analysis/ale'
+Plug 'arcticicestudio/nord-vim'
 
 " Language plugins
 " ----------------
@@ -62,7 +63,7 @@ set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 set notermguicolors 
 
 " Gruvbox (dark)
-colorscheme codedark
+colorscheme nord
 set background=dark
 hi Normal ctermbg=NONE
 

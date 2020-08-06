@@ -39,7 +39,7 @@ export CPPFLAGS="-I/usr/local/opt/llvm@8/include"
 # Toggle JVMs
 jenv() {
 	if [ -z $1 ]; then
-		echo "Pick 8, 11, or 14"
+		echo "Pick 8, 11, android, or 14"
 	else
 		case $1 in
 			8)
