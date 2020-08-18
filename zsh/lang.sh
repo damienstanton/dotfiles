@@ -22,6 +22,7 @@ alias please="sudo"
 alias sorry='sudo $(fc -ln -1)'
 alias glog="git log --oneline --decorate --graph"
 alias ll="ls -lha"
+alias ee="code -r"
 
 # whatis pretty-prints the result of which
 whatis() {
