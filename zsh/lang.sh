@@ -34,7 +34,7 @@ whatis() {
 ff() {
 	case "$3" in
 		"f")
-			fd $1 $2 -t f -c always -X bat --theme 
+			fd $1 $2 -t f -c always -X bat --theme Nord
 			;;
 		"d")
 			fd $1 $2 -t d | as-tree
