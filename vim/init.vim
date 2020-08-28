@@ -6,7 +6,6 @@
 
 " General Editor Config
 " ---------------------
-set encoding=UTF-8
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
@@ -40,7 +39,6 @@ Plug 'christoomey/vim-system-copy'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'enricobacis/vim-airline-clock'
-Plug 'ryanoasis/vim-devicons'
 Plug 'edkolev/tmuxline.vim'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'ncm2/float-preview.nvim'
