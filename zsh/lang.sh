@@ -26,7 +26,7 @@ alias ee="code -r"
 
 # whatis pretty-prints the result of which
 whatis() {
-    which $1 | bat --theme TwoDark
+    which $1 | bat --theme Nord
 }
 
 # ff finds things and (if applicable) previews them nicely
@@ -34,7 +34,7 @@ whatis() {
 ff() {
 	case "$3" in
 		"f")
-			fd $1 $2 -t f -c always -X bat --theme TwoDark
+			fd $1 $2 -t f -c always -X bat --theme 
 			;;
 		"d")
 			fd $1 $2 -t d | as-tree
