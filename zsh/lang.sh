@@ -24,6 +24,12 @@ alias glog="git log --oneline --decorate --graph"
 alias ll="ls -lha"
 alias ee="code -r"
 
+# mkcd creates a (potentially large tree) of directories
+# and cd's into the target
+mkcd() {
+	mkdir -p $1 && cd $1
+}
+
 # whatis pretty-prints the result of which
 whatis() {
     which $1 | bat --theme Nord
