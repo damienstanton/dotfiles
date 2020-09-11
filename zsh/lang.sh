@@ -1,6 +1,7 @@
 # configuration aliases
 alias vimconf="$EDITOR $HOME/.config/nvim/init.vim"
 alias zshconf="$EDITOR $HOME/.zshrc"
+alias tmuxconf="$EDITOR $HOME/.tmux.conf"
 
 # other aliases
 alias g="git"
@@ -23,6 +24,7 @@ alias sorry='sudo $(fc -ln -1)'
 alias glog="git log --oneline --decorate --graph"
 alias ll="ls -lha"
 alias ee="code -r"
+alias reloadmux="tmux source-file $HOME/.tmux.conf"
 
 # mkcd creates a (potentially large tree) of directories
 # and cd's into the target
