@@ -11,6 +11,8 @@ vim_pres_file="$HOME/.config/nvim/presentation.vim"
 vim_coc_file="$HOME/.config/nvim/coc.vim"
 coc_settings_file="$HOME/.config/nvim/coc-settings.json"
 
+tmux_file="$HOME/.tmux.conf"
+
 install() {
   echo "-> Getting latest updates from GitHub"
   git pull
@@ -26,6 +28,7 @@ install() {
   cp vim/presentation.vim "$HOME/.config/nvim/"
   cp vim/coc.vim "$HOME/.config/nvim/"
   cp vim/coc-settings.json "$HOME/.config/nvim/"
+  cp tmux/.tmux.conf "$HOME/.tmux.conf"
   echo "-> Done"
 }
 
@@ -39,6 +42,7 @@ upload() {
   cp $vim_pres_file vim/
   cp $vim_coc_file vim/
   cp $coc_settings_file vim/
+  cp $tmux_file tmux/
   git add -A && git commit -m "Dotfiles synced on $(date +%Y-%m-%d)" && git push
 }
 
