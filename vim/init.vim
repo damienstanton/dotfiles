@@ -39,7 +39,6 @@ Plug 'christoomey/vim-system-copy'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'enricobacis/vim-airline-clock'
-Plug 'edkolev/tmuxline.vim'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'ncm2/float-preview.nvim'
 Plug 'tomasiser/vim-code-dark'
@@ -70,10 +69,6 @@ hi Normal ctermbg=NONE
 " set background=light
 " let g:airline_theme = "github"
 " hi Normal ctermbg=NONE
-
-if exists("$TMUX")
-	autocmd VimEnter * Tmuxline vim_statusline_2
-endif
 
 let g:airline_powerline_fonts=1
 let g:airline_skip_empty_sections=1
