@@ -30,11 +30,6 @@ mkcd() {
 	mkdir -p $1 && cd $1
 }
 
-# whatis pretty-prints the result of which
-whatis() {
-    which $1 | bat --theme Nord
-}
-
 # ff finds things and (if applicable) previews them nicely
 # usage: ff <pattern> <path> <type> <additional args for fd>
 ff() {
