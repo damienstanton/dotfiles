@@ -25,7 +25,11 @@ alias glog="git log --oneline --decorate --graph"
 alias ll="ls -lha"
 alias ee="code -r"
 alias reloadmux="tmux source-file $HOME/.tmux.conf"
-alias build="./bin/build"
+
+# create a new project based on the pset repo
+newpset() {
+	cp -r $HOME/code/oss/pset $1 && cd $1 && rm -rf .git/
+}
 
 # mkcd creates a (potentially large tree) of directories
 # and cd's into the target
