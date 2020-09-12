@@ -40,7 +40,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'cormacrelf/vim-colors-github'
-Plug 'ncm2/float-preview.nvim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'neoclide/coc.nvim', {'tag': 'v0.0.78'}
 Plug 'dense-analysis/ale'
