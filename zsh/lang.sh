@@ -25,6 +25,7 @@ alias glog="git log --oneline --decorate --graph"
 alias ll="ls -lha"
 alias ee="code -r"
 alias reloadmux="tmux source-file $HOME/.tmux.conf"
+alias build="./bin/build"
 
 # mkcd creates a (potentially large tree) of directories
 # and cd's into the target
