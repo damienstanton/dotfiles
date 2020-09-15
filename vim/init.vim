@@ -44,12 +44,15 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'neoclide/coc.nvim', {'tag': 'v0.0.78'}
 Plug 'dense-analysis/ale'
 Plug 'arcticicestudio/nord-vim'
+" browser integration
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 " Language plugins
 " ----------------
 Plug 'cespare/vim-toml'
 Plug 'leafgarland/typescript-vim'
 Plug 'damienstanton/vim-swift'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 

@@ -26,6 +26,13 @@ alias ll="ls -lha"
 alias ee="code -r"
 alias reloadmux="tmux source-file $HOME/.tmux.conf"
 
+# create a new Go subpackage (presuming this func is
+# called from within a root project dir with a mod file
+mkpkg() {
+	mkdir $1 && cd $1
+	echo "package $1" > {$1,$1_test}.go 
+}
+
 # create a new project based on the pset repo
 newpset() {
 	cp -r $HOME/code/oss/pset $1 && cd $1 && rm -rf .git/
