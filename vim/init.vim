@@ -41,7 +41,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'tomasiser/vim-code-dark'
-Plug 'neoclide/coc.nvim', {'tag': 'v0.0.78'}
+Plug 'neoclide/coc.nvim'
 Plug 'dense-analysis/ale'
 Plug 'arcticicestudio/nord-vim'
 " browser integration
