@@ -2,6 +2,7 @@
 alias vimconf="$EDITOR $HOME/.config/nvim/init.vim"
 alias zshconf="$EDITOR $HOME/.zshrc"
 alias tmuxconf="$EDITOR $HOME/.tmux.conf"
+alias termconf="$EDITOR $HOME/.alacritty.yml"
 
 # other aliases
 alias g="git"

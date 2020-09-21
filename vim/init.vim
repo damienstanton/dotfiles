@@ -53,6 +53,7 @@ Plug 'cespare/vim-toml'
 Plug 'leafgarland/typescript-vim'
 Plug 'damienstanton/vim-swift'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 
 call plug#end()
 
@@ -97,6 +98,13 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 " ----
 let g:rust_clip_command = 'pbcopy'
 let g:rustfmt_autosave = 1
+
+" Svelte
+" ------
+let g:svelte_preprocessor_tags = [
+  \ { 'name': 'ts', 'tag': 'script', 'as': 'typescript' }
+  \ ]
+let g:svelte_preprocessors = ['ts']
 
 
 " Keybindings
