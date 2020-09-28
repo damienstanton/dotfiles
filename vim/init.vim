@@ -20,8 +20,19 @@ set colorcolumn=100
 set timeoutlen=1000 ttimeoutlen=0 " adjust for esc delay
 set splitright
 
+
 " enable remap of motions captured by the terminal
 silent !stty -ixon > /dev/null 2>/dev/null
+
+" ALE
+" ---
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_sign_error = "☠️ "
+let g:ale_sign_warning = "⚠️ " 
+let g:ale_disable_lsp = 1
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
 
 call plug#begin('~/.vim/plugged')
 " General Plugins
@@ -53,7 +64,6 @@ Plug 'cespare/vim-toml'
 Plug 'leafgarland/typescript-vim'
 Plug 'damienstanton/vim-swift'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'evanleck/vim-svelte', {'branch': 'main'}
 
 call plug#end()
 
@@ -79,14 +89,6 @@ let g:airline_left_sep=' '
 let g:airline_right_sep=' '
 let g:tmuxline_powerline_separators=0
 
-" ALE
-" ---
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
-let g:ale_sign_error = "☠️ "
-let g:ale_sign_warning = "⚠️ " 
-highlight clear ALEErrorSign
-highlight clear ALEWarningSign
 
 " Language specific lints/syntax
 " ------------------------------
@@ -134,6 +136,7 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " Keywords
 " --------
 :command JSON %!jq '.'
+:command AT ALEToggleBuffer
 
 " Distraction free mode
 runtime presentation.vim

@@ -26,6 +26,7 @@ alias sorry='sudo $(fc -ln -1)'
 alias glog="git log --oneline --decorate --graph"
 alias ee="code -r"
 alias reloadmux="tmux source-file $HOME/.tmux.conf"
+alias vimdiff="/usr/local/Cellar/vim/8.2.1700/bin/vimdiff"
 
 # create a new Go subpackage (presuming this func is
 # called from within a root project dir with a mod file
