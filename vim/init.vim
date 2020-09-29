@@ -101,13 +101,9 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 let g:rust_clip_command = 'pbcopy'
 let g:rustfmt_autosave = 1
 
-" Svelte
-" ------
-let g:svelte_preprocessor_tags = [
-  \ { 'name': 'ts', 'tag': 'script', 'as': 'typescript' }
-  \ ]
-let g:svelte_preprocessors = ['ts']
-
+" Go
+" --
+let g:go_fmt_command = "goimports"
 
 " Keybindings
 " -----------
