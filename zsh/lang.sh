@@ -29,6 +29,20 @@ alias ee="code -r"
 alias reloadmux="tmux source-file $HOME/.tmux.conf"
 alias vimdiff="/usr/local/Cellar/vim/8.2.1700/bin/vimdiff"
 
+# toggle the macOS trackpad/mouse scrolling direction
+function scrolldir() {
+	osascript -e 'tell application "System Preferences"
+	  reveal anchor "trackpadTab" of pane id "com.apple.preference.trackpad"
+	end tell
+
+	tell application "System Events" to tell process "System Preferences"
+		click radio button 2 of tab group 1 of window 1
+		click checkbox 1 of tab group 1 of window 1
+	end tell
+
+	quit application "System Preferences"'
+}
+
 # create a new Go subpackage (presuming this func is
 # called from within a root project dir with a mod file
 mkpkg() {
