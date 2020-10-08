@@ -235,6 +235,9 @@ build/
 .bloop/
 .pytest_cache/
 .mypy_cache/
+.dart_tool/
+.packages
+pubspec.lock
 I
 }
 
