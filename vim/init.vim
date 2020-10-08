@@ -64,6 +64,8 @@ Plug 'cespare/vim-toml'
 Plug 'leafgarland/typescript-vim'
 Plug 'damienstanton/vim-swift'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
 
 call plug#end()
 

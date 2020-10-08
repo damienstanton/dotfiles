@@ -7,7 +7,7 @@
 export EDITOR="nvim"
 export GIT_EDITOR="nvim"
 export TERM="xterm-256color"
-export VIMRUNTIME="/usr/local/Cellar/vim/8.2.1750/share/vim/vim82"
+export VIMRUNTIME="/usr/local/Cellar/vim/8.2.1800_1/share/vim/vim82"
 export ZSH=$HOME/.oh-my-zsh
 DEFAULT_USER="damien"
 ZSH_THEME="ds"
@@ -36,6 +36,9 @@ export PATH="$HOME/.local/bin:$PATH"
 # Updated LLVM
 export LDFLAGS="-L/usr/local/opt/llvm@8/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm@8/include"
+
+# Flutter
+export PATH="$HOME/flutter/bin:$PATH"
 
 # Toggle JVMs
 jenv() {
