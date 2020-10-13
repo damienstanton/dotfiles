@@ -124,6 +124,7 @@ nnoremap <silent> gd :ALEGoToDefinitionInSplit<CR>
 nnoremap <silent> gr :ALEFindReferences<CR>
 nnoremap <silent> vt :vnew <bar> term<CR>a
 nnoremap <silent> ht :new <bar> term<CR>a
+nnoremap <silent> <C-t> :tabNext<CR>
 vnoremap <C-f> y/<C-R>"<CR>
 vnoremap <leader>" c""<ESC>P
 inoremap jk <ESC>

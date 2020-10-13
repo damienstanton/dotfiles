@@ -29,6 +29,7 @@ alias ee="code -r"
 alias reloadmux="tmux source-file $HOME/.tmux.conf"
 alias vimdiff="/usr/local/Cellar/vim/8.2.1700/bin/vimdiff"
 alias f="flutter"
+alias fly="open $HOME/xplane/X-Plane.app"
 
 # toggle the macOS trackpad/mouse scrolling direction
 function scrolldir() {
