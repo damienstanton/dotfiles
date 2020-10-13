@@ -94,12 +94,12 @@ activate() {
 }
 
 # runner for CMake
-cmakebuild() {
+cmb() {
     if [ ! -d "build" ]; then
         mkdir build
     fi
     cd build
-    cmake -G "Unix Makefiles" ..
+    cmake $@
     make
     cd ..
 }
