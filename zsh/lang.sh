@@ -93,50 +93,6 @@ activate() {
 	fi
 }
 
-# create a new go-mod based Go project
-goproject() {
-    coord=$1
-    project=$2
-    mkdir $project && cd $project
-    go mod init $coord/$project
-cat <<ENDGOFILE > $project.go
-package main
-
-import "fmt"
-
-func main() { fmt.Println("$project OK") }
-ENDGOFILE
-cat <<ENDGOTESTFILE > ${project}_test.go
-package main
-
-import "testing"
-
-func TestNothing(t *testing.T) {
-    if 1 != 1 { t.Fatal("not possible") }
-}
-ENDGOTESTFILE
-cat <<ENDMAKE > Makefile
-.PHONY: default
-default:
-	build test run
-
-.PHONY: build
-build:
-	@go build -o bin/$project
-
-.PHONY: test
-test:
-	@go test -v -cover
-
-.PHONY: _run
-_run:
-	@go run $project.go
-
-.PHONY: run
-run: build _run
-ENDMAKE
-}
-
 # runner for CMake
 cmakebuild() {
     if [ ! -d "build" ]; then
@@ -173,28 +129,6 @@ synchronize() {
 	git checkout -
 	git merge --no-ff $branch
 	git push
-}
-
-# build a new Java project using maven
-javaproject() {
-    project=$2
-    group=$1
-    mvn -B archetype:generate \
-        -DarchetypeGroupId=org.apache.maven.archetypes \
-        -DgroupId=$group \
-        -DartifactId=$project
-    echo "Created project $group.$project"
-    cd $project
-}
-
-# build a new Python project with reasonable defaults
-pyproject() {
-	mkdir $1 && cd $1
-	echo "Building a new project: $1..."
-	python3 -m venv env
-	source env/bin/activate
-	pip3 install pytest pylint mypy python-language-server black pyflakes ipython
-	echo "Created project $1 successfully"
 }
 
 # retrieve one of my GitHub repos
@@ -515,14 +449,5 @@ jv() {
 # pretty CSV object catting
 cv() {
     cat $1 | sed 's/,/ ,/g' | column -t -s, | less -S
-}
-
-# automate synchro with a third-party github repo (useful for OSS stuff)
-syncwith() {
-    git remote add up https://github.com/$1
-    git fetch up master \
-        && git merge up/master \
-        && git push \
-        && echo "OK"
 }
 
