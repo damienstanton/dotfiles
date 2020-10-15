@@ -133,7 +133,7 @@ synchronize() {
 
 # retrieve one of my GitHub repos
 getme() {
-    git clone https://github.com/damienstanton/$1 $2 && cd $2 # where 2 is an alias
+    git clone https://github.com/damienstanton/$1 $2 # where 2 is an alias
 }
 
 # retrieve an arbitrary project from GitHub
