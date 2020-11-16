@@ -4,9 +4,6 @@ font:
     style: Retina
   size: 12.0
 
-  use_thin_strokes: true
-
-
 bell:
   animation: EaseOutExpo
   color: '#ffffff'
