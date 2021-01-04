@@ -7,7 +7,7 @@
 export EDITOR="nvim"
 export GIT_EDITOR="nvim"
 export TERM="xterm-256color"
-export VIMRUNTIME="/usr/local/Cellar/vim/8.2.2200_2/share/vim/vim82"
+export VIMRUNTIME="/usr/local/Cellar/vim/8.2.2250_1/share/vim/vim82"
 export ZSH=$HOME/.oh-my-zsh
 DEFAULT_USER="damien"
 ZSH_THEME="ds"

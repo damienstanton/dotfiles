@@ -152,7 +152,7 @@ commit() {
 firstpush() {
     git add -A
     git commit
-    git push --set-upstream origin master
+    git push --set-upstream origin main
 }
 
 # generate a reasonable gitignore
@@ -433,7 +433,7 @@ newrepo() {
         read w
     fi
     curl -u $u https://api.github.com/user/repos -d "{\"name\":\"$w\"}"
-    git init && git remote add origin https://github.com/$u/$w
+    git init && git remote add origin main https://github.com/$u/$w
 }
 
 # set the current dir to an existing github remote.
