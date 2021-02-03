@@ -46,7 +46,7 @@ export PATH="$HOME/flutter/bin:$PATH"
 # Toggle JVMs
 jenv() {
 	if [ -z $1 ]; then
-		echo "Pick 8, 11, android, or 14"
+		echo "Pick 8, 11, android, or 15"
 	else
 		case $1 in
 			8)
@@ -55,11 +55,11 @@ jenv() {
 			11)
 				export JAVA_HOME="$(/usr/libexec/java_home -v11)"
 				;;
-			14)
-				export JAVA_HOME="$(/usr/libexec/java_home -v14)"
+			15)
+				export JAVA_HOME="$(/usr/libexec/java_home -v15)"
 				;;
 			*)
-				echo "Not a valid Java version on this machine"
+				echo "$1 is not a valid Java version on this machine"
 				;;
 		esac
 	fi
