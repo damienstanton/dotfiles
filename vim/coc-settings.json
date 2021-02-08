@@ -2,5 +2,13 @@
 	"diagnostic.virtualText": true,
 	"rust-analyzer.serverPath": "/Users/damien/bin/rust-analyzer",
 	"rust-analyzer.checkOnSave.allFeatures": true,
-	"diagnostic.displayByAle": true
+	"diagnostic.displayByAle": true,
+	"languageserver": {
+		"go": {
+		  "command": "gopls",
+		  "rootPatterns": ["go.mod"],
+		  "trace.server": "verbose",
+		  "filetypes": ["go"]
+		}
+  	}
 }

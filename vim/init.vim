@@ -47,16 +47,12 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'zivyangll/git-blame.vim'
 Plug 'tpope/vim-commentary'
 Plug 'christoomey/vim-system-copy'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'enricobacis/vim-airline-clock'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'tomasiser/vim-code-dark'
 Plug 'neoclide/coc.nvim'
 Plug 'dense-analysis/ale'
 Plug 'arcticicestudio/nord-vim'
-" browser integration
-" Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Language plugins
 " ----------------
@@ -66,6 +62,7 @@ Plug 'damienstanton/vim-swift'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
+Plug 'zetzit/vim'
 
 call plug#end()
 
