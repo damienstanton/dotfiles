@@ -107,6 +107,10 @@ let g:rustfmt_autosave = 1
 " --
 let g:go_fmt_command = "goimports"
 
+" Go (with generics & go2go tool)
+" -------------------------------
+au BufNewFile,BufRead,BufReadPost *.go2 set syntax=go
+
 " Keybindings
 " -----------
 let g:move_key_modifier='C'
