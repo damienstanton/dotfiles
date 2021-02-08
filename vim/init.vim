@@ -56,7 +56,7 @@ Plug 'neoclide/coc.nvim'
 Plug 'dense-analysis/ale'
 Plug 'arcticicestudio/nord-vim'
 " browser integration
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+" Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 " Language plugins
 " ----------------
