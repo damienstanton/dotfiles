@@ -37,7 +37,6 @@ highlight clear ALEWarningSign
 call plug#begin('~/.vim/plugged')
 " General Plugins
 " ---------------
-Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'airblade/vim-gitgutter'
 Plug 'matze/vim-move'
@@ -53,16 +52,17 @@ Plug 'neoclide/coc.nvim'
 Plug 'dense-analysis/ale'
 Plug 'arcticicestudio/nord-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'itchyny/lightline.vim'
 
 " Language plugins
 " ----------------
 Plug 'cespare/vim-toml'
 Plug 'leafgarland/typescript-vim'
 Plug 'damienstanton/vim-swift'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go'
+" Manually call :GoUpdateBinaries if desired
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
-Plug 'zetzit/vim'
 
 call plug#end()
 
@@ -71,21 +71,10 @@ call plug#end()
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 set notermguicolors 
 
-" Gruvbox (dark)
 colorscheme nord
 set background=dark
 hi Normal ctermbg=NONE
-
-" GitHub (light)
-" colorscheme github
-" set background=light
-" let g:airline_theme = "github"
-" hi Normal ctermbg=NONE
-
-let g:airline_powerline_fonts=1
-let g:airline_skip_empty_sections=1
-let g:airline_left_sep=' '
-let g:airline_right_sep=' '
+let g:lightline = { 'colorscheme': 'nord' }
 let g:tmuxline_powerline_separators=0
 
 
