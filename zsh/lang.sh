@@ -148,14 +148,6 @@ commit() {
     git push
 }
 
-# firstpush is the same as commit, but sets the origin
-firstpush() {
-    git add -A
-    git commit
-	git branch -M main
-    git push -u origin main
-}
-
 # generate a reasonable gitignore
 ignore() {
 cat <<I>> .gitignore
@@ -440,8 +432,11 @@ newrepo() {
 # set the current dir to an existing github remote.
 remote() {
 	git init
+	git add -A
+	git commit
 	git branch -M main
 	git remote add origin https://github.com/$@
+	git push -u origin main
 }
 
 # pretty JSON object catting
