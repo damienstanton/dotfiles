@@ -1,8 +1,6 @@
 {
 	"diagnostic.virtualText": true,
-	"rust-analyzer.serverPath": "/Users/damien/bin/rust-analyzer",
-	"rust-analyzer.checkOnSave.allFeatures": true,
-	"diagnostic.displayByAle": true,
+	"diagnostic.level": "error",
 	"languageserver": {
 		"go": {
 		  "command": "gopls",

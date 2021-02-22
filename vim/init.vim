@@ -24,16 +24,6 @@ set splitright
 " enable remap of motions captured by the terminal
 silent !stty -ixon > /dev/null 2>/dev/null
 
-" ALE
-" ---
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
-let g:ale_sign_error = "☠️ "
-let g:ale_sign_warning = "⚠️ " 
-let g:ale_disable_lsp = 1
-highlight clear ALEErrorSign
-highlight clear ALEWarningSign
-
 call plug#begin('~/.vim/plugged')
 " General Plugins
 " ---------------
