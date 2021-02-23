@@ -5,6 +5,7 @@ zsh_file="$HOME/.zshrc"
 zsh_theme_file="$HOME/.oh-my-zsh/custom/themes/ds.zsh-theme"
 zsh_lang_file="$HOME/zsh/lang.sh"
 zsh_work_file="$HOME/zsh/work.sh"
+zsh_completions="$HOME/zsh/completions"
 
 nvim_file="$HOME/.config/nvim/init.vim"
 vim_pres_file="$HOME/.config/nvim/presentation.vim"
@@ -20,11 +21,15 @@ install() {
   if [ ! -d "$HOME/zsh" ]; then
       mkdir $HOME/zsh
   fi
+  if [ ! -d "$HOME/zsh/completions" ]; then
+      mkdir $HOME/zsh/completions
+  fi
   echo "-> Copying configuration files"
   cat zsh/.zshrc > $zsh_file
   cp zsh/ds.zsh-theme "$HOME/.oh-my-zsh/custom/themes/"
   cp zsh/lang.sh $HOME/zsh/
   cp zsh/work.sh $HOME/zsh/
+  cp -r zsh/completions/ $HOME/zsh/completions
   cat vim/init.vim > $nvim_file
   cp vim/presentation.vim "$HOME/.config/nvim/"
   cp vim/coc.vim "$HOME/.config/nvim/"
@@ -40,6 +45,7 @@ upload() {
   cp $zsh_theme_file zsh/
   cp $zsh_lang_file zsh/
   cp $zsh_work_file zsh/
+  cp -r $zsh_completions zsh/completions
   cp $nvim_file vim/
   cp $vim_pres_file vim/
   cp $vim_coc_file vim/
