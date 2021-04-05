@@ -9,7 +9,6 @@ zsh_completions="$HOME/zsh/completions"
 
 nvim_file="$HOME/.config/nvim/init.vim"
 vim_pres_file="$HOME/.config/nvim/presentation.vim"
-vim_coc_file="$HOME/.config/nvim/coc.vim"
 coc_settings_file="$HOME/.config/nvim/coc-settings.json"
 
 tmux_file="$HOME/.tmux.conf"
@@ -32,7 +31,6 @@ install() {
   cp -r zsh/completions/ $HOME/zsh/completions
   cat vim/init.vim > $nvim_file
   cp vim/presentation.vim "$HOME/.config/nvim/"
-  cp vim/coc.vim "$HOME/.config/nvim/"
   cp vim/coc-settings.json "$HOME/.config/nvim/"
   cp tmux/.tmux.conf "$HOME/.tmux.conf"
   cp alacritty/.alacritty.yml "$HOME/.alacritty.yml" 
@@ -48,7 +46,6 @@ upload() {
   cp -r $zsh_completions zsh/completions
   cp $nvim_file vim/
   cp $vim_pres_file vim/
-  cp $vim_coc_file vim/
   cp $coc_settings_file vim/
   cp $tmux_file tmux/
   cp $alacritty_file alacritty/

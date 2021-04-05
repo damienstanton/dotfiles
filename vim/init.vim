@@ -39,10 +39,13 @@ Plug 'christoomey/vim-system-copy'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'tomasiser/vim-code-dark'
 Plug 'neoclide/coc.nvim'
-Plug 'dense-analysis/ale'
 Plug 'arcticicestudio/nord-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
+Plug 'machakann/vim-highlightedyank'
+Plug 'andymass/vim-matchup'
+Plug 'rust-lang/rust.vim'
+Plug 'rhysd/vim-clang-format'
 
 " Language plugins
 " ----------------
@@ -56,17 +59,57 @@ Plug 'thosakwe/vim-flutter'
 
 call plug#end()
 
-" Style 
-" -----
+" Style & Function
+" ----------------
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 set notermguicolors 
 
 colorscheme nord
 set background=dark
 hi Normal ctermbg=NONE
-let g:lightline = { 'colorscheme': 'nord' }
+let g:lightline = { 
+	\ 'colorscheme': 'nord',
+	\ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'filename': 'LightlineFilename',
+      \   'cocstatus': 'coc#status'
+      \ }
+	  \}
+
+function! LightlineFilename()
+  return expand('%:t') !=# '' ? @% : '[No Name]'
+endfunction
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <c-.> coc#refresh()
+
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+
+
 let g:tmuxline_powerline_separators=0
 
+set cmdheight=2
+set updatetime=300
+set signcolumn=yes
+set splitright
+set splitbelow
 
 " Language specific lints/syntax
 " ------------------------------
@@ -87,6 +130,10 @@ let g:go_fmt_command = "goimports"
 " -------------------------------
 au BufNewFile,BufRead,BufReadPost *.go2 set syntax=go
 
+" Java
+" ----
+let java_ignore_javadoc=1
+
 " Keybindings
 " -----------
 let g:move_key_modifier='C'
@@ -95,28 +142,60 @@ let g:multi_cursor_start_key='g<C-x>'
 let g:multi_cursor_next_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 nnoremap <C-q> :qa<CR>
 nnoremap <C-f> :Rg<SPACE>
 noremap <silent> <C-p> :Files<CR>
 nnoremap <silent> gf :GFiles<CR>
-nnoremap <silent> gd :ALEGoToDefinitionInSplit<CR>
-nnoremap <silent> gr :ALEFindReferences<CR>
 nnoremap <silent> vt :vnew <bar> term<CR>a
 nnoremap <silent> ht :new <bar> term<CR>a
 nnoremap <silent> <C-t> :tabNext<CR>
+nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
 vnoremap <C-f> y/<C-R>"<CR>
 vnoremap <leader>" c""<ESC>P
+
 inoremap jk <ESC>
+
 tnoremap <Esc> <C-\><C-n>
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Introduce function text object
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+
+nmap <silent> <TAB> <Plug>(coc-range-select)
+xmap <silent> <TAB> <Plug>(coc-range-select)
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <space>i  :call CocActionAsync('codeAction', '', 'Implement missing members')<cr>
+nnoremap <silent> <space>a  :CocAction<cr>
 
 " Keywords
 " --------
 :command JSON %!jq '.'
-:command AT ALEToggleBuffer
 
 " Distraction free mode
 runtime presentation.vim
-runtime coc.vim

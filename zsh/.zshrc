@@ -42,30 +42,8 @@ export PATH="/usr/local/Cellar/node/15.2.1/bin:$PATH"
 # Flutter
 export PATH="$HOME/flutter/bin:$PATH"
 
-# Toggle JVMs
-jenv() {
-	if [ -z $1 ]; then
-		echo "Pick 8, 11, android, or 15"
-	else
-		case $1 in
-			8)
-				export JAVA_HOME="$(/usr/libexec/java_home -v1.8)"
-				;;
-			11)
-				export JAVA_HOME="$(/usr/libexec/java_home -v11)"
-				;;
-			15)
-				export JAVA_HOME="$(/usr/libexec/java_home -v15)"
-				;;
-			*)
-				echo "$1 is not a valid Java version on this machine"
-				;;
-		esac
-	fi
-	export PATH="$JAVA_HOME/bin:$PATH"
-}
-# set JDK 8 as default for dumb legacy reasons
-jenv 8
+# Java
+export JAVA_HOME=$HOME/jdk-15.0.2.jdk/Contents/Home
 
 # Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
@@ -94,7 +72,3 @@ export PATH="$GOPATH/bin:$PATH"
 
 # Flutter
 export PATH="$HOME/flutter/bin:$PATH"
-
-# If on a work machine
-source ~/zsh/work.sh
-source ~/.secret

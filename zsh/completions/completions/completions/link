@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+set -e
+completion_path="/usr/local/share/zsh/site-functions"
+ln -s $(pwd)/$1 $completion_path/$1

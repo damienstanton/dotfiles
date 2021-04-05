@@ -2,8 +2,7 @@ let s:hidden_all=0
 function! ToggleHiddenAll()
     if s:hidden_all == 0
         let s:hidden_all=1
-        syntax off
-		ALEToggleBuffer
+        " syntax off
 		set noshowmode
         set noruler
         set laststatus=0
@@ -12,8 +11,7 @@ function! ToggleHiddenAll()
 		set nonumber
     else
         let s:hidden_all=0
-		ALEToggleBuffer
-        syntax on
+        " syntax on
 		set showmode
         set ruler
         set laststatus=2
