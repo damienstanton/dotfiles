@@ -8,4 +8,4 @@ coc-kotlin
 [diff]
     tool = nvimdiff
 [difftool "nvimdiff"]
-    cmd = "nvim -d -u ~/.vimrc \"$LOCAL\" \"$REMOTE\""
+    cmd = "nvim -d -u ~/.config/nvim/init.vim \"$LOCAL\" \"$REMOTE\""
