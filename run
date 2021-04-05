@@ -10,6 +10,8 @@ zsh_completions="$HOME/zsh/completions"
 nvim_file="$HOME/.config/nvim/init.vim"
 vim_pres_file="$HOME/.config/nvim/presentation.vim"
 coc_settings_file="$HOME/.config/nvim/coc-settings.json"
+ccls_file="$HOME/.config/nvim/default_ccls"
+extras="$HOME/.config/nvim/extras"
 
 tmux_file="$HOME/.tmux.conf"
 alacritty_file="$HOME/.alacritty.yml"
@@ -34,6 +36,8 @@ install() {
   cp vim/coc-settings.json "$HOME/.config/nvim/"
   cp tmux/.tmux.conf "$HOME/.tmux.conf"
   cp alacritty/.alacritty.yml "$HOME/.alacritty.yml" 
+  cp vim/ccls_file "$HOME/.config/nvim/"
+  cp vim/extras "$HOME/.config/nvim/"
   echo "-> Done"
 }
 
@@ -47,6 +51,8 @@ upload() {
   cp $nvim_file vim/
   cp $vim_pres_file vim/
   cp $coc_settings_file vim/
+  cp $ccls_file vim/
+  cp $extras vim/
   cp $tmux_file tmux/
   cp $alacritty_file alacritty/
   git add -A && git commit -m "Dotfiles synced on $(date +%Y-%m-%d)" && git push
