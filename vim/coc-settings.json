@@ -6,6 +6,31 @@
 		  "rootPatterns": ["go.mod"],
 		  "trace.server": "verbose",
 		  "filetypes": ["go"]
-		}
-  	}
+		},
+		"ccls": {
+            "command": "ccls",
+            "filetypes": [
+                "c",
+                "cpp",
+                "objc",
+                "objcpp"
+            ],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json",
+                ".vim/",
+                ".git/"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        }
+  	},
+	"java_configuration_runtimes": {
+		"name": "OpenJDK 15",
+		"path": "/Users/dstanton006/jdk-15.0.2.jdk/Contents/Home",
+		"default": true
+	}
 }
