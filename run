@@ -36,7 +36,7 @@ install() {
   cp vim/coc-settings.json "$HOME/.config/nvim/"
   cp tmux/.tmux.conf "$HOME/.tmux.conf"
   cp alacritty/.alacritty.yml "$HOME/.alacritty.yml" 
-  cp vim/ccls_file "$HOME/.config/nvim/"
+  cp vim/default_ccls "$HOME/.config/nvim/"
   cp vim/extras "$HOME/.config/nvim/"
   echo "-> Done"
 }
