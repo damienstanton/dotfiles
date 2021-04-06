@@ -32,6 +32,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Pip-installed binaries
 export PATH="$HOME/.local/bin:$PATH"
 
+# Python system libs
+export PATH="$HOME/Library/Python/3.9/bin:$PATH"
+
 # Updated LLVM
 export LDFLAGS="-L/usr/local/opt/llvm@8/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm@8/include"
