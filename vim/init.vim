@@ -56,6 +56,7 @@ Plug 'fatih/vim-go'
 " Manually call :GoUpdateBinaries if desired
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
+Plug 'udalov/kotlin-vim'
 
 call plug#end()
 
@@ -70,7 +71,7 @@ if exists('+termguicolors')
 endif
 set background=dark
 colorscheme nord
-hi Normal ctermbg=NONE
+hi normal guibg=NONE ctermbg=NONE
 
 let g:lightline = { 
 	\ 'colorscheme': 'nord',
@@ -164,6 +165,7 @@ nnoremap <silent> ht :new <bar> term<CR>a
 nnoremap <silent> <C-t> :tabNext<CR>
 nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <leader><SPACE> :CocAction<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -201,6 +203,7 @@ nnoremap <silent> <space>a  :CocAction<cr>
 " Keywords
 " --------
 :command JSON %!jq '.'
+:command RR source ~/.config/nvim/init.vim
 
 " Distraction free mode
 runtime presentation.vim
