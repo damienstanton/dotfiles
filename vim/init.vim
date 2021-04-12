@@ -50,7 +50,6 @@ Plug 'rhysd/vim-clang-format'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'chriskempson/base16-vim'
-
 " Language plugins
 " ----------------
 Plug 'cespare/vim-toml'
@@ -61,7 +60,7 @@ Plug 'fatih/vim-go'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
 Plug 'udalov/kotlin-vim'
-
+Plug 'stevearc/vim-arduino'
 call plug#end()
 
 " Style & Function
