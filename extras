@@ -3,6 +3,7 @@ coc-rust-analyzer
 coc-flutter
 coc-java
 coc-kotlin
+coc-tsserver
 
 // Git config:
 [diff]
