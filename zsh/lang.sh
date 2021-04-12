@@ -6,7 +6,7 @@ alias termconf="$EDITOR $HOME/.alacritty.yml"
 
 # other aliases
 alias g="git"
-alias cat="bat --theme Nord"
+alias cat="bat --theme base16"
 alias e="$EDITOR"
 alias gs="git status"
 alias push="git push"

@@ -49,6 +49,8 @@ Plug 'rhysd/vim-clang-format'
 " ------
 Plug 'arcticicestudio/nord-vim'
 Plug 'ayu-theme/ayu-vim'
+Plug 'chriskempson/base16-vim'
+
 " Language plugins
 " ----------------
 Plug 'cespare/vim-toml'
@@ -74,12 +76,11 @@ set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 " endif
 set termguicolors
 set background=dark
-let ayucolor="mirage"
-colorscheme ayu
+colorscheme base16-tomorrow-night
 hi normal guibg=NONE ctermbg=NONE
 
 let g:lightline = { 
-	\ 'colorscheme': 'ayu_mirage',
+	\ 'colorscheme': 'Tomorrow_Night',
 	\ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
