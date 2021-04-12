@@ -39,14 +39,16 @@ Plug 'christoomey/vim-system-copy'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'tomasiser/vim-code-dark'
 Plug 'neoclide/coc.nvim'
-Plug 'arcticicestudio/nord-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'andymass/vim-matchup'
 Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-clang-format'
-
+" Colorschemes
+" ------
+Plug 'arcticicestudio/nord-vim'
+Plug 'ayu-theme/ayu-vim'
 " Language plugins
 " ----------------
 Plug 'cespare/vim-toml'
@@ -64,17 +66,20 @@ call plug#end()
 " ----------------
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 
-if exists('+termguicolors')
-  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
+" Uncomment if running in a possibly non-truecolor term
+" if exists('+termguicolors')
+"   let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+"   let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+"   set termguicolors
+" endif
+set termguicolors
 set background=dark
-colorscheme nord
+let ayucolor="mirage"
+colorscheme ayu
 hi normal guibg=NONE ctermbg=NONE
 
 let g:lightline = { 
-	\ 'colorscheme': 'nord',
+	\ 'colorscheme': 'ayu_mirage',
 	\ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
