@@ -1,8 +1,8 @@
 font:
   normal:
-    family: Monoid Nerd Font
-    style: Retina
-  size: 12.0
+    family: Iosevka Nerd Font Mono
+    style: Light
+  size: 14.0
 
 bell:
   animation: EaseOutExpo

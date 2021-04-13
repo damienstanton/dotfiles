@@ -208,7 +208,6 @@ nnoremap <silent> <space>a  :CocAction<cr>
 " Keywords
 " --------
 :command JSON %!jq '.'
-:command RR source ~/.config/nvim/init.vim
 
 " Distraction free mode
 runtime presentation.vim
