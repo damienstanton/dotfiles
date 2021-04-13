@@ -59,19 +59,11 @@ export PATH="$HOME/sbt/bin:$PATH"
 export PYENV_ROOT="$HOME/bin/.pyenv"
 export PYTHONDONTWRITEBYTECODE=1
 
+# Silly stuff
+export PATH="$HOME/doomfiles/bin:$PATH"
+
 # fzf and fd configs
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND="fd --type file --color=always"
 export FZF_DEFAULT_OPTS="--ansi"
-
-
-# Silly stuff
-export PATH="$HOME/doomfiles/bin:$PATH"
-
-# Go
-export GO111MODULE=on
-export PATH="$HOME/go/bin:$PATH"
-export PATH="$GOPATH/bin:$PATH"
-
-# Flutter
-export PATH="$HOME/flutter/bin:$PATH"
+source $HOME/fzf-theme/fzf-tomorrow-night.sh
