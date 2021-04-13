@@ -1,5 +1,5 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env zsh
+set -e -o pipefail
 
 zsh_file="$HOME/.zshrc"
 zsh_theme_file="$HOME/.oh-my-zsh/custom/themes/ds.zsh-theme"
@@ -12,6 +12,7 @@ vim_pres_file="$HOME/.config/nvim/presentation.vim"
 coc_settings_file="$HOME/.config/nvim/coc-settings.json"
 ccls_file="$HOME/.config/nvim/default_ccls"
 extras="$HOME/.config/nvim/extras"
+fzf_theme="$HOME/fzf-theme/fzf-tomorrow-night.sh"
 
 tmux_file="$HOME/.tmux.conf"
 alacritty_file="$HOME/.alacritty.yml"
@@ -24,6 +25,9 @@ install() {
   fi
   if [ ! -d "$HOME/zsh/completions" ]; then
       mkdir $HOME/zsh/completions
+  fi
+  if [ ! -d "$HOME/fzf-theme" ]; then
+      mkdir $HOME/fzf-theme
   fi
   echo "-> Copying configuration files"
   cat zsh/.zshrc > $zsh_file
@@ -38,6 +42,7 @@ install() {
   cp alacritty/.alacritty.yml "$HOME/.alacritty.yml" 
   cp vim/default_ccls "$HOME/.config/nvim/"
   cp vim/extras "$HOME/.config/nvim/"
+  cp fzf/fzf-tomorrow-night.sh "$HOME/fzf-theme/"
   echo "-> Done"
 }
 
@@ -55,6 +60,7 @@ upload() {
   cp $extras vim/
   cp $tmux_file tmux/
   cp $alacritty_file alacritty/
+  cp $fzf_theme fzf/
   git add -A && git commit -m "Dotfiles synced on $(date +%Y-%m-%d)" && git push
 }
 
