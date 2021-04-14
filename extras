@@ -4,6 +4,8 @@ coc-flutter
 coc-java
 coc-kotlin
 coc-tsserver
+coc-angular
+coc-eslint
 
 // Git config:
 [diff]
