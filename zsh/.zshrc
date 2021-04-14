@@ -14,53 +14,39 @@ COMPLETION_WAITING_DOTS="true"
 KEYTIMEOUT=1
 plugins=(git dirhistory docker git-extras gradle node npm osx pip sudo wd vi-mode)
 
+# imports
 source $HOME/zsh/lang.sh
 source $ZSH/oh-my-zsh.sh
+source $HOME/zsh/work.sh
 
-# Prerelease nvim
-export PATH="$HOME/nvim-osx64/bin:$PATH"
-
-# Scripts
+# scripts
 export PATH="$HOME/work/scripts:$PATH"
 
-# Custom binaries
+# custom binaries
 export PATH="$HOME/bin:$PATH"
 
-# Cargo-installed binaries
+# cargo-installed binaries
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# Pip-installed binaries
+# pip-installed binaries
 export PATH="$HOME/.local/bin:$PATH"
 
-# Python system libs
+# python system libs
 export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 
-# Updated LLVM
-export LDFLAGS="-L/usr/local/opt/llvm@8/lib"
-export CPPFLAGS="-I/usr/local/opt/llvm@8/include"
-
-# Node binaries
-export PATH="/usr/local/Cellar/node/15.2.1/bin:$PATH"
-
-# Flutter
+# flutter
 export PATH="$HOME/flutter/bin:$PATH"
 
-# Java
+# java
 export JAVA_HOME=$HOME/jdk-15.0.2.jdk/Contents/Home
 
-# Android
+# android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export NDK_HOME="$ANDROID_HOME/ndk-bundle"
 
-# Scala
-export PATH="$HOME/sbt/bin:$PATH"
-
-# Pyenv
+# pyenv
 export PYENV_ROOT="$HOME/bin/.pyenv"
 export PYTHONDONTWRITEBYTECODE=1
-
-# Silly stuff
-export PATH="$HOME/doomfiles/bin:$PATH"
 
 # fzf and fd configs
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

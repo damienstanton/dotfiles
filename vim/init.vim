@@ -30,7 +30,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'airblade/vim-gitgutter'
 Plug 'matze/vim-move'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'zivyangll/git-blame.vim'
@@ -89,6 +89,8 @@ let g:lightline = {
       \ }
 	  \}
 
+" following functions and mappings provide LSP details in LightLine
+" and allow for forced autocompletion via ctrl+.
 function! LightlineFilename()
   return expand('%:t') !=# '' ? @% : '[No Name]'
 endfunction
@@ -110,8 +112,6 @@ if exists('*complete_info')
 else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
-
-
 
 let g:tmuxline_powerline_separators=0
 
@@ -164,7 +164,7 @@ nmap <silent> gr <Plug>(coc-references)
 
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 nnoremap <C-q> :qa<CR>
-nnoremap <C-f> :Rg<SPACE>
+nnoremap <C-f> :Rg<CR>
 noremap <silent> <C-p> :Files<CR>
 nnoremap <silent> gf :GFiles<CR>
 nnoremap <silent> vt :vnew <bar> term<CR>a

@@ -3,8 +3,6 @@ alias vimconf="$EDITOR $HOME/.config/nvim/init.vim"
 alias zshconf="$EDITOR $HOME/.zshrc"
 alias tmuxconf="$EDITOR $HOME/.tmux.conf"
 alias termconf="$EDITOR $HOME/.alacritty.yml"
-
-# other aliases
 alias g="git"
 alias cat="bat --theme base16"
 alias e="$EDITOR"
@@ -16,7 +14,9 @@ alias c="clear; exa -l --header -t=mod --time-style=long-iso --git"
 alias ct="clear; exa -l --header -t=mod --time-style=long-iso --tree --level=2 --git"
 alias peek="exa -l --header -t=mod --time-style=long-iso --tree --level=2 --git"
 alias sub="git submodule update --init --recursive"
-alias updateall="brew update && brew upgrade && brew cleanup && npm i -g npm && npm update -g && rustup update"
+alias up="brew update && brew upgrade && brew cleanup && npm i -g npm && npm update -g && rustup update"
+# TODO: remove the following alias once brew recipes are more or less ported
+alias m1up="brew update && arch -amd64 brew upgrade && brew cleanup && npm i -g npm && npm update -g && rustup update"
 alias rff="rm -rf"
 alias k="kubectl"
 alias listening="lsof -P | rg LISTEN"
@@ -27,9 +27,11 @@ alias sorry='sudo $(fc -ln -1)'
 alias glog="git log --oneline --decorate --graph"
 alias ee="code -r"
 alias reloadmux="tmux source-file $HOME/.tmux.conf"
-alias vimdiff="/usr/local/Cellar/vim/8.2.1700/bin/vimdiff"
-alias f="flutter"
-alias fly="open $HOME/xplane/X-Plane.app"
+
+# pretty version of `which`
+what() {
+	which $1 | bat --theme base16 -l zsh
+}
 
 # toggle the macOS trackpad/mouse scrolling direction
 function scrolldir() {
@@ -63,27 +65,6 @@ mkcd() {
 	mkdir -p $1 && cd $1
 }
 
-# ff finds things and (if applicable) previews them nicely
-# usage: ff <pattern> <path> <type> <additional args for fd>
-ff() {
-	case "$3" in
-		"f")
-			fd $1 $2 -t f -c always -X bat --theme Nord
-			;;
-		"d")
-			fd $1 $2 -t d | as-tree
-			;;
-		"x")
-			fd $1 $2 -t x | as-tree
-			;;
-		"*")
-			echo "Not a valid type. Need one of ['f', 'd', 'x']"
-			echo "to search for either a file, dir, or executable"
-			;;
-	esac
-}
-
-
 # activate a Python virtualenv in the current dir
 activate() {
 	if [ -z "$1" ]; then
@@ -91,17 +72,6 @@ activate() {
 	else
 		source $1/bin/activate
 	fi
-}
-
-# runner for CMake
-cmb() {
-    if [ ! -d "build" ]; then
-        mkdir build
-    fi
-    cd build
-    cmake $@
-    make
-    cd ..
 }
 
 # human readable size check
@@ -116,29 +86,6 @@ sizeof() {
 # delete all docker images, recursively
 dockerdelete() {
 	docker rmi --force `docker images -a -q`
-}
-
-# synchronize a working branch with another branch via rebase
-synchronize() {
-	branch=$1
-	if [ -z $1 ]; then
-    branch=master
-  fi
-	git checkout $branch 
-	git pull --rebase
-	git checkout -
-	git merge --no-ff $branch
-	git push
-}
-
-# retrieve one of my GitHub repos
-getme() {
-    git clone https://github.com/damienstanton/$1 $2 # where 2 is an alias
-}
-
-# retrieve an arbitrary project from GitHub
-get() {
-	git clone --recursive https://github.com/$1/$2 $@
 }
 
 # simpler one-shot commit shortcut
@@ -399,46 +346,6 @@ cat <<LIC_STUB>> license_stub.txt
 LIC_STUB
 }
 
-# peek at a particular line in a file (decent for printf-style debugging)
-show() {
-    line_number=$1
-    start=$(($line_number - 10))
-    stop=$(($line_number + 10))
-
-    case "$2" in
-        "in")
-            file_path=$3
-            ;;
-        *)
-            echo "Usage: show <line_number> in <path_to_file>"
-            ;;
-    esac
-
-    awk "NR >= $start && NR <= $stop + 10" $file_path
-}
-
-# create a new GitHub repo from the command line
-newrepo() {
-    w=$1
-    u="damienstanton"
-    if [ -z "$1" ]; then
-        echo -n "Need the name of the new repo:"
-        read w
-    fi
-    curl -u $u https://api.github.com/user/repos -d "{\"name\":\"$w\"}"
-    git init && git remote add origin main https://github.com/$u/$w
-}
-
-# set the current dir to an existing github remote.
-remote() {
-	git init
-	git add -A
-	git commit
-	git branch -M main
-	git remote add origin https://github.com/$@
-	git push -u origin main
-}
-
 # pretty JSON object catting
 jv() {
     jq -C . $1 | less -R
@@ -448,4 +355,3 @@ jv() {
 cv() {
     cat $1 | sed 's/,/ ,/g' | column -t -s, | less -S
 }
-
