@@ -32,5 +32,6 @@
 		"name": "OpenJDK 15",
 		"path": "/Users/dstanton006/jdk-15.0.2.jdk/Contents/Home",
 		"default": true
-	}
+	},
+	"angular.experimental-ivy": true
 }
