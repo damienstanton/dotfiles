@@ -131,6 +131,9 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 " ----
 let g:rust_clip_command = 'pbcopy'
 let g:rustfmt_autosave = 1
+nnoremap <leader>h :CocCommand rust-analyzer.toggleInlayHints<CR>
+nnoremap <leader>tr :CocCommand rust-analyzer.syntaxTree<CR>
+nnoremap <leader>hr :CocCommand rust-analyzer.viewHir<CR>
 
 " Go
 " --
@@ -167,7 +170,6 @@ nnoremap <silent> gf :GFiles<CR>
 nnoremap <silent> vt :vnew <bar> term<CR>a
 nnoremap <silent> ht :new <bar> term<CR>a
 nnoremap <silent> <C-t> :tabNext<CR>
-nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 nnoremap <leader><SPACE> :CocAction<CR>
 
