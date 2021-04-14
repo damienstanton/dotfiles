@@ -42,7 +42,6 @@ Plug 'neoclide/coc.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'machakann/vim-highlightedyank'
-Plug 'andymass/vim-matchup'
 Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-clang-format'
 " Colorschemes
