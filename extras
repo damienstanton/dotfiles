@@ -6,6 +6,8 @@ coc-kotlin
 coc-tsserver
 coc-angular
 coc-eslint
+coc-python
+coc-omnisharp
 
 // Git config:
 [diff]
