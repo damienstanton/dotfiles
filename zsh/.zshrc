@@ -8,6 +8,7 @@ export EDITOR="nvim"
 export GIT_EDITOR="nvim"
 export TERM="xterm-256color"
 export ZSH=$HOME/.oh-my-zsh
+export BAT_THEME="base16"
 DEFAULT_USER="damien"
 ZSH_THEME="ds"
 COMPLETION_WAITING_DOTS="true"
