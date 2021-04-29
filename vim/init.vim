@@ -59,7 +59,6 @@ Plug 'fatih/vim-go'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
 Plug 'udalov/kotlin-vim'
-Plug 'stevearc/vim-arduino'
 call plug#end()
 
 " Style & Function
@@ -72,6 +71,11 @@ set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 "   let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 "   set termguicolors
 " endif
+
+" indent by 2 for js/ts
+au FileType javascript setlocal ts=2 sw=2 expandtab
+au FileType typescript setlocal ts=2 sw=2 expandtab
+
 set termguicolors
 set background=dark
 colorscheme base16-tomorrow-night
@@ -147,6 +151,12 @@ au BufNewFile,BufRead,BufReadPost *.go2 set syntax=go
 " ----
 let java_ignore_javadoc=1
 
+" C#
+" --
+let g:ale_linters = {
+\ 'cs': ['OmniSharp']
+\}
+
 " Keybindings
 " -----------
 let g:move_key_modifier='C'
@@ -160,7 +170,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gr <Plug>(coc-references-used)
 
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 nnoremap <C-q> :qa<CR>
@@ -172,14 +182,10 @@ nnoremap <silent> ht :new <bar> term<CR>a
 nnoremap <silent> <C-t> :tabNext<CR>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 nnoremap <leader><SPACE> :CocAction<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <space>i  :call CocActionAsync('codeAction', '', 'Implement missing members')<cr>
+nnoremap <silent> <space>a  :CocAction<cr>
 
 vnoremap <C-f> y/<C-R>"<CR>
 vnoremap <leader>" c""<ESC>P
@@ -188,23 +194,11 @@ inoremap jk <ESC>
 
 tnoremap <Esc> <C-\><C-n>
 
-autocmd CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
-
-" Introduce function text object
-" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
-
 nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-nnoremap <silent> <space>i  :call CocActionAsync('codeAction', '', 'Implement missing members')<cr>
-nnoremap <silent> <space>a  :CocAction<cr>
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Keywords
 " --------

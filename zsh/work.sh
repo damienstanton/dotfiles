@@ -1,5 +1,11 @@
 source ~/zsh/secret.sh
 
+# auto-export ESP-IDF env vars
+esp_idf() {
+	source $HOME/esp/esp-idf/export.sh
+	echo "Imported ESP-IDF virtual environment. Ready to develop."
+}
+
 # connect to 'dev' environment for ACT backend
 act_db() {
 	db=""
@@ -27,4 +33,9 @@ mrun() {
 		android) npx cap sync && npx cap open android ;;
 		*) echo "target not specified. Need one of [ios, android]" ;;
 	esac
+}
+
+# install an npm package from PwC private registry
+pwc() {
+	npm --registry $PWC_NPM_URL $@
 }

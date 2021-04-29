@@ -4,7 +4,7 @@ alias zshconf="$EDITOR $HOME/.zshrc"
 alias tmuxconf="$EDITOR $HOME/.tmux.conf"
 alias termconf="$EDITOR $HOME/.alacritty.yml"
 alias g="git"
-alias cat="bat --theme base16"
+alias cat="bat --theme TwoDark"
 alias e="$EDITOR"
 alias gs="git status"
 alias push="git push"
@@ -27,6 +27,12 @@ alias sorry='sudo $(fc -ln -1)'
 alias glog="git log --oneline --decorate --graph"
 alias ee="code -r"
 alias reloadmux="tmux source-file $HOME/.tmux.conf"
+
+# build a C++ binary using the wasi-sdk clang compiler
+wasmc() {
+	WASI="$HOME/oss/wasi-clang/wasi-sdk-12.0"
+	$WASI/bin/clang++ --sysroot $WASI/share/wasi-sysroot $@
+}
 
 # pretty version of `which`
 what() {
