@@ -16,7 +16,7 @@ alias peek="exa -l --header -t=mod --time-style=long-iso --tree --level=2 --git"
 alias sub="git submodule update --init --recursive"
 alias up="brew update && brew upgrade && brew cleanup && npm i -g npm && npm update -g && rustup update"
 # TODO: remove the following alias once brew recipes are more or less ported
-alias m1up="brew update && arch -amd64 brew upgrade && brew cleanup && npm i -g npm && npm update -g && rustup update"
+alias m1up="brew update && arch -arm64 brew upgrade && brew cleanup && npm i -g npm && npm update -g && rustup update"
 alias rff="rm -rf"
 alias k="kubectl"
 alias listening="lsof -P | rg LISTEN"
