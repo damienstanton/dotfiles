@@ -2,7 +2,7 @@ font:
   normal:
     family: Iosevka Nerd Font Mono
     style: Light
-  size: 16.0
+  size: 14.0
 
 bell:
   animation: EaseOutExpo
@@ -23,6 +23,9 @@ shell:
   program: /bin/zsh
   args:
     - --login
+
+window:
+    decorations: none
 
 colors:
   # Default colors
