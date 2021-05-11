@@ -11,7 +11,7 @@ nvim_file="$HOME/.config/nvim/init.vim"
 vim_pres_file="$HOME/.config/nvim/presentation.vim"
 coc_settings_file="$HOME/.config/nvim/coc-settings.json"
 ccls_file="$HOME/.config/nvim/default_ccls"
-extras="$HOME/.config/nvim/extras"
+extras="$HOME/.config/nvim/extras.toml"
 fzf_theme="$HOME/fzf-theme/fzf-tomorrow-night.sh"
 
 tmux_file="$HOME/.tmux.conf"
