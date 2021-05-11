@@ -1,0 +1,17 @@
+coc_plugins = """
+coc-rust-analyzer
+coc-flutter
+coc-java
+coc-kotlin
+coc-tsserver
+coc-angular
+coc-eslint
+coc-python
+"""
+
+git_config = """
+[diff]
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d -u ~/.config/nvim/init.vim \"$LOCAL\" \"$REMOTE\""
+"""

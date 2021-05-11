@@ -66,3 +66,4 @@ source $HOME/fzf-theme/fzf-tomorrow-night.sh
 export WASMTIME_HOME="$HOME/.wasmtime"
 
 export PATH="$WASMTIME_HOME/bin:$PATH"
+[ -f "/Users/dstanton006/.ghcup/env" ] && source "/Users/dstanton006/.ghcup/env" # ghcup-env
