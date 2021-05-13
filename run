@@ -41,7 +41,7 @@ install() {
   cp tmux/.tmux.conf "$HOME/.tmux.conf"
   cp alacritty/.alacritty.yml "$HOME/.alacritty.yml" 
   cp vim/default_ccls "$HOME/.config/nvim/"
-  cp vim/extras "$HOME/.config/nvim/"
+  cp vim/extras.toml "$HOME/.config/nvim/"
   cp fzf/fzf-tomorrow-night.sh "$HOME/fzf-theme/"
   echo "-> Done"
 }
