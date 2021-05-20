@@ -53,6 +53,9 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export NDK_HOME="$ANDROID_HOME/ndk/23.0.7123448" # keep track of these versions
 export androidc="$NDK_HOME/toolchains/llvm/prebuilt/darwin-x86_64/bin"
 
+# haskell
+export PATH="$HOME/.ghcup/bin:$PATH"
+
 # pyenv
 export PYENV_ROOT="$HOME/bin/.pyenv"
 export PYTHONDONTWRITEBYTECODE=1
