@@ -11,6 +11,7 @@ set shiftwidth=4
 set noexpandtab
 set autoindent
 set number
+set relativenumber
 set mouse=a
 set backspace=indent,eol,start
 set updatetime=300

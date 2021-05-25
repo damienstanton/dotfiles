@@ -25,7 +25,7 @@ plugins=(git dirhistory docker git-extras gradle node npm osx pip sudo wd vi-mod
 # imports
 source $HOME/zsh/lang.sh
 source $ZSH/oh-my-zsh.sh
-# source $HOME/zsh/work.sh
+source $HOME/zsh/work.sh
 
 # scripts
 export PATH="$HOME/work/scripts:$PATH"
