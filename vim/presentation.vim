@@ -9,6 +9,7 @@ function! ToggleHiddenAll()
         set noshowcmd
         set colorcolumn=
 		set nonumber
+		set norelativenumber
     else
         let s:hidden_all=0
         " syntax on
@@ -18,6 +19,7 @@ function! ToggleHiddenAll()
         set showcmd
         set colorcolumn=100
         set number
+		set relativenumber
     endif
 endfunction
 

@@ -60,6 +60,8 @@ Plug 'fatih/vim-go'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
 Plug 'udalov/kotlin-vim'
+Plug 'unisonweb/unison', { 'branch': 'trunk', 'rtp': 'editor-support/vim' }
+
 call plug#end()
 
 " Style & Function

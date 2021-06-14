@@ -67,3 +67,7 @@ export WASMTIME_HOME="$HOME/.wasmtime"
 
 export PATH="$WASMTIME_HOME/bin:$PATH"
 [ -f "/Users/dstanton006/.ghcup/env" ] && source "/Users/dstanton006/.ghcup/env" # ghcup-env
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/dstanton006/.sdkman"
+[[ -s "/Users/dstanton006/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/dstanton006/.sdkman/bin/sdkman-init.sh"

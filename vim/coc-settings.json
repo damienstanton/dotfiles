@@ -1,5 +1,9 @@
 {
 	"diagnostic.virtualText": true,
+	"diagnostic.errorSign": "💣",
+	"diagnostic.warningSign": "🚧 ",
+	"diagnostic.infoSign": "📘 ",
+	"diagnostic.hintSign": "🔎 ",
 	"languageserver": {
 		"go": {
 		  "command": "gopls",
@@ -25,5 +29,6 @@
 		"path": "/Users/dstanton006/jdk-15.0.2.jdk/Contents/Home",
 		"default": true
 	},
-	"angular.experimental-ivy": true
+  "angular.experimental-ivy": true,
+  "clangd.path": "/Users/dstanton006/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd"
 }

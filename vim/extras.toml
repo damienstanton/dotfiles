@@ -6,7 +6,8 @@ coc-kotlin
 coc-tsserver
 coc-angular
 coc-eslint
-coc-python
+coc-pyright
+coc-clangd
 """
 
 git_config = """

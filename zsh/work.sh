@@ -39,3 +39,6 @@ mrun() {
 pwc() {
 	npm --registry $PWC_NPM_URL $@
 }
+
+# Apache Spark Config
+export SPARK_HOME="$HOME/spark-3.1.2"
