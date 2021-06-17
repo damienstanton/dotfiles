@@ -154,11 +154,10 @@ au BufNewFile,BufRead,BufReadPost *.go2 set syntax=go
 " ----
 let java_ignore_javadoc=1
 
-" C#
-" --
-let g:ale_linters = {
-\ 'cs': ['OmniSharp']
-\}
+" Turn markdown buffers into PDFs automatically
+augroup markdown_render | au!
+	autocmd BufWritePost *.md !md-to-pdf <afile>:p:S
+augroup end
 
 " Keybindings
 " -----------

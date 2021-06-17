@@ -4,6 +4,7 @@
 	"diagnostic.warningSign": "🚧 ",
 	"diagnostic.infoSign": "📘 ",
 	"diagnostic.hintSign": "🔎 ",
+  	"python.linting.mypyEnabled": true,
 	"languageserver": {
 		"go": {
 		  "command": "gopls",
