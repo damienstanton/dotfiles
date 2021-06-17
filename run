@@ -13,6 +13,7 @@ coc_settings_file="$HOME/.config/nvim/coc-settings.json"
 ccls_file="$HOME/.config/nvim/default_ccls"
 extras="$HOME/.config/nvim/extras.toml"
 fzf_theme="$HOME/fzf-theme/fzf-tomorrow-night.sh"
+markdown_template="$HOME/.config/nvim/template.md"
 
 tmux_file="$HOME/.tmux.conf"
 alacritty_file="$HOME/.alacritty.yml"
@@ -42,6 +43,7 @@ install() {
   cp alacritty/.alacritty.yml "$HOME/.alacritty.yml" 
   cp vim/default_ccls "$HOME/.config/nvim/"
   cp vim/extras.toml "$HOME/.config/nvim/"
+  cp vim/template.md "$HOME/.config/nvim/"
   cp fzf/fzf-tomorrow-night.sh "$HOME/fzf-theme/"
   echo "-> Done"
 }
@@ -58,6 +60,7 @@ upload() {
   cp $coc_settings_file vim/
   cp $ccls_file vim/
   cp $extras vim/
+  cp $markdown_template vim/
   cp $tmux_file tmux/
   cp $alacritty_file alacritty/
   cp $fzf_theme fzf/
