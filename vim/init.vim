@@ -17,7 +17,8 @@ set backspace=indent,eol,start
 set updatetime=300
 set splitbelow
 set ignorecase smartcase
-set colorcolumn=100
+set colorcolumn=80
+set textwidth=80
 set timeoutlen=1000 ttimeoutlen=0 " adjust for esc delay
 set splitright
 
