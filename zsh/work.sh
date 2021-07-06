@@ -1,4 +1,4 @@
-source ~/zsh/secret.sh
+# source ~/zsh/secret.sh
 
 # auto-export ESP-IDF env vars
 esp_idf() {

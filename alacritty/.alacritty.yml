@@ -20,9 +20,9 @@ cursor:
 live_config_reload: true
 
 shell:
-  program: /Users/dstanton006/.cargo/bin/nu
- # args:
- #   - --login
+  program: /bin/zsh
+  args:
+    - --login
 
 colors:
   # Dark

@@ -71,3 +71,9 @@ export PATH="$WASMTIME_HOME/bin:$PATH"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/dstanton006/.sdkman"
 [[ -s "/Users/dstanton006/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/dstanton006/.sdkman/bin/sdkman-init.sh"
+
+# opam configuration
+test -r /Users/damien/.opam/opam-init/init.zsh && . /Users/damien/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# starship promot
+eval "$(starship init zsh)"
