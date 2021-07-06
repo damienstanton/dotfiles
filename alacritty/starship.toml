@@ -1,0 +1,9 @@
+add_newline = false
+
+[directory]
+home_symbol = "🏠"
+
+[character]
+success_symbol = "[::](bold green)"
+vicmd_symbol = "[v:](bold green)"
+error_symbol = "[::](bold red)"
