@@ -14,7 +14,7 @@ ccls_file="$HOME/.config/nvim/default_ccls"
 extras="$HOME/.config/nvim/extras.toml"
 fzf_theme="$HOME/fzf-theme/fzf-tomorrow-night.sh"
 markdown_template="$HOME/.config/nvim/template.md"
-
+starship_config="$HOME/.config/starship.toml"
 tmux_file="$HOME/.tmux.conf"
 alacritty_file="$HOME/.alacritty.yml"
 
@@ -41,6 +41,7 @@ install() {
   cp vim/coc-settings.json "$HOME/.config/nvim/"
   cp tmux/.tmux.conf "$HOME/.tmux.conf"
   cp alacritty/.alacritty.yml "$HOME/.alacritty.yml" 
+  cp alacritty/starship.toml "$HOME/.config/starship.toml" 
   cp vim/default_ccls "$HOME/.config/nvim/"
   cp vim/extras.toml "$HOME/.config/nvim/"
   cp vim/template.md "$HOME/.config/nvim/"
@@ -63,6 +64,7 @@ upload() {
   cp $markdown_template vim/
   cp $tmux_file tmux/
   cp $alacritty_file alacritty/
+  cp $starship_config alacritty/
   cp $fzf_theme fzf/
   git add -A && git commit -m "Dotfiles synced on $(date +%Y-%m-%d)" && git push
 }
