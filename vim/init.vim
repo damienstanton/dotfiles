@@ -156,9 +156,16 @@ au BufNewFile,BufRead,BufReadPost *.go2 set syntax=go
 let java_ignore_javadoc=1
 
 " Turn markdown buffers into PDFs automatically
-augroup markdown_render | au!
-	autocmd BufWritePost *.md !md-to-pdf <afile>:p:S
-augroup end
+function! ToPDF()
+	augroup markdown_render | au!
+		autocmd BufWritePost *.md !md-to-pdf <afile>:p:S
+	augroup end
+	augroup lhs_render | au!
+		autocmd BufWritePost *.lhs !pandoc <afile> -s -o <afile>.pdf
+	augroup end
+endfunction
+
+
 
 " Keybindings
 " -----------
@@ -206,6 +213,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Keywords
 " --------
 :command JSON %!jq '.'
+:command PDF :call ToPDF()
 
 " Distraction free mode
 runtime presentation.vim

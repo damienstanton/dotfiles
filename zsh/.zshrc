@@ -75,5 +75,9 @@ export SDKMAN_DIR="/Users/dstanton006/.sdkman"
 # opam configuration
 test -r /Users/damien/.opam/opam-init/init.zsh && . /Users/damien/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
+# haskell path
+export PATH="$HOME/.ghcup/bin:$PATH"
+export PATH="$HOME/.ghcup/ghc/8.10.5/bin:$PATH"
+
 # starship promot
 eval "$(starship init zsh)"

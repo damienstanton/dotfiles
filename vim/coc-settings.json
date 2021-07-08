@@ -24,11 +24,11 @@
 			 ],
 			 "filetypes": ["haskell", "lhaskell"]
     	},
-		"ocaml-lsp": {
-    		"command": "arch",
-    		"args": ["-arm64","opam", "config", "exec", "--", "ocamllsp"],
-    		"filetypes": ["ocaml", "reason"]
-  		}
+		  "ocaml-lsp": {
+			"command": "opam",
+			"args": ["config", "exec", "--", "ocamllsp"],
+			"filetypes": ["ocaml", "reason"]
+		}
   	},
 	"java_configuration_runtimes": {
 		"name": "OpenJDK 15",
