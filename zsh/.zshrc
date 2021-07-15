@@ -74,6 +74,7 @@ export SDKMAN_DIR="/Users/dstanton006/.sdkman"
 
 # opam configuration
 test -r /Users/damien/.opam/opam-init/init.zsh && . /Users/damien/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+export PATH="$HOME/.opam/default/bin:$PATH"
 
 # haskell path
 export PATH="$HOME/.ghcup/bin:$PATH"

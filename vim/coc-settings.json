@@ -5,6 +5,7 @@
 	"diagnostic.infoSign": "📘 ",
 	"diagnostic.hintSign": "🔎 ",
   	"python.linting.mypyEnabled": true,
+	"haskell.liquidOn": true,
 	"languageserver": {
 		"go": {
 		  "command": "gopls",
@@ -34,6 +35,10 @@
 		"name": "OpenJDK 15",
 		"path": "/Users/dstanton006/jdk-15.0.2.jdk/Contents/Home",
 		"default": true
+	},
+	"java.import.gradle.wrapper.checksums": {
+		"sha256": "e2b82129ab64751fd40437007bd2f7f2afb3c6e41a9198e628650b22d5824a14",
+		"allowed": true
 	},
   "angular.experimental-ivy": true,
   "clangd.path": "/Users/dstanton006/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd"
