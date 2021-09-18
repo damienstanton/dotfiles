@@ -29,6 +29,7 @@ alias glog="git log --oneline --decorate --graph"
 alias ee="code -r"
 alias reloadmux="tmux source-file $HOME/.tmux.conf"
 alias i="ipython"
+alias ta="tmux attach-session -t 0"
 
 # build a C++ binary using the wasi-sdk clang compiler
 wasmc() {
