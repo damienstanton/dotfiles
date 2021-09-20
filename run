@@ -6,6 +6,7 @@ zsh_theme_file="$HOME/.oh-my-zsh/custom/themes/ds.zsh-theme"
 zsh_lang_file="$HOME/zsh/lang.sh"
 zsh_work_file="$HOME/zsh/work.sh"
 zsh_completions="$HOME/zsh/completions"
+deps_config="$HOME/.config/clojure/deps.edn"
 
 nvim_file="$HOME/.config/nvim/init.vim"
 vim_pres_file="$HOME/.config/nvim/presentation.vim"
@@ -30,6 +31,9 @@ install() {
   if [ ! -d "$HOME/fzf-theme" ]; then
       mkdir $HOME/fzf-theme
   fi
+  if [ ! -d "$HOME/config/clojure" ]; then
+      mkdir -p  "$HOME/.config/clojure"
+  fi
   echo "-> Copying configuration files"
   cat zsh/.zshrc > $zsh_file
   cp zsh/ds.zsh-theme "$HOME/.oh-my-zsh/custom/themes/"
@@ -46,6 +50,7 @@ install() {
   cp vim/extras.toml "$HOME/.config/nvim/"
   cp vim/template.md "$HOME/.config/nvim/"
   cp fzf/fzf-tomorrow-night.sh "$HOME/fzf-theme/"
+  cp clojure/deps.edn "$HOME/.config/clojure/"
   echo "-> Done"
 }
 
@@ -66,6 +71,7 @@ upload() {
   cp $alacritty_file alacritty/
   cp $starship_config alacritty/
   cp $fzf_theme fzf/
+  cp $deps_config clojure/
   git add -A && git commit -m "Dotfiles synced on $(date +%Y-%m-%d)" && git push
 }
 
