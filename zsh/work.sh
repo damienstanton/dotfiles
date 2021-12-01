@@ -1,5 +1,9 @@
 # source ~/zsh/secret.sh
 
+# graph repo vars
+export SGPATH=~/work/backend/graph
+export PATH="$SGPATH/backend/scripts:$PATH"
+
 # auto-export ESP-IDF env vars
 esp_idf() {
 	source $HOME/esp/esp-idf/export.sh

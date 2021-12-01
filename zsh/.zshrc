@@ -9,7 +9,7 @@ export GIT_EDITOR="nvim"
 export TERM="xterm-256color"
 export ZSH=$HOME/.oh-my-zsh
 # set base colors for bat and alacritty, and simple apply switches
-export BAT_THEME="base16"
+export BAT_THEME="OneHalfLight"
 LIGHT_COLOR="base16-tomorrow.yml"
 DARK_COLOR="base16-tomorrow-night.yml"
 alias day="alacritty-colorscheme -c $HOME/.alacritty.yml -V apply $LIGHT_COLOR"
@@ -20,7 +20,7 @@ DEFAULT_USER="damien"
 ZSH_THEME="ds"
 COMPLETION_WAITING_DOTS="true"
 KEYTIMEOUT=1
-plugins=(git dirhistory docker git-extras gradle node npm osx pip sudo wd vi-mode)
+plugins=(git dirhistory docker git-extras gradle node npm macos pip sudo wd vi-mode)
 
 # imports
 source $HOME/zsh/lang.sh
@@ -46,7 +46,11 @@ export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 export PATH="$HOME/flutter/bin:$PATH"
 
 # java
-export JAVA_HOME=$HOME/jdk-15.0.2.jdk/Contents/Home
+export JAVA_HOME="/usr/local/Cellar/openjdk@11/11.0.12"
+export PATH="/usr/local/Cellar/openjdk@11/11.0.12/bin:$PATH"
+
+# brew node
+export PATH="/usr/local/Cellar/node@16/16.13.0/bin:$PATH"
 
 # android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
@@ -57,11 +61,15 @@ export androidc="$NDK_HOME/toolchains/llvm/prebuilt/darwin-x86_64/bin"
 export PYENV_ROOT="$HOME/bin/.pyenv"
 export PYTHONDONTWRITEBYTECODE=1
 
+# clojure CLR (clojure JVM installed via brew, clojurescript via npm)
+export PATH="$HOME/.dotnet/tools:$PATH"
+
+
 # fzf and fd configs
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND="fd --type file --color=always"
 export FZF_DEFAULT_OPTS="--ansi"
-source $HOME/fzf-theme/fzf-tomorrow-night.sh
+source $HOME/fzf-theme/fzf-papercolor.sh
 
 export WASMTIME_HOME="$HOME/.wasmtime"
 

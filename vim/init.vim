@@ -51,6 +51,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'chriskempson/base16-vim'
+Plug 'NLKNguyen/papercolor-theme'
 " Language plugins
 " ----------------
 Plug 'cespare/vim-toml'
@@ -83,12 +84,12 @@ au FileType javascript setlocal ts=2 sw=2 expandtab
 au FileType typescript setlocal ts=2 sw=2 expandtab
 
 set termguicolors
-set background=dark
-colorscheme base16-tomorrow-night
+set background=light
+colorscheme PaperColor
 hi normal guibg=NONE ctermbg=NONE
 
 let g:lightline = { 
-	\ 'colorscheme': 'Tomorrow_Night',
+	\ 'colorscheme': 'PaperColor',
 	\ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]

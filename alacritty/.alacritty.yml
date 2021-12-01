@@ -24,37 +24,38 @@ shell:
   args:
     - --login
 
+window:
+  decorations: none
+
 colors:
-  # Dark
-  # ----
   # Default colors
   primary:
-    background: '0x1d1f21'
-    foreground: '0xc5c8c6'
+    background: '0xeeeeee'
+    foreground: '0x4d4d4c'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x1d1f21'
-    cursor: '0xffffff'
+    text: '0xf3f3f3'
+    cursor: '0x4d4d4c'
 
   # Normal colors
   normal:
-    black:   '0x1d1f21'
-    red:     '0xcc6666'
-    green:   '0xb5bd68'
-    yellow:  '0xe6c547'
-    blue:    '0x81a2be'
-    magenta: '0xb294bb'
-    cyan:    '0x70c0ba'
-    white:   '0x373b41'
+    black:   '0xededed'
+    red:     '0xd7005f'
+    green:   '0x718c00'
+    yellow:  '0xd75f00'
+    blue:    '0x4271ae'
+    magenta: '0x8959a8'
+    cyan:    '0x3e999f'
+    white:   '0x4d4d4c'
 
   # Bright colors
   bright:
-    black:   '0x666666'
-    red:     '0xff3334'
-    green:   '0x9ec400'
-    yellow:  '0xf0c674'
-    blue:    '0x81a2be'
-    magenta: '0xb77ee0'
-    cyan:    '0x54ced6'
-    white:   '0x282a2e'
+    black:   '0x949494'
+    red:     '0xd7005f'
+    green:   '0x718c00'
+    yellow:  '0xd75f00'
+    blue:    '0x4271ae'
+    magenta: '0x8959a8'
+    cyan:    '0x3e999f'
+    white:   '0xf5f5f5'
